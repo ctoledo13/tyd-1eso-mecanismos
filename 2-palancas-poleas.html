@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2. Palancas y poleas · 1º ESO</title><style>
+:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;box-shadow:0 1px 4px #0002}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
+h2{color:var(--c);margin-top:6px}h3{margin:18px 0 6px}
+.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
+.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
+details{background:#fff;border-radius:12px;margin:8px 0;padding:10px 14px;box-shadow:0 1px 4px #0001}summary{font-weight:700;cursor:pointer}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
+button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0}
+button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
+.chip{display:inline-block;background:var(--cl);border:1px solid var(--c);border-radius:16px;padding:4px 12px;margin:3px;cursor:pointer;font-weight:600}
+.chip.sel{background:var(--c);color:#fff}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}
+.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0}
+a.lk{display:inline-block;background:#fff;border:2px solid var(--c);border-radius:10px;padding:8px 14px;margin:4px;color:var(--c);font-weight:700;text-decoration:none}
+.im{max-width:100%;background:#fff;border-radius:10px;padding:4px}
+nav a{border:2px solid var(--c);color:var(--c);border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}nav a:hover{background:var(--c);color:#fff}
+dt{font-weight:700;margin-top:8px}dd{margin:0 0 4px 14px}footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
+.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}.portada{max-width:900px;margin:12px auto 0;padding:0 14px}.portada img{width:100%;max-height:300px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 2px 8px #0002}
+[data-s]{opacity:0;transition:opacity .6s}[data-s].v{opacity:1}
+.card ol,.card ul{margin:6px 0;padding-left:22px}.card li{margin:3px 0}nav a.act-nav{background:var(--c);color:#fff}nav a.act-nav:hover{background:var(--c2)}
+.fg{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center}.fg>div{flex:1 1 240px}.ci{color:var(--hl);font-weight:700}nav a.cur{background:var(--c);color:#fff}body{padding-bottom:84px}
+#sl{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;box-shadow:0 -2px 10px #0003;display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 12px}
+#sl button,#sl a{margin:0;white-space:nowrap;text-decoration:none;display:inline-block}#sl button:disabled{opacity:.35;cursor:default}
+#si{flex:1;max-width:340px;text-align:center;line-height:1.25}#si b{font-size:1.15rem}#st{display:block;font-size:.8rem;color:#556;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sb{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+#sl .bar{margin-top:4px}@media print{#sl,nav,button{display:none!important}section{display:block!important}}
+@media(max-width:480px){#sl{gap:6px;padding:8px}#sl .b{padding:8px 10px;font-size:.95rem}}
+/* Propios de la unidad de mecanismos */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:8px 0}
+.flow .bx{flex:1 1 150px;max-width:220px;border-radius:12px;padding:10px;text-align:center;font-weight:700;border:2px solid}
+.flow .ar{font-size:1.6rem;color:var(--c)}
+.m1{background:#ffe3e3;border-color:#e03131}.m2{background:#d3f9d8;border-color:#2f9e44}.m3{background:#d0ebff;border-color:#1971c2}
+.flow .bx small{display:block;font-weight:400;font-size:.88rem;margin-top:3px}
+.mov{text-align:center}.mov svg{width:100%;max-width:200px;height:110px;display:block;margin:auto}
+@keyframes lin{0%{transform:translateX(0)}100%{transform:translateX(110px)}}
+@keyframes alt{0%,100%{transform:translateX(0)}50%{transform:translateX(90px)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+.lin{animation:lin 2.4s linear infinite}.alt{animation:alt 2s ease-in-out infinite}.rot{animation:rot 3s linear infinite;transform-origin:100px 55px;transform-box:view-box}
+.big{font-size:2.4rem;text-align:center;line-height:1.2}
+.res{font-size:1.1rem}input[type=range]{accent-color:var(--c);width:150px}input[type=number]{padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem}
+header{position:relative}
+.lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
+.lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
+.lang button.on{background:#fff;color:var(--c)}
+.l1{background:#e7f5ff;border-left:5px solid #1971c2;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.95rem;color:#1d3557;font-weight:400}
+.l1[dir=rtl]{border-left:0;border-right:5px solid #1971c2;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro',Tahoma,Arial,sans-serif;font-size:1.05rem;line-height:1.8}
+.l1 ul,.l1 ol{margin:4px 0;padding-inline-start:22px}.l1t{display:block;font-weight:800;font-size:.8rem;margin-bottom:2px;color:#1971c2}
+.l1o{color:#1971c2;font-size:.9em}.row .l1{margin:4px 0 0;padding:4px 8px;font-size:.88rem}
+@media(max-width:640px){.lang{position:static;margin-top:8px}}
+@media print{.lang{display:none!important}}
+</style></head><body>
+<header><p class="eb">Tecnología y Digitalización · 1º ESO · Mecanismos · Parte 2 de 3</p><h1>⚖️ Palancas y poleas</h1></header>
+<div class="portada"><img src="portada-mecanismos.jpg" alt="Chico montando en bicicleta por una calle de la ciudad"></div>
+<nav><a href="index.html">🏠 Inicio</a><a href="#elem">La palanca</a><a href="#ley">La ley</a><a href="#ejr">Ejemplo</a><a href="#grados">Tipos</a><a href="#objs">¿De qué grado?</a><a href="#polea">La polea</a><a href="#poleas">Fija y móvil</a><a href="#video">🎬 Vídeo</a><a href="#preg">Piensa</a><a href="#practica">Cuaderno</a><a class="act-nav" href="2-palancas-poleas-actividades.html">🧩 Actividades</a></nav>
+<main>
+<section id="elem"><h2>¿Qué es una palanca?</h2>
+<div class="card key">Una <b>palanca</b> es una <b>barra rígida</b> que <b>gira</b> sobre un <b>punto de apoyo</b>. Sirve para mover cosas pesadas haciendo <b>menos fuerza</b>.</div>
+<div class="card"><svg viewBox="0 20 480 170" class="im" style="width:100%;max-width:480px;display:block;margin:auto">
+<rect x="40" y="96" width="400" height="12" rx="4" fill="#a0522d"/><polygon points="300,108 280,150 320,150" fill="#495057"/>
+<rect x="45" y="56" width="50" height="40" rx="4" fill="#1971c2"/><text x="70" y="82" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">R</text>
+<line x1="420" y1="30" x2="420" y2="88" stroke="#e03131" stroke-width="5"/><polygon points="420,96 412,80 428,80" fill="#e03131"/><text x="432" y="50" font-size="16" font-weight="700" fill="#e03131">F</text>
+<g stroke="#1d2733" stroke-width="1.5"><line x1="70" y1="125" x2="420" y2="125"/><line x1="70" y1="118" x2="70" y2="132"/><line x1="300" y1="118" x2="300" y2="132"/><line x1="420" y1="118" x2="420" y2="132"/></g>
+<text x="185" y="142" font-size="14" font-weight="700" text-anchor="middle" fill="#1971c2">r</text><text x="360" y="142" font-size="14" font-weight="700" text-anchor="middle" fill="#e03131">d</text>
+<text x="300" y="172" font-size="14" font-weight="700" text-anchor="middle">Punto de apoyo</text></svg></div>
+<div class="card"><ul><li><b style="color:#e03131">F</b> = <b>fuerza</b> que hacemos.</li><li><b style="color:#1971c2">R</b> = <b>resistencia</b>: el peso que queremos mover.</li><li><b>Punto de apoyo</b>: donde gira la barra.</li><li><b style="color:#e03131">d</b> y <b style="color:#1971c2">r</b> = <b>distancias</b> al punto de apoyo.</li></ul></div></section>
+
+<section id="ley"><h2>La ley de la palanca</h2>
+<div class="card key" style="text-align:center"><div style="font-size:2rem;font-weight:800"><span style="color:#e03131">F</span> × <span style="color:#e03131">d</span> = <span style="color:#1971c2">R</span> × <span style="color:#1971c2">r</span></div>Si los dos lados dan lo mismo, hay <b>equilibrio</b>. Cuanto <b>más lejos</b> empujas, <b>menos fuerza</b> necesitas.</div>
+<div class="card"><h3 style="margin-top:0">🎮 Equilibra el balancín</h3><svg id="bsv" viewBox="0 40 480 170" class="im" style="width:100%;max-width:520px;display:block;margin:auto"></svg>
+<div class="fg" style="margin-top:8px"><div><b style="color:#1971c2">Izquierda (R)</b><div class="row">Peso <input type="range" id="sR" min="10" max="60" step="5" value="20"> <b id="vR"></b></div><div class="row">Distancia <input type="range" id="sr" min="0.25" max="2" step="0.25" value="1.5"> <b id="vr"></b></div></div>
+<div><b style="color:#e03131">Derecha (F)</b><div class="row">Peso <input type="range" id="sF" min="10" max="60" step="5" value="30"> <b id="vF"></b></div><div class="row">Distancia <input type="range" id="sd" min="0.25" max="2" step="0.25" value="2"> <b id="vd"></b></div></div></div>
+<div class="fb res" id="bres"></div></div></section>
+
+<section id="ejr"><h2>🎬 Ejemplo resuelto</h2><div class="card"><div id="aej"></div></div>
+<div class="card tip">Para calcular la distancia: <b>d = R × r ÷ F</b>.</div></section>
+
+<section id="grados"><h2>Los tres tipos de palanca</h2>
+<p>Depende de <b>qué hay en el medio</b>. Truco: <b>A-R-F</b> → 1º <b>A</b>poyo, 2º <b>R</b>esistencia, 3º <b>F</b>uerza.</p>
+<div class="card"><h3 style="margin-top:0">1er grado · el <b>apoyo</b> en medio</h3><div id="g1"></div><span class="ci">Ej.: balancín, tijeras, alicates.</span></div>
+<div class="card"><h3 style="margin-top:0">2º grado · la <b>resistencia</b> en medio</h3><div id="g2"></div><b>Siempre ahorra</b> fuerza. <span class="ci">Ej.: carretilla, cascanueces, abrebotellas.</span></div>
+<div class="card"><h3 style="margin-top:0">3er grado · la <b>fuerza</b> en medio</h3><div id="g3"></div>Gasta <b>más</b> fuerza, pero es más <b>precisa</b>. <span class="ci">Ej.: pinzas, caña de pescar.</span></div></section>
+
+<section id="objs"><h2>¿De qué grado es?</h2>
+<p>Toca un objeto y descubre su tipo de palanca.</p><div id="ochips"></div><div class="card" id="obox"></div></section>
+
+<section id="polea"><h2>¿Qué es una polea?</h2>
+<div class="card key">Una <b>polea</b> es una <b>rueda</b> con una <b>ranura</b> por la que pasa una <b>cuerda</b>. Sirve para <b>subir cargas</b> de forma más <b>cómoda</b>.</div>
+<div class="card"><div class="fg"><div style="text-align:center"><svg viewBox="0 0 160 150" style="width:150px"><circle cx="80" cy="70" r="50" fill="#adb5bd" stroke="#495057" stroke-width="4"/><circle cx="80" cy="70" r="40" fill="#dee2e6"/><circle cx="80" cy="70" r="8" fill="#495057"/><path d="M30 150 L30 70 A50 50 0 0 1 130 70 L130 150" fill="none" stroke="#a0522d" stroke-width="5"/></svg><br><b>Rueda + ranura + cuerda</b></div>
+<div><p>🏗️ Las verás en <b>grúas</b>, <b>pozos</b>, <b>mástiles</b> de banderas, <b>persianas</b> y aparatos de <b>gimnasio</b>.</p><p>Hay dos tipos básicos: la polea <b>fija</b> y la polea <b>móvil</b>.</p></div></div></div></section>
+
+<section id="poleas"><h2>🎮 Polea fija y polea móvil</h2>
+<p>Mueve el control para <b>tirar de la cuerda</b>. La carga pesa <b>100 N</b>.</p>
+<div class="card"><div class="row" style="justify-content:center">Cuerda recogida <input type="range" id="pl" min="0" max="100" step="5" value="0"> <b id="vl"></b></div>
+<div class="fg"><div style="text-align:center"><b>Polea fija</b><svg id="pf" viewBox="0 0 220 300" style="width:100%;max-width:220px;display:block;margin:auto"></svg><div class="card key" style="margin:4px 0"><b>F = R</b><br>Fuerza: <b>100 N</b>. No ahorra fuerza, pero es más <b>cómodo</b> tirar hacia <b>abajo</b>.</div></div>
+<div style="text-align:center"><b>Polea móvil</b><svg id="pm" viewBox="0 0 220 300" style="width:100%;max-width:220px;display:block;margin:auto"></svg><div class="card key" style="margin:4px 0"><b>F = R ÷ 2</b><br>Fuerza: <b>50 N</b>. Ahorra la <b>mitad</b> de fuerza, pero hay que tirar el <b>doble</b> de cuerda.</div></div></div>
+<div class="fb res" id="pres" style="text-align:center"></div></div>
+<div class="card tip">Un <b>polipasto</b> une varias poleas: <b>cuantas más poleas móviles</b>, <b>menos fuerza</b> hay que hacer.</div></section>
+
+<section id="video"><h2>🎬 Vídeo: así se multiplica la fuerza</h2>
+<div class="card" style="text-align:center"><video src="palancas-poleas.mp4" controls playsinline preload="metadata" style="max-width:100%;max-height:70vh;border-radius:12px;background:#000"></video></div>
+<div class="card tip"><b>Mira el vídeo</b> y responde en tu <b>cuaderno</b>:<ol style="margin:6px 0 0"><li>¿Dónde empujamos la palanca para levantar la piedra de <b>100 kg</b> con <b>menos fuerza</b>?</li><li>Con una <b>polea móvil</b>, ¿qué fuerza hace falta para subir <b>100 kg</b>? ¿Qué «pagamos» a cambio?</li></ol>
+<details style="margin-top:8px"><summary>Ver respuestas</summary>1. <b>Lejos</b> del punto de apoyo (brazo de fuerza largo).<br>2. La <b>mitad</b>: como si fueran <b>50 kg</b>. A cambio, hay que tirar el <b>doble de cuerda</b>.</details></div></section>
+
+<section id="preg"><h2>Piensa y responde <button class="b g" id="all" style="float:right;font-size:.85rem">Abrir todas</button></h2>
+<details><summary>¿Cómo se llama el punto sobre el que gira la palanca?</summary><b>Punto de apoyo</b> (o fulcro).</details>
+<details><summary>Si empujo más lejos del punto de apoyo, ¿necesito más o menos fuerza?</summary><b>Menos</b> fuerza.</details>
+<details><summary>¿Qué hay en medio en una palanca de 2º grado?</summary>La <b>resistencia</b>. Ej.: la carga de la carretilla.</details>
+<details><summary>¿Qué fuerza necesito para subir 80 N con una polea fija? ¿Y con una móvil?</summary>Fija: <b>80 N</b>. Móvil: 80 ÷ 2 = <b>40 N</b>.</details>
+<details><summary>Si la polea móvil ahorra fuerza, ¿qué «pagamos» a cambio?</summary>Hay que tirar el <b>doble de cuerda</b>.</details></section>
+
+<section id="practica"><h2>✏️ En tu cuaderno</h2>
+<div class="card tip"><p style="margin-top:0"><b>Copia y haz</b> en tu cuaderno (libro, págs. 86, 88 y 98):</p>
+<ol><li>Copia la <b>ley de la palanca</b>: F × d = R × r.</li><li>Dibuja los <b>tres tipos</b> de palanca y marca <b>F</b>, <b>R</b> y el <b>apoyo</b>. Escribe un ejemplo de cada uno.</li><li>Dibuja una <b>polea fija</b> y una <b>polea móvil</b> con su fórmula.</li><li>Problema: una niña de <b>20 kg</b> se sienta a <b>2 m</b> del centro de un balancín. ¿Dónde se sienta su padre, de <b>80 kg</b>?</li></ol>
+<details><summary>Ver solución del problema</summary>d = 20 × 2 ÷ 80 = 40 ÷ 80 = <b>0,5 m</b>. El padre se sienta <b>más cerca</b> del centro.</details></div>
+<h3>Antes de entregar</h3><a class="lk" href="2-palancas-poleas-actividades.html">🧩 Hacer las actividades autocorregibles</a></section>
+
+<section id="glosario"><h2>Glosario</h2><dl><dt>Palanca</dt><dd>Barra rígida que gira sobre un punto de apoyo.</dd><dt>Punto de apoyo (fulcro)</dt><dd>Punto sobre el que gira la palanca.</dd><dt>Fuerza (F)</dt><dd>La fuerza que hacemos.</dd><dt>Resistencia (R)</dt><dd>El peso que queremos mover.</dd><dt>Ley de la palanca</dt><dd>F × d = R × r.</dd><dt>Polea</dt><dd>Rueda con una ranura por la que pasa una cuerda.</dd><dt>Polea fija</dt><dd>No se mueve. F = R.</dd><dt>Polea móvil</dt><dd>Sube con la carga. F = R ÷ 2.</dd><dt>Polipasto</dt><dd>Conjunto de varias poleas fijas y móviles.</dd></dl></section>
+</main><footer>Carlos Alberto Toledo · 2026</footer>
+<script>
+const $=s=>document.querySelector(s);
+const f2=n=>String(+(+n).toFixed(2)).replace('.',',');
+function Anim(id,vb,mk,tx){const R=$('#'+id);clearInterval(R._t);let n=0;const N=tx.length-1;
+R.innerHTML='<div class="row"><button class="b g">◀ Anterior</button><button class="b">Siguiente ▶</button><button class="b g">▶ Reproducir</button><button class="b g">↺ Reiniciar</button></div><svg viewBox="'+vb+'" class="im" style="width:100%;max-width:480px;display:block;margin:6px auto">'+mk+'</svg><div class="fb" style="min-height:3.2em"></div>';
+const[bp,bn,bl,br]=R.querySelectorAll('button'),sv=R.querySelector('svg'),t=R.querySelector('.fb');
+const set=k=>{n=Math.max(0,Math.min(N,k));sv.querySelectorAll('[data-s]').forEach(e=>{const a=+e.dataset.s,z=e.dataset.e===undefined?99:+e.dataset.e;e.classList.toggle('v',n>=a&&n<=z)});t.innerHTML='<b>Paso '+(n+1)+' de '+(N+1)+'.</b> '+tx[n];bp.disabled=n==0;bn.disabled=n==N};
+bp.onclick=()=>{clearInterval(R._t);set(n-1)};bn.onclick=()=>{clearInterval(R._t);set(n+1)};br.onclick=()=>{clearInterval(R._t);set(0)};
+bl.onclick=()=>{clearInterval(R._t);set(0);R._t=setInterval(()=>{if(n>=N)clearInterval(R._t);else set(n+1)},2300)};set(0)}
+
+/* Engranaje: radio primitivo r, z dientes, altura del diente h */
+function gearD(r,z,h){const a=2*Math.PI/z,P=[];for(let i=0;i<z;i++){const t=i*a;[[r-h/2,t-a*.27],[r+h/2,t-a*.12],[r+h/2,t+a*.12],[r-h/2,t+a*.27]].forEach(([R,u])=>P.push((R*Math.cos(u)).toFixed(1)+','+(R*Math.sin(u)).toFixed(1)))}return 'M'+P.join('L')+'Z'}
+const gear=(el,cx,cy,r,z,h)=>{el.innerHTML='<path d="'+gearD(r,z,h)+'"/>';el._c=[cx,cy];el.setAttribute('transform','translate('+cx+' '+cy+')')};
+const rotG=(el,deg)=>el.setAttribute('transform','translate('+el._c[0]+' '+el._c[1]+') rotate('+deg+')');
+
+
+
+function lev(t){const ap=x=>'<polygon points="'+x+',108 '+(x-16)+',140 '+(x+16)+',140" fill="#495057"/>';
+ const Rb=x=>'<rect x="'+(x-22)+'" y="62" width="44" height="34" rx="4" fill="#1971c2"/><text x="'+x+'" y="85" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">R</text>';
+ const Fd=x=>'<line x1="'+x+'" y1="30" x2="'+x+'" y2="86" stroke="#e03131" stroke-width="5"/><polygon points="'+x+',96 '+(x-8)+',80 '+(x+8)+',80" fill="#e03131"/><text x="'+(x+10)+'" y="46" font-size="15" font-weight="700" fill="#e03131">F</text>';
+ const Fu=x=>'<line x1="'+x+'" y1="112" x2="'+x+'" y2="160" stroke="#e03131" stroke-width="5"/><polygon points="'+x+',108 '+(x-8)+',124 '+(x+8)+',124" fill="#e03131"/><text x="'+(x+10)+'" y="156" font-size="15" font-weight="700" fill="#e03131">F</text>';
+ const lb=(x,s)=>'<text x="'+x+'" y="176" font-size="12" text-anchor="middle" font-weight="700">'+s+'</text>';
+ let g='<rect x="40" y="96" width="400" height="12" rx="4" fill="#a0522d"/>';
+ if(t==1)g+=ap(240)+Rb(70)+Fd(410)+lb(240,'Apoyo');if(t==2)g+=ap(55)+Rb(220)+Fu(420)+lb(55,'Apoyo');if(t==3)g+=ap(55)+Fu(220)+Rb(410)+lb(55,'Apoyo');
+ return '<svg viewBox="0 20 480 165" class="im" style="width:100%;max-width:420px;display:block;margin:4px auto">'+g+'</svg>'}
+[1,2,3].forEach(t=>$('#g'+t).innerHTML=lev(t));
+const OB=[['✂️ Tijeras',1,'El <b>tornillo</b> es el apoyo y está en medio.'],['🛝 Balancín',1,'El <b>apoyo</b> está en el centro, entre los dos niños.'],['🛒 Carretilla',2,'La <b>rueda</b> es el apoyo y la <b>carga</b> está en medio.'],['🌰 Cascanueces',2,'La <b>nuez</b> queda entre la bisagra y la mano.'],['🍾 Abrebotellas',2,'La <b>chapa</b> queda entre el apoyo y la mano.'],['🥢 Pinzas',3,'Los <b>dedos</b> aprietan en medio.'],['🎣 Caña de pescar',3,'Una mano tira <b>en medio</b> y el pez está en la punta.'],['🔨 Martillo (sacando un clavo)',1,'La <b>cabeza</b> del martillo se apoya en la madera, entre la mano y el clavo.'],['🧺 Pinza de tender',1,'El <b>muelle</b> del centro es el apoyo: aprietas por un lado y se abre por el otro.'],['⛏️ Pala',3,'La mano de arriba es el apoyo, la de abajo hace la <b>fuerza</b> en medio y la tierra está al final.']];
+$('#ochips').innerHTML=OB.map(o=>'<span class="chip">'+o[0]+'</span>').join('');
+const ob=i=>{const o=OB[i];$('#obox').innerHTML='<h3 style="margin-top:0">'+o[0]+': palanca de <span style="color:var(--c)">'+(o[1]==1?'1er':o[1]==2?'2º':'3er')+' grado</span></h3>'+lev(o[1])+'<p style="margin-bottom:0">'+o[2]+'</p>';document.querySelectorAll('#ochips .chip').forEach((c,k)=>c.classList.toggle('sel',k==i))};
+document.querySelectorAll('#ochips .chip').forEach((c,i)=>c.onclick=()=>ob(i));ob(0);
+function sim(){const R=+$('#sR').value,r=+$('#sr').value,F=+$('#sF').value,d=+$('#sd').value,ML=R*r,MR=F*d;
+ $('#vR').textContent=R+' kg';$('#vr').textContent=f2(r)+' m';$('#vF').textContent=F+' kg';$('#vd').textContent=f2(d)+' m';
+ const ang=Math.max(-14,Math.min(14,(MR-ML)*0.6));const bx=(x,kg,c)=>{const s=22+kg*0.5;return '<rect x="'+(x-s/2)+'" y="'+(-6-s)+'" width="'+s+'" height="'+s+'" rx="4" fill="'+c+'"/><text x="'+x+'" y="'+(-6-s/2+5)+'" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">'+kg+'</text>'};
+ let tk='';for(let k=-2;k<=2;k+=0.5){tk+='<line x1="'+(k*100)+'" y1="6" x2="'+(k*100)+'" y2="'+(k%1?10:14)+'" stroke="#fff" stroke-width="2"/>'}
+ $('#bsv').innerHTML='<polygon points="240,150 214,196 266,196" fill="#495057"/><g transform="translate(240 150) rotate('+ang.toFixed(1)+')"><rect x="-210" y="-6" width="420" height="12" rx="4" fill="#a0522d"/>'+tk+bx(-r*100,R,'#1971c2')+bx(d*100,F,'#e03131')+'</g><text x="30" y="200" font-size="12" fill="#556">2 m</text><text x="420" y="200" font-size="12" fill="#556">2 m</text>';
+ const eq=Math.abs(ML-MR)<1e-9;
+ $('#bres').innerHTML='Izquierda: '+R+' × '+f2(r)+' = <b>'+f2(ML)+'</b> &nbsp;·&nbsp; Derecha: '+F+' × '+f2(d)+' = <b>'+f2(MR)+'</b><br>'+(eq?'<span style="color:var(--ok)">✅ ¡Equilibrio!</span>':ML>MR?'⬅️ Baja la <b>izquierda</b>.':'➡️ Baja la <b>derecha</b>.')}
+['sR','sr','sF','sd'].forEach(i=>$('#'+i).oninput=sim);sim();
+const bb=(x,c,t)=>'<rect x="'+(x-20)+'" y="70" width="40" height="40" rx="4" fill="'+c+'"/><text x="'+x+'" y="95" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">'+t+'</text>';
+Anim('aej','0 0 480 210','<polygon points="240,122 220,156 260,156" fill="#495057"/><rect x="30" y="110" width="420" height="12" rx="4" fill="#a0522d"/>'
++'<g data-s="0">'+bb(90,'#1971c2','20 kg')+'<text x="165" y="145" font-size="13" text-anchor="middle" fill="#1971c2" font-weight="700">1,5 m</text></g>'
++'<g data-s="1" data-e="3">'+bb(390,'#e03131','30 kg')+'<text x="315" y="145" font-size="13" text-anchor="middle" fill="#e03131" font-weight="700">d = ?</text></g>'
++'<g data-s="2"><text x="240" y="30" font-size="18" font-weight="800" text-anchor="middle">30 × d = 20 × 1,5</text></g>'
++'<g data-s="3"><text x="240" y="56" font-size="18" font-weight="800" text-anchor="middle" fill="#d9480f">d = 30 ÷ 30 = 1 m</text></g>'
++'<g data-s="4">'+bb(340,'#e03131','30 kg')+'<text x="290" y="145" font-size="13" text-anchor="middle" fill="#e03131" font-weight="700">1 m</text><text x="240" y="190" font-size="16" font-weight="800" text-anchor="middle" fill="#2f9e44">✅ ¡Equilibrio!</text></g>',
+['Una niña de <b>20 kg</b> se sienta a <b>1,5 m</b> del centro.','Un niño de <b>30 kg</b> quiere equilibrarlo. ¿A qué distancia <b>d</b>?','Escribimos la <b>ley</b>: F × d = R × r.','20 × 1,5 = 30. Entonces <b>d = 30 ÷ 30 = 1 m</b>.','El que <b>pesa más</b> se sienta <b>más cerca</b> del centro. ¡Equilibrio!']);
+/* Poleas */
+function pol(){const L=+$('#pl').value;$('#vl').textContent=L+' cm';
+ const P=(cx,cy)=>'<circle cx="'+cx+'" cy="'+cy+'" r="25" fill="#adb5bd" stroke="#495057" stroke-width="3"/><circle cx="'+cx+'" cy="'+cy+'" r="5" fill="#495057"/>';
+ const C='stroke="#a0522d" stroke-width="4" fill="none"',ceil='<rect x="0" y="0" width="220" height="10" fill="#495057"/>';
+ const box=(x,y,t)=>'<rect x="'+(x-25)+'" y="'+y+'" width="50" height="40" rx="4" fill="#1971c2"/><text x="'+x+'" y="'+(y+25)+'" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">'+t+'</text>';
+ const hand=(x,y,t)=>'<circle cx="'+x+'" cy="'+y+'" r="9" fill="#e03131"/><line x1="'+x+'" y1="'+(y+10)+'" x2="'+x+'" y2="'+(y+34)+'" stroke="#e03131" stroke-width="4"/><polygon points="'+x+','+(y+42)+' '+(x-7)+','+(y+30)+' '+(x+7)+','+(y+30)+'" fill="#e03131"/><text x="'+(x+12)+'" y="'+(y+28)+'" font-size="12" font-weight="700" fill="#e03131">'+t+'</text>';
+ const yl=220-L, yh=150+L;
+ $('#pf').innerHTML=ceil+'<line x1="110" y1="10" x2="110" y2="50" stroke="#495057" stroke-width="4"/><path d="M85 '+yl+' L85 50 A25 25 0 0 1 135 50 L135 '+yh+'" '+C+'/>'+P(110,50)+box(85,yl,'100 N')+hand(135,yh,'100 N')+'<text x="10" y="290" font-size="12" fill="#556">La carga sube '+L+' cm</text>';
+ const py=200-L/2, yh2=150+L;
+ $('#pm').innerHTML=ceil+'<line x1="115" y1="10" x2="115" y2="50" stroke="#495057" stroke-width="4"/><path d="M40 10 L40 '+py+' A25 25 0 0 0 90 '+py+' L90 50 A25 25 0 0 1 140 50 L140 '+yh2+'" '+C+'/>'+P(115,50)+P(65,py)+'<line x1="65" y1="'+py+'" x2="65" y2="'+(py+30)+'" stroke="#495057" stroke-width="3"/>'+box(65,py+30,'100 N')+hand(140,yh2,'50 N')+'<text x="10" y="290" font-size="12" fill="#556">La carga sube '+f2(L/2)+' cm</text>';
+ $('#pres').innerHTML=L?'Has tirado <b>'+L+' cm</b> de cuerda: con la fija la carga sube <b>'+L+' cm</b>; con la móvil solo <b>'+f2(L/2)+' cm</b>.':'Tira de la cuerda con el control.'}
+$('#pl').oninput=pol;pol();
+$('#all').onclick=()=>{const d=[...document.querySelectorAll('#preg details')],o=d.every(x=>x.open);d.forEach(x=>x.open=!o);$('#all').textContent=o?'Abrir todas':'Cerrar todas'};
+</script>
+<script>window.ACT_HREF="2-palancas-poleas-actividades.html";(function(){const S=[...document.querySelectorAll('main>section')],N=S.length,$=s=>document.querySelector(s);let cur=-1;
+const bar=document.createElement('div');bar.id='sl';
+bar.innerHTML='<button class="b g" id="sp">◀ Anterior</button><div id="si"><b id="sn"></b><span id="st"></span><div class="bar"><i id="sb"></i></div></div><button class="b" id="snx">Siguiente ▶</button>';
+document.body.append(bar);
+const ttl=s=>{const h=s.querySelector('h2');return h?h.firstChild.textContent.trim():''};
+function show(i,scroll){i=Math.max(0,Math.min(N-1,i));
+ if(cur>=0&&cur!=i){S[cur].querySelectorAll('iframe').forEach(f=>{f.src=f.src});S[cur].querySelectorAll('video').forEach(v=>v.pause())}
+ S.forEach((s,k)=>s.classList.toggle('on',k==i));cur=i;
+ $('#sn').textContent=(i+1)+' / '+N;$('#st').textContent=ttl(S[i]);$('#sb').style.width=((i+1)/N*100)+'%';
+ $('#sp').disabled=i==0;const nx=$('#snx');
+ if(i==N-1&&window.ACT_HREF){nx.outerHTML='<a class="b" id="snx" href="'+window.ACT_HREF+'">🧩 Ir a las actividades ▶</a>'}
+ else if(nx.tagName=='A'){nx.outerHTML='<button class="b" id="snx">Siguiente ▶</button>';wire()}
+ else nx.disabled=i==N-1;
+ document.querySelectorAll('nav a').forEach(a=>{const h=a.getAttribute('href');a.classList.toggle('cur',h&&h[0]=='#'&&S[i].contains(document.getElementById(h.slice(1)))||h=='#'+S[i].id)});
+ try{history.replaceState(null,'','#'+(S[i].id||('p'+(i+1))))}catch(e){}
+ if(scroll){const m=document.querySelector('main');window.scrollTo({top:Math.max(0,m.getBoundingClientRect().top+scrollY-10),behavior:'smooth'})}}
+function wire(){$('#snx').onclick=()=>show(cur+1,1)}
+$('#sp').onclick=()=>show(cur-1,1);wire();
+document.querySelectorAll('nav a').forEach(a=>{const h=a.getAttribute('href');if(h&&h[0]=='#')a.onclick=e=>{e.preventDefault();const t=document.getElementById(h.slice(1));const k=S.findIndex(s=>s.contains(t));if(k>=0)show(k,1)}});
+document.addEventListener('keydown',e=>{if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.key=='ArrowRight')show(cur+1,1);if(e.key=='ArrowLeft')show(cur-1,1)});
+let k0=0;const h=location.hash.slice(1);if(h){const t=document.getElementById(h);k0=Math.max(0,S.findIndex(s=>s.contains(t)))}
+show(k0,0);})();
+</script>
+<script>
+window.L1={
+en:{
+elem:'A <b>lever (palanca)</b> is a rigid bar that turns on a <b>fulcrum (punto de apoyo)</b>.<ul><li><b>F</b> = <b>effort (fuerza)</b>: the force we make.</li><li><b>R</b> = <b>load (resistencia)</b>: the weight we want to move.</li><li><b>d</b> and <b>r</b> = distances to the fulcrum.</li></ul>',
+ley:'<b>Law of the lever (ley de la palanca)</b>: F × d = R × r.<br>If both sides are the same, there is <b>balance (equilibrio)</b>. The farther you push from the fulcrum, the <b>less force</b> you need. Move the sliders to balance the see-saw (balancín).',
+ejr:'Example: a girl of 20 kg sits 1.5 m from the centre. Where does a boy of 30 kg sit?<br>30 × d = 20 × 1.5 → d = 30 ÷ 30 = <b>1 m</b>. The heavier person sits <b>closer</b> to the centre.',
+grados:'3 <b>types (grados)</b> of lever. Trick <b>A-R-F</b>: what is in the middle?<ul><li>1st: the fulcrum (<b>A</b>poyo). See-saw, scissors.</li><li>2nd: the load (<b>R</b>esistencia). Wheelbarrow, nutcracker. It always saves force.</li><li>3rd: the effort (<b>F</b>uerza). Tweezers, fishing rod. More force, but more precise.</li></ul>',
+objs:'Tap an object: tijeras = scissors, balancín = see-saw, carretilla = wheelbarrow, cascanueces = nutcracker, abrebotellas = bottle opener, pinzas = tweezers, caña de pescar = fishing rod, martillo = hammer, pinza de tender = clothes peg, pala = shovel.',
+polea:'A <b>pulley (polea)</b> is a wheel with a groove for a <b>rope (cuerda)</b>. It helps to lift loads more easily. We find pulleys in cranes, wells, flagpoles and blinds.',
+poleas:'Move the slider to pull the rope.<ul><li><b>Fixed pulley (polea fija)</b>: F = R. It does not save force, but pulling down is more comfortable.</li><li><b>Movable pulley (polea móvil)</b>: F = R ÷ 2. Half the force, but you pull <b>twice as much rope</b>.</li></ul>',
+video:'Watch the video. Then answer in your notebook: 1. Where do you push the lever to lift the 100 kg stone with less force? 2. How much force do you need with a movable pulley for 100 kg? What do you “pay” for it?',
+preg:'Read each question and think. Click on it to see the answer.',
+practica:'In your <b>notebook (cuaderno)</b>:<ol><li>Copy the law: F × d = R × r.</li><li>Draw the 3 types of lever with F, R and the fulcrum, and one example of each.</li><li>Draw a fixed pulley and a movable pulley with their formula.</li><li>Problem: a girl (20 kg) sits 2 m from the centre of a see-saw. Where does her father (80 kg) sit?</li></ol>',
+glosario:'<ul><li><b>palanca</b> = lever</li><li><b>punto de apoyo (fulcro)</b> = fulcrum</li><li><b>fuerza</b> = effort, force</li><li><b>resistencia</b> = load</li><li><b>equilibrio</b> = balance</li><li><b>polea fija</b> = fixed pulley</li><li><b>polea móvil</b> = movable pulley</li><li><b>polipasto</b> = block and tackle (many pulleys)</li></ul>'},
+ar:{
+elem:'<b>الرافعة (palanca)</b> قضيب صلب يدور حول <b>نقطة ارتكاز (punto de apoyo)</b>.<ul><li><b>F</b> = <b>القوة (fuerza)</b>: القوة التي نبذلها.</li><li><b>R</b> = <b>المقاومة (resistencia)</b>: الثقل الذي نريد تحريكه.</li><li><b>d</b> و <b>r</b> = المسافتان إلى نقطة الارتكاز.</li></ul>',
+ley:'<b>قانون الرافعة (ley de la palanca)</b>: F × d = R × r.<br>إذا تساوى الطرفان يحدث <b>التوازن (equilibrio)</b>. كلما دفعت أبعد عن نقطة الارتكاز احتجت إلى <b>قوة أقل</b>. حرّك المؤشرات لموازنة الأرجوحة (balancín).',
+ejr:'مثال: فتاة وزنها 20 كغ تجلس على بعد 1.5 م من المركز. أين يجلس ولد وزنه 30 كغ؟<br>30 × d = 20 × 1.5 ← d = 30 ÷ 30 = <b>1 م</b>. الشخص الأثقل يجلس <b>أقرب</b> إلى المركز.',
+grados:'3 <b>أنواع (grados)</b> من الروافع. الحيلة <b>A-R-F</b>: ماذا يوجد في الوسط؟<ul><li>النوع الأول: نقطة الارتكاز (<b>A</b>poyo). الأرجوحة، المقص.</li><li>النوع الثاني: المقاومة (<b>R</b>esistencia). عربة اليد، كسّارة الجوز. توفّر القوة دائمًا.</li><li>النوع الثالث: القوة (<b>F</b>uerza). الملقط، صنارة الصيد. قوة أكبر لكن دقة أكثر.</li></ul>',
+objs:'اضغط على شيء: tijeras = مقص، balancín = أرجوحة، carretilla = عربة يد، cascanueces = كسّارة جوز، abrebotellas = فتّاحة زجاجات، pinzas = ملقط، caña de pescar = صنارة صيد، martillo = مطرقة، pinza de tender = ملقط غسيل، pala = مجرفة.',
+polea:'<b>البكرة (polea)</b> عجلة فيها مجرى يمرّ فيه <b>حبل (cuerda)</b>. تساعد على رفع الأحمال بسهولة. نجدها في الرافعات والآبار وسواري الأعلام والستائر.',
+poleas:'حرّك المؤشر لسحب الحبل.<ul><li><b>البكرة الثابتة (polea fija)</b>: F = R. لا توفّر القوة، لكن السحب إلى الأسفل أسهل.</li><li><b>البكرة المتحركة (polea móvil)</b>: F = R ÷ 2. نصف القوة، لكنك تسحب <b>ضعف طول الحبل</b>.</li></ul>',
+video:'شاهد الفيديو. ثم أجب في دفترك: 1. أين تدفع الرافعة لرفع الحجر (100 كغ) بقوة أقل؟ 2. ما القوة اللازمة مع بكرة متحركة لرفع 100 كغ؟ وما الثمن الذي ندفعه مقابل ذلك؟',
+preg:'اقرأ كل سؤال وفكّر. اضغط عليه لترى الجواب.',
+practica:'في <b>دفترك (cuaderno)</b>:<ol><li>انسخ القانون: F × d = R × r.</li><li>ارسم أنواع الروافع الثلاثة مع F و R ونقطة الارتكاز، ومثالًا لكل نوع.</li><li>ارسم بكرة ثابتة وبكرة متحركة مع القانون الخاص بكل منهما.</li><li>مسألة: فتاة (20 كغ) تجلس على بعد 2 م من مركز الأرجوحة. أين يجلس أبوها (80 كغ)؟</li></ol>',
+glosario:'<ul><li><b>palanca</b> = رافعة</li><li><b>punto de apoyo (fulcro)</b> = نقطة الارتكاز</li><li><b>fuerza</b> = القوة</li><li><b>resistencia</b> = المقاومة (الحِمل)</li><li><b>equilibrio</b> = التوازن</li><li><b>polea fija</b> = بكرة ثابتة</li><li><b>polea móvil</b> = بكرة متحركة</li><li><b>polipasto</b> = مجموعة بكرات</li></ul>'}};
+
+
+/* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
+(function(){
+const TIT={en:'🇬🇧 Help in English',ar:'🌍 مساعدة بالعربية'};
+let cur='es';try{cur=localStorage.getItem('mec-lang')||'es'}catch(e){}
+const hd=document.querySelector('header');
+const bar=document.createElement('div');bar.className='lang noprint';bar.setAttribute('aria-label','Idioma / Language / اللغة');
+bar.innerHTML='<button data-l="es" title="Español">ES</button><button data-l="en" title="English">EN</button><button data-l="ar" title="العربية">ع</button>';
+hd.appendChild(bar);
+const box=(l,html,extra)=>{const d=document.createElement('div');d.className='l1'+(extra?' '+extra:'');if(l=='ar')d.dir='rtl';d.innerHTML=html;return d};
+window.LANG=()=>cur;
+window.l1box=box;window.L1TIT=TIT;
+function apply(l){cur=l;try{localStorage.setItem('mec-lang',l)}catch(e){}
+ bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+ document.querySelectorAll('.l1,.l1o').forEach(e=>e.remove());
+ document.querySelectorAll('option[data-t]').forEach(o=>o.textContent=o.dataset.t);
+ if(l=='es'){if(window.onLang)window.onLang(l);return}
+ /* Apuntes: un recuadro de apoyo bajo el título de cada sección */
+ const L=(window.L1||{})[l];
+ if(L)for(const id in L){const s=document.getElementById(id);if(!s)continue;const h=s.querySelector('h2');const d=box(l,'<span class="l1t">'+TIT[l]+'</span>'+L[id]);h?h.after(d):s.prepend(d)}
+ if(window.onLang)window.onLang(l)}
+bar.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.l));
+window.applyLang=apply;
+apply(cur);
+})();
+/* Actividades: apoyo dentro de cada pregunta */
+function supA(a,Q){const l=window.LANG?LANG():'es';if(l=='es'||!window.L1A||!L1A[l])return;const T=L1A[l][a.id];if(!T)return;
+ const sec=document.getElementById(a.id);if(T.tip&&!sec.querySelector(':scope>.l1')){sec.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+T.tip))}
+ if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const t=T.it[i];if(!t)return;c.querySelector('h4').after(l1box(l,t[0]));c.querySelectorAll('label').forEach(lb=>{const k=+lb.querySelector('input').value;if(t[1][k].trim()===lb.textContent.trim())return;const sp=document.createElement('span');sp.className='l1o';sp.style.marginLeft='14px';sp.style.display='inline-block';if(l=='ar')sp.dir='rtl';sp.textContent=t[1][k];lb.appendChild(sp)})})}
+ if(a.tipo=='sel'){Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;const sp=s.closest('.row').querySelector('span');if(T.it[i])sp.appendChild(l1box(l,T.it[i]));s.querySelectorAll('option').forEach((o,k)=>{if(!k)return;o.dataset.t=o.dataset.t||o.textContent;o.textContent=o.dataset.t+' · '+T.op[k-1]})})}
+ if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i;const c=e.closest('.act');if(T.it[i])c.querySelector('h4').after(l1box(l,T.it[i]))})}
+ if(a.tipo=='fill'){const c=Q.querySelector('.fill');c.after(l1box(l,T.txt));Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;s.querySelectorAll('option').forEach(o=>{if(!o.value)return;o.dataset.t=o.dataset.t||o.textContent;const tr=(T.h&&T.h[i]&&T.h[i][o.dataset.t]);if(tr)o.textContent=o.dataset.t+' · '+tr})})}}
+
+</script>
+</body></html>

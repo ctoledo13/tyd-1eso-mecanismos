@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Actividades · 1. ¿Qué es un mecanismo? · 1º ESO</title><style>
+:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
+.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}
+.who input{padding:8px;border-radius:8px;border:0;margin:2px 6px 2px 0;font-size:1rem;width:240px;max-width:100%}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 1px 4px #0002}
+nav button{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:20px;padding:7px 14px;font-weight:700;cursor:pointer;font-size:.95rem}
+nav button.on{background:var(--c);color:#fff}nav button.dn::after{content:" ✓"}
+nav a{border:2px solid #868e96;color:#495057;border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
+h2{color:var(--c);margin-top:6px}
+.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
+.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
+.act h4{margin:0 0 4px}.tag{font-size:.75rem;background:var(--cl);color:var(--c);padding:2px 8px;border-radius:10px;margin-left:6px}
+.act label{display:block;margin:4px 0;cursor:pointer}.act.ok{border:2px solid var(--ok)}.act.ko{border:2px solid var(--ko)}
+button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0;text-decoration:none;display:inline-block}
+button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
+select{padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem;max-width:100%;background:#fff}
+select.ok{border:2px solid var(--ok);background:#ebfbee}select.ko{border:2px solid var(--ko);background:#fff5f5}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}.it{justify-content:space-between;border-bottom:1px dashed #e9ecef;padding:4px 0}
+.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+.fill{line-height:2.4}.big{font-size:2.2rem;font-weight:800;color:var(--c)}
+footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
+@media print{nav,header .who,section:not(#res),button,.noprint{display:none!important}section#res{display:block!important}body{background:#fff}}
+header{position:relative}
+.lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
+.lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
+.lang button.on{background:#fff;color:var(--c)}
+.l1{background:#e7f5ff;border-left:5px solid #1971c2;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.95rem;color:#1d3557;font-weight:400}
+.l1[dir=rtl]{border-left:0;border-right:5px solid #1971c2;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro',Tahoma,Arial,sans-serif;font-size:1.05rem;line-height:1.8}
+.l1 ul,.l1 ol{margin:4px 0;padding-inline-start:22px}.l1t{display:block;font-weight:800;font-size:.8rem;margin-bottom:2px;color:#1971c2}
+.l1o{color:#1971c2;font-size:.9em}.row .l1{margin:4px 0 0;padding:4px 8px;font-size:.88rem}
+@media(max-width:640px){.lang{position:static;margin-top:8px}}
+@media print{.lang{display:none!important}}
+</style></head><body>
+<header><p class="eb">Tecnología y Digitalización · 1º ESO · Mecanismos · Parte 1 de 3</p><h1>🧩 Actividades: ¿Qué es un mecanismo?</h1>
+<div class="who"><input id="nom" placeholder="Nombre y apellidos"><input id="gru" placeholder="Grupo (ej.: 1º ESO B)"></div></header>
+<nav id="nv"></nav>
+<main>
+<section id="s1"><h2>1. Test: ¿lo has entendido?</h2><div class="card tip">Elige la respuesta correcta en cada pregunta y pulsa <b>Comprobar</b>.</div><div class="q"></div></section>
+<section id="s2"><h2>2. Motriz, mecanismo o receptor</h2><div class="card tip">Indica qué <b>parte de la máquina</b> es cada elemento.</div><div class="q"></div></section>
+<section id="s3"><h2>3. ¿Lineal, circular o alternativo?</h2><div class="card tip">¿Qué <b>tipo de movimiento</b> hace cada objeto? Recuerda: <b>alternativo</b> = de ida y vuelta.</div><div class="q"></div></section>
+<section id="s4"><h2>4. ¿Transmite o transforma?</h2><div class="card tip"><b>Transmite</b>: el movimiento que sale es del <b>mismo tipo</b> que el que entra.<br><b>Transforma</b>: el movimiento <b>cambia de tipo</b> (por ejemplo, de giro a línea recta).</div><div class="q"></div></section>
+<section id="s5"><h2>5. 🏆 Reto: completa el resumen</h2><div class="card tip">Elige la palabra que falta en cada hueco.</div><div class="q"></div></section>
+<section id="res"><h2>📄 Resultado</h2>
+<div class="card"><p style="margin-top:0"><b>Alumno/a:</b> <span id="rn">—</span> &nbsp; <b>Grupo:</b> <span id="rg">—</span><br><b>Unidad:</b> Mecanismos · Parte 1: ¿Qué es un mecanismo? &nbsp; <b>Fecha:</b> <span id="rf"></span></p>
+<table id="rt"></table><p>Nota de las actividades: <span class="big" id="rnota">0</span> / 10</p><div class="bar"><i id="rbar"></i></div></div>
+<div class="card key noprint"><b>Cómo entregar:</b><ol style="margin:6px 0"><li>Escribe tu <b>nombre</b> y tu <b>grupo</b> arriba.</li><li>Pulsa <b>Descargar PDF</b> y elige <b>Guardar como PDF</b>.</li><li>Sube el PDF a tu <b>Drive</b>, <b>adjúntalo</b> en la tarea de <b>Classroom</b> y pulsa <b>Entregar</b>.</li></ol>
+<button class="b" onclick="window.print()">📄 Descargar PDF</button><a class="b g" href="1-mecanismos.html">📘 Volver a los apuntes</a></div></section>
+</main><footer>Carlos Alberto Toledo · 2026</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const mix=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+/* ---- Datos ---- */
+const A=[
+{id:'s1',t:'Test',tipo:'mc',it:[
+ ['Un <b>mecanismo</b> sirve para…',['<b>transmitir</b> o <b>transformar</b> fuerzas y movimientos','crear energía de la nada','almacenar agua'],0],
+ ['Una <b>máquina</b> es…',['una sola pieza que gira','un conjunto de <b>varios mecanismos</b>','siempre algo eléctrico'],1],
+ ['El <b>elemento motriz</b> es el que…',['hace el trabajo final','<b>pone en marcha</b> el movimiento','frena la máquina'],1],
+ ['En una <b>bicicleta</b>, el <b>elemento receptor</b> es…',['la cadena','las piernas','la <b>rueda trasera</b>'],2],
+ ['¿Qué tipo de <b>movimiento</b> hace una <b>rueda</b>?',['lineal','circular','alternativo'],1],
+ ['En un <b>reloj de pared</b>, los <b>engranajes</b> son…',['el <b>mecanismo</b>','el elemento motriz','el elemento receptor'],0]]},
+{id:'s2',t:'Partes',tipo:'sel',op:['Motriz','Mecanismo','Receptor'],it:[
+ ['🚲 Las <b>piernas</b> del ciclista',0],['🚲 La <b>cadena</b>',1],['🚲 La <b>rueda trasera</b>',2],['🕰️ Las <b>pesas</b> del reloj',0],['🕰️ Las <b>manecillas</b>',2],
+ ['🪣 La <b>manivela</b> del pozo',1],['🪣 El <b>cubo</b> de agua que sube',2],['🥤 El <b>motor eléctrico</b> de la batidora',0],['🥤 Las <b>varillas</b> de la batidora',2],['🥤 Los <b>engranajes</b> de la batidora',1]]},
+{id:'s3',t:'Movimientos',tipo:'sel',op:['Lineal','Circular','Alternativo'],it:[
+ ['Una <b>rueda</b> de coche',1],['Una <b>puerta corredera</b> al abrirse',0],['La <b>aguja</b> de una máquina de coser',2],['Las <b>manecillas</b> del reloj',1],
+ ['Un <b>cajón</b> al abrirse',0],['El <b>pistón</b> de un motor',2],['Una <b>noria</b>',1],['Una <b>sierra</b> de calar (sube y baja)',2]]},
+{id:'s4',t:'Transmite/transforma',tipo:'sel',op:['Transmite','Transforma'],it:[
+ ['<b>Engranajes</b>: giro ➜ giro',0],['<b>Piñón-cremallera</b>: giro ➜ línea recta',1],['<b>Poleas con correa</b>: giro ➜ giro',0],['<b>Biela-manivela</b>: vaivén ➜ giro',1],
+ ['<b>Cadena y piñones</b> de la bici: giro ➜ giro',0],['<b>Tornillo-tuerca</b>: giro ➜ avance recto',1],['<b>Leva</b>: giro ➜ sube y baja',1],['<b>Palanca</b>: fuerza ➜ fuerza',0]]},
+{id:'s5',t:'Reto',tipo:'fill',txt:'Los mecanismos {0} y {1} fuerzas y movimientos desde un elemento {2} hasta un elemento {3}. Cuando varios mecanismos trabajan juntos forman una {4}. Una rueda que gira tiene un movimiento {5}.',
+ h:[[['transmiten','crean','apagan'],0],[['transforman','destruyen','pintan'],0],[['motriz','receptor'],0],[['receptor','motriz'],0],[['máquina','pieza','herramienta'],0],[['circular','lineal','alternativo'],0]]}];
+const ST={};
+/* ---- Construcción ---- */
+function build(a){const Q=$('#'+a.id+' .q');let h='';
+ if(a.tipo=='mc'){a.it.forEach((x,i)=>{const o=mix(x[1].map((t,k)=>[t,k]));h+='<div class="card act"><h4>'+(i+1)+'. '+x[0]+'</h4>'+o.map(([t,k])=>'<label><input type="radio" name="'+a.id+i+'" value="'+k+'"> '+t.replace(/<\/?b>/g,'')+'</label>').join('')+'</div>'})}
+ if(a.tipo=='sel'){h='<div class="card act">'+mix(a.it.map((x,i)=>[x,i])).map(([x,i])=>'<div class="row it"><span>'+x[0]+'</span><select data-i="'+i+'"><option value="">— elige —</option>'+a.op.map((o,k)=>'<option value="'+k+'">'+o+'</option>').join('')+'</select></div>').join('')+'</div>'}
+ if(a.tipo=='fill'){h='<div class="card act fill">'+a.txt.replace(/\{(\d)\}/g,(m,n)=>{const[o]=a.h[n];return '<select data-i="'+n+'"><option value="">— — —</option>'+mix(o.map((t,k)=>[t,k])).map(([t,k])=>'<option value="'+k+'">'+t+'</option>').join('')+'</select>'})+'</div>'}
+ h+='<button class="b">✔ Comprobar</button><button class="b g">↺ Repetir</button><div class="fb"></div>';Q.innerHTML=h;if(window.supA)supA(a,Q);
+ const [bc,br]=Q.querySelectorAll('button'),fb=Q.querySelector('.fb');
+ bc.onclick=()=>{let ok=0,n=0;
+  if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const r=c.querySelector('input:checked');const b=r&&+r.value===a.it[i][2];n++;if(b)ok++;c.classList.toggle('ok',b);c.classList.toggle('ko',!b)})}
+  else{Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i,sol=a.tipo=='sel'?a.it[i][1]:a.h[i][1];const b=s.value!==''&&+s.value===sol;n++;if(b)ok++;s.classList.toggle('ok',b);s.classList.toggle('ko',!b)})}
+  ST[a.id]=[ok,n];fb.innerHTML=(ok==n?'🎉 ¡Perfecto! ':'')+'Has acertado <b>'+ok+' de '+n+'</b>.'+(ok<n?' Revisa las marcadas en rojo y vuelve a intentarlo.':'');
+  fb.style.color=ok==n?'var(--ok)':'var(--ko)';$('#nv').children[A.indexOf(a)].classList.toggle('dn',ok==n);
+  fb.insertAdjacentHTML('beforeend',' <button class="b nx">Siguiente ▶</button>');fb.querySelector('.nx').onclick=()=>go(A.indexOf(a)+1);res()};
+ br.onclick=()=>{delete ST[a.id];build(a);res()}}
+A.forEach(build);
+/* ---- Navegación ---- */
+const secs=[...A.map(a=>[a.id,(A.indexOf(a)+1)+'. '+a.t]),['res','📄 Resultado']];
+$('#nv').innerHTML=secs.map(s=>'<button>'+s[1]+'</button>').join('')+'<a href="1-mecanismos.html">📘 Apuntes</a><a href="index.html">🏠 Inicio</a>';
+function go(i){$$('main>section').forEach((s,k)=>s.classList.toggle('on',k==i));$$('#nv button').forEach((b,k)=>b.classList.toggle('on',k==i));if(i==A.length)res();window.scrollTo({top:0,behavior:'smooth'})}
+$$('#nv button').forEach((b,i)=>b.onclick=()=>go(i));go(0);
+/* ---- Resultado ---- */
+function res(){let tot=0;$('#rt').innerHTML='<tr><th>Actividad</th><th>Aciertos</th></tr>'+A.map(a=>{const s=ST[a.id];const n=a.tipo=='fill'?a.h.length:a.it.length;const ok=s?s[0]:0;tot+=ok/n;return '<tr><td>'+$('#'+a.id+' h2').textContent+'</td><td>'+(s?ok+' / '+n:'sin hacer')+'</td></tr>'}).join('');
+ const nota=Math.round(tot/A.length*100)/10;$('#rnota').textContent=String(nota).replace('.',',');$('#rbar').style.width=nota*10+'%';
+ $('#rn').textContent=$('#nom').value||'—';$('#rg').textContent=$('#gru').value||'—';$('#rf').textContent=new Date().toLocaleDateString('es-ES')}
+['nom','gru'].forEach(i=>$('#'+i).oninput=res);res();
+</script><script>
+window.L1A={
+en:{
+s1:{tip:'Choose the correct answer and press <b>Comprobar</b> (check).',it:[
+ ['A mechanism is used to…',['pass on or change forces and movements','make energy from nothing','store water']],
+ ['A machine is…',['one single part that turns','a group of several mechanisms','always something electric']],
+ ['The driving element (motriz) is the one that…',['does the final job','starts the movement','stops the machine']],
+ ['On a bike, the output element (receptor) is…',['the chain','the legs','the back wheel']],
+ ['What type of movement does a wheel make?',['linear','circular','back and forth']],
+ ['In a wall clock, the gears are…',['the mechanism','the driving element','the output element']]]},
+s2:{tip:'Which part of the machine is each element?',op:['driving','mechanism','output'],it:['the legs of the cyclist','the chain','the back wheel','the weights of the clock','the clock hands','the handle (crank) of the well','the bucket of water that goes up','the electric motor of the blender','the beaters of the blender','the gears of the blender']},
+s3:{tip:'What type of movement does each object make? Alternativo = back and forth.',op:['straight line','turning','back and forth'],it:['a car wheel','a sliding door when it opens','the needle of a sewing machine','the hands of a clock','a drawer when it opens','the piston of an engine','a big wheel (fair)','a jigsaw (it goes up and down)']},
+s4:{tip:'<b>Transmite</b>: the same type of movement comes out. <b>Transforma</b>: the type of movement changes.',op:['passes on','changes'],it:['gears: turning → turning','rack and pinion: turning → straight line','pulleys with a belt: turning → turning','connecting rod and crank: back and forth → turning','bike chain and sprockets: turning → turning','screw and nut: turning → straight line','cam: turning → up and down','lever: force → force']},
+s5:{tip:'Choose the missing word for each gap.',txt:'Mechanisms ___ and ___ forces and movements from a ___ element to a ___ element. When several mechanisms work together, they make a ___. A turning wheel has a ___ movement.',h:[{'transmiten':'pass on','crean':'create','apagan':'switch off'},{'transforman':'change','destruyen':'destroy','pintan':'paint'},{'motriz':'driving','receptor':'output'},{'receptor':'output','motriz':'driving'},{'máquina':'machine','pieza':'part','herramienta':'tool'},{'circular':'circular','lineal':'linear','alternativo':'back and forth'}]},
+res:'Write your <b>name</b> and <b>group</b> at the top. Press <b>Descargar PDF</b>, choose <b>Save as PDF</b> and hand it in on <b>Classroom</b>.'},
+ar:{
+s1:{tip:'اختر الجواب الصحيح واضغط <b>Comprobar</b> (تحقّق).',it:[
+ ['الآلية تُستعمل من أجل…',['نقل القوى والحركات أو تغييرها','صنع الطاقة من لا شيء','تخزين الماء']],
+ ['الآلة هي…',['قطعة واحدة تدور','مجموعة من عدة آليات','شيء كهربائي دائمًا']],
+ ['العنصر المحرِّك (motriz) هو الذي…',['يقوم بالعمل النهائي','يبدأ الحركة','يوقف الآلة']],
+ ['في الدرّاجة، العنصر المستقبِل (receptor) هو…',['السلسلة','الساقان','العجلة الخلفية']],
+ ['ما نوع الحركة التي تقوم بها العجلة؟',['خطّية','دائرية','ترددية']],
+ ['في ساعة الحائط، التروس هي…',['الآلية','العنصر المحرِّك','العنصر المستقبِل']]]},
+s2:{tip:'أيّ جزء من الآلة هو كل عنصر؟',op:['محرِّك','آلية','مستقبِل'],it:['ساقا راكب الدرّاجة','السلسلة','العجلة الخلفية','أثقال الساعة','عقارب الساعة','ذراع (مقبض) البئر','دلو الماء الذي يصعد','المحرّك الكهربائي للخلّاط','مضارب الخلّاط','تروس الخلّاط']},
+s3:{tip:'ما نوع حركة كل شيء؟ Alternativo = ذهابًا وإيابًا.',op:['خط مستقيم','دوران','ذهابًا وإيابًا'],it:['عجلة سيارة','باب منزلق عندما يُفتح','إبرة ماكينة الخياطة','عقارب الساعة','درج عندما يُفتح','مكبس المحرّك','عجلة الملاهي الكبيرة','منشار كهربائي (يصعد وينزل)']},
+s4:{tip:'<b>Transmite</b>: يخرج نفس نوع الحركة. <b>Transforma</b>: يتغيّر نوع الحركة.',op:['ينقل','يحوّل'],it:['التروس: دوران ← دوران','الترس والجريدة المسننة: دوران ← خط مستقيم','بكرات مع سير: دوران ← دوران','ذراع التوصيل والمرفق: ذهاب وإياب ← دوران','سلسلة الدرّاجة وتروسها: دوران ← دوران','البرغي والصامولة: دوران ← خط مستقيم','الكامة: دوران ← صعود ونزول','الرافعة: قوة ← قوة']},
+s5:{tip:'اختر الكلمة الناقصة لكل فراغ.',txt:'الآليات ___ و ___ القوى والحركات من عنصر ___ إلى عنصر ___. عندما تعمل عدة آليات معًا تكوّن ___. العجلة التي تدور لها حركة ___.',h:[{'transmiten':'تنقل','crean':'تصنع','apagan':'تطفئ'},{'transforman':'تحوّل','destruyen':'تدمّر','pintan':'تلوّن'},{'motriz':'محرِّك','receptor':'مستقبِل'},{'receptor':'مستقبِل','motriz':'محرِّك'},{'máquina':'آلة','pieza':'قطعة','herramienta':'أداة'},{'circular':'دائرية','lineal':'خطّية','alternativo':'ترددية'}]},
+res:'اكتب <b>اسمك</b> و<b>صفّك</b> في الأعلى. اضغط <b>Descargar PDF</b>، اختر <b>حفظ بصيغة PDF</b> وسلّمه في <b>Classroom</b>.'}};
+
+if(window.NUMT){for(const l of ['en','ar'])if(L1A[l]&&L1A[l].s4)L1A[l].s4.it=NUMT[l]}
+window.onLang=function(l){if(typeof A==='undefined')return;A.forEach(a=>supA(a,document.querySelector('#'+a.id+' .q')));const r=document.getElementById('res');if(l!='es'&&L1A[l]&&L1A[l].res)r.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+L1A[l].res))};
+/* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
+(function(){
+const TIT={en:'🇬🇧 Help in English',ar:'🌍 مساعدة بالعربية'};
+let cur='es';try{cur=localStorage.getItem('mec-lang')||'es'}catch(e){}
+const hd=document.querySelector('header');
+const bar=document.createElement('div');bar.className='lang noprint';bar.setAttribute('aria-label','Idioma / Language / اللغة');
+bar.innerHTML='<button data-l="es" title="Español">ES</button><button data-l="en" title="English">EN</button><button data-l="ar" title="العربية">ع</button>';
+hd.appendChild(bar);
+const box=(l,html,extra)=>{const d=document.createElement('div');d.className='l1'+(extra?' '+extra:'');if(l=='ar')d.dir='rtl';d.innerHTML=html;return d};
+window.LANG=()=>cur;
+window.l1box=box;window.L1TIT=TIT;
+function apply(l){cur=l;try{localStorage.setItem('mec-lang',l)}catch(e){}
+ bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+ document.querySelectorAll('.l1,.l1o').forEach(e=>e.remove());
+ document.querySelectorAll('option[data-t]').forEach(o=>o.textContent=o.dataset.t);
+ if(l=='es'){if(window.onLang)window.onLang(l);return}
+ /* Apuntes: un recuadro de apoyo bajo el título de cada sección */
+ const L=(window.L1||{})[l];
+ if(L)for(const id in L){const s=document.getElementById(id);if(!s)continue;const h=s.querySelector('h2');const d=box(l,'<span class="l1t">'+TIT[l]+'</span>'+L[id]);h?h.after(d):s.prepend(d)}
+ if(window.onLang)window.onLang(l)}
+bar.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.l));
+window.applyLang=apply;
+apply(cur);
+})();
+/* Actividades: apoyo dentro de cada pregunta */
+function supA(a,Q){const l=window.LANG?LANG():'es';if(l=='es'||!window.L1A||!L1A[l])return;const T=L1A[l][a.id];if(!T)return;
+ const sec=document.getElementById(a.id);if(T.tip&&!sec.querySelector(':scope>.l1')){sec.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+T.tip))}
+ if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const t=T.it[i];if(!t)return;c.querySelector('h4').after(l1box(l,t[0]));c.querySelectorAll('label').forEach(lb=>{const k=+lb.querySelector('input').value;if(t[1][k].trim()===lb.textContent.trim())return;const sp=document.createElement('span');sp.className='l1o';sp.style.marginLeft='14px';sp.style.display='inline-block';if(l=='ar')sp.dir='rtl';sp.textContent=t[1][k];lb.appendChild(sp)})})}
+ if(a.tipo=='sel'){Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;const sp=s.closest('.row').querySelector('span');if(T.it[i])sp.appendChild(l1box(l,T.it[i]));s.querySelectorAll('option').forEach((o,k)=>{if(!k)return;o.dataset.t=o.dataset.t||o.textContent;o.textContent=o.dataset.t+' · '+T.op[k-1]})})}
+ if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i;const c=e.closest('.act');if(T.it[i])c.querySelector('h4').after(l1box(l,T.it[i]))})}
+ if(a.tipo=='fill'){const c=Q.querySelector('.fill');c.after(l1box(l,T.txt));Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;s.querySelectorAll('option').forEach(o=>{if(!o.value)return;o.dataset.t=o.dataset.t||o.textContent;const tr=(T.h&&T.h[i]&&T.h[i][o.dataset.t]);if(tr)o.textContent=o.dataset.t+' · '+tr})})}}
+
+</script>
+</body></html>

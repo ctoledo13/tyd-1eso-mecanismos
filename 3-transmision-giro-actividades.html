@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Actividades · 3. La transmisión del giro · 1º ESO</title><style>
+:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
+.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}
+.who input{padding:8px;border-radius:8px;border:0;margin:2px 6px 2px 0;font-size:1rem;width:240px;max-width:100%}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 1px 4px #0002}
+nav button{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:20px;padding:7px 14px;font-weight:700;cursor:pointer;font-size:.95rem}
+nav button.on{background:var(--c);color:#fff}nav button.dn::after{content:" ✓"}
+nav a{border:2px solid #868e96;color:#495057;border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
+h2{color:var(--c);margin-top:6px}
+.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
+.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
+.act h4{margin:0 0 4px}.tag{font-size:.75rem;background:var(--cl);color:var(--c);padding:2px 8px;border-radius:10px;margin-left:6px}
+.act label{display:block;margin:4px 0;cursor:pointer}.act.ok{border:2px solid var(--ok)}.act.ko{border:2px solid var(--ko)}
+button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0;text-decoration:none;display:inline-block}
+button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
+input.n{width:90px;padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem}input.n.ok{border:2px solid var(--ok);background:#ebfbee}input.n.ko{border:2px solid var(--ko);background:#fff5f5}
+select{padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem;max-width:100%;background:#fff}
+select.ok{border:2px solid var(--ok);background:#ebfbee}select.ko{border:2px solid var(--ko);background:#fff5f5}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}.it{justify-content:space-between;border-bottom:1px dashed #e9ecef;padding:4px 0}
+.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+.fill{line-height:2.4}.big{font-size:2.2rem;font-weight:800;color:var(--c)}
+footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
+@media print{nav,header .who,section:not(#res),button,.noprint{display:none!important}section#res{display:block!important}body{background:#fff}}
+header{position:relative}
+.lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
+.lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
+.lang button.on{background:#fff;color:var(--c)}
+.l1{background:#e7f5ff;border-left:5px solid #1971c2;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.95rem;color:#1d3557;font-weight:400}
+.l1[dir=rtl]{border-left:0;border-right:5px solid #1971c2;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro',Tahoma,Arial,sans-serif;font-size:1.05rem;line-height:1.8}
+.l1 ul,.l1 ol{margin:4px 0;padding-inline-start:22px}.l1t{display:block;font-weight:800;font-size:.8rem;margin-bottom:2px;color:#1971c2}
+.l1o{color:#1971c2;font-size:.9em}.row .l1{margin:4px 0 0;padding:4px 8px;font-size:.88rem}
+@media(max-width:640px){.lang{position:static;margin-top:8px}}
+@media print{.lang{display:none!important}}
+.calc-btn{border:2px solid #1971c2!important;color:#1971c2!important;background:#fff!important}
+#calc{position:fixed;right:16px;bottom:16px;z-index:50;width:250px;background:#fff;border-radius:16px;box-shadow:0 6px 24px #0004;padding:10px;border:2px solid #1971c2}
+#calc[hidden]{display:none}#calc .ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;color:#1971c2}
+#calc .cx{border:0;background:#f1f3f5;border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:1rem}
+#calc .cd{background:#1d2733;color:#fff;border-radius:10px;padding:6px 10px;text-align:right;margin-bottom:8px;min-height:62px}
+#calc .ce{font-size:.8rem;opacity:.7;min-height:1.1em;overflow:hidden;white-space:nowrap}#calc .cr{font-size:1.6rem;font-weight:700;overflow:hidden;white-space:nowrap}
+#calc .cg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+#calc .ck{border:0;border-radius:10px;padding:10px 0;font-size:1.15rem;font-weight:700;background:#f1f3f5;cursor:pointer;color:#1d2733}
+#calc .ck:hover{filter:brightness(.93)}#calc .op{background:#d0ebff;color:#1971c2}#calc .eq{background:var(--c);color:#fff}#calc .cl{background:#ffe3e3;color:#c92a2a}
+</style></head><body>
+<header><p class="eb">Tecnología y Digitalización · 1º ESO · Mecanismos · Parte 3 de 3</p><h1>🧩 Actividades: La transmisión del giro</h1>
+<div class="who"><input id="nom" placeholder="Nombre y apellidos"><input id="gru" placeholder="Grupo (ej.: 1º ESO B)"></div></header>
+<nav id="nv"></nav>
+<main>
+<section id="s1"><h2>1. Test: ¿lo has entendido?</h2><div class="card tip">Elige la respuesta correcta y pulsa <b>Comprobar</b>.</div><div class="q"></div></section>
+<section id="s2"><h2>2. ¿Multiplicador, reductor o constante?</h2><div class="card tip">Recuerda: la rueda <b>pequeña</b> gira <b>más rápido</b>.</div><div class="q"></div></section>
+<section id="s3"><h2>3. El sentido de giro</h2><div class="card tip">¿La rueda <b>conducida</b> gira en el <b>mismo</b> sentido que la motriz o en sentido <b>contrario</b>?</div><div class="q"></div></section>
+<section id="s4"><h2>4. Calcula las vueltas</h2><div class="card tip">Vueltas de la conducida = <b>dientes de la motriz ÷ dientes de la conducida</b>. Puedes usar <b>coma</b> para los decimales.</div><div class="q"></div></section>
+<section id="s5"><h2>5. 🏆 Reto: las marchas de la bici</h2><div class="card tip">Elige la mejor respuesta.</div><div class="q"></div></section>
+<section id="res"><h2>📄 Resultado</h2>
+<div class="card"><p style="margin-top:0"><b>Alumno/a:</b> <span id="rn">—</span> &nbsp; <b>Grupo:</b> <span id="rg">—</span><br><b>Unidad:</b> Mecanismos · Parte 3: La transmisión del giro &nbsp; <b>Fecha:</b> <span id="rf"></span></p>
+<table id="rt"></table><p>Nota de las actividades: <span class="big" id="rnota">0</span> / 10</p><div class="bar"><i id="rbar"></i></div></div>
+<div class="card key noprint"><b>Cómo entregar:</b><ol style="margin:6px 0"><li>Escribe tu <b>nombre</b> y tu <b>grupo</b> arriba.</li><li>Pulsa <b>Descargar PDF</b> y elige <b>Guardar como PDF</b>.</li><li>Sube el PDF a tu <b>Drive</b>, <b>adjúntalo</b> en la tarea de <b>Classroom</b> y pulsa <b>Entregar</b>.</li></ol>
+<button class="b" onclick="window.print()">📄 Descargar PDF</button><a class="b g" href="3-transmision-giro.html">📘 Volver a los apuntes</a></div></section>
+</main><footer>Carlos Alberto Toledo · 2026</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const mix=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+/* ---- Datos ---- */
+/* Problemas con números aleatorios (cada alumno ve datos distintos) */
+const gR=a=>a[Math.floor(Math.random()*a.length)];
+const gPA=[[30,10],[40,10],[50,10],[60,20],[36,12],[48,12],[45,15],[60,15],[40,20]];
+const gA=gR(gPA);let gB=gR(gPA);for(let k=0;k<50&&gB===gA;k++)gB=gR(gPA);
+const gC=gR([[48,16],[42,14],[36,12],[54,18],[48,12],[44,11],[52,13]]),gD=gR([[10,20],[15,30],[12,24],[10,40],[20,40],[15,60]]);
+const GEN={es:[
+ ['⚙️ Un engranaje de <b>'+gA[0]+' dientes</b> mueve otro de <b>'+gA[1]+' dientes</b>. ¿Cuántas <b>vueltas</b> da el pequeño por cada vuelta del grande?',gA[0]/gA[1],'vueltas'],
+ ['⚙️ Un engranaje de <b>'+gB[0]+' dientes</b> mueve otro de <b>'+gB[1]+' dientes</b>. ¿Cuántas <b>vueltas</b> da el de '+gB[1]+'?',gB[0]/gB[1],'vueltas'],
+ ['🚲 Un plato de <b>'+gC[0]+' dientes</b> mueve un piñón de <b>'+gC[1]+' dientes</b>. ¿Cuántas <b>vueltas</b> da la rueda por pedalada?',gC[0]/gC[1],'vueltas'],
+ ['⚙️ Un engranaje de <b>'+gD[0]+' dientes</b> mueve otro de <b>'+gD[1]+' dientes</b>. ¿Cuántas <b>vueltas</b> da el grande?',gD[0]/gD[1],'vueltas']],
+en:['A gear with '+gA[0]+' teeth moves a gear with '+gA[1]+' teeth. How many turns does the small one make for each turn of the big one?','A gear with '+gB[0]+' teeth moves a gear with '+gB[1]+' teeth. How many turns does the one with '+gB[1]+' teeth make?','A chainring with '+gC[0]+' teeth moves a sprocket with '+gC[1]+' teeth. How many turns does the wheel make for each pedal turn?','A gear with '+gD[0]+' teeth moves a gear with '+gD[1]+' teeth. How many turns does the big one make?'],
+ar:['ترس فيه '+gA[0]+' سنًّا يحرّك ترسًا فيه '+gA[1]+' سنًّا. كم دورة يدور الصغير مع كل دورة للكبير؟','ترس فيه '+gB[0]+' سنًّا يحرّك ترسًا فيه '+gB[1]+' سنًّا. كم دورة يدور الترس الذي فيه '+gB[1]+' سنًّا؟','ترس أمامي فيه '+gC[0]+' سنًّا يحرّك ترسًا خلفيًا فيه '+gC[1]+' سنًّا. كم دورة تدور العجلة مع كل دورة للدوّاسة؟','ترس فيه '+gD[0]+' سنًّا يحرّك ترسًا فيه '+gD[1]+' سنًّا. كم دورة يدور الكبير؟']};
+window.NUMT={en:GEN.en,ar:GEN.ar};
+
+const A=[
+{id:'s1',t:'Test',tipo:'mc',it:[
+ ['La rueda que <b>empieza</b> el giro se llama…',['motriz','conducida','loca'],0],
+ ['¿Qué rueda gira <b>más rápido</b>?',['la pequeña','la grande','giran igual siempre'],0],
+ ['En la bici, el <b>plato</b> y el <b>piñón</b> están unidos por…',['una cadena','una correa','un engranaje loco'],0],
+ ['Dos <b>engranajes</b> juntos giran…',['en sentido contrario','en el mismo sentido','no giran'],0],
+ ['Para que dos poleas giren en sentido <b>contrario</b>…',['se cruza la correa','se quita la correa','se ponen más grandes'],0],
+ ['Un sistema <b>reductor</b>…',['hace que la conducida gire más despacio','hace que la conducida gire más rápido','no cambia la velocidad'],0]]},
+{id:'s2',t:'Velocidad',tipo:'sel',op:['Multiplicador','Reductor','Constante'],it:[
+ ['Motriz de <b>40</b> dientes → conducida de <b>10</b> dientes',0],['Motriz de <b>10</b> dientes → conducida de <b>30</b> dientes',1],['Motriz de <b>20</b> dientes → conducida de <b>20</b> dientes',2],
+ ['Polea motriz <b>grande</b> → polea conducida <b>pequeña</b>',0],['Polea motriz <b>pequeña</b> → polea conducida <b>grande</b>',1],['🚲 El <b>plato</b> de la bici mueve el <b>piñón</b>',0]]},
+{id:'s3',t:'Sentido',tipo:'sel',op:['Mismo sentido','Sentido contrario'],it:[
+ ['<b>Dos engranajes</b> que encajan',1],['Dos poleas con una <b>correa normal</b>',0],['Dos poleas con una <b>correa cruzada</b>',1],['<b>Tres engranajes</b> en fila: el 1º y el 3º',0],['🚲 El <b>plato</b> y el <b>piñón</b> de la bici (con cadena)',0]]},
+{id:'s4',t:'Calcula',tipo:'num',it:GEN.es},
+{id:'s5',t:'Reto',tipo:'mc',it:[
+ ['Vas a <b>subir una cuesta</b> muy empinada. ¿Qué combinación eliges?',['plato pequeño y piñón grande','plato grande y piñón pequeño','da igual'],0],
+ ['Vas por una carretera <b>llana</b> y quieres ir <b>rápido</b>. ¿Qué combinación eliges?',['plato grande y piñón pequeño','plato pequeño y piñón grande','da igual'],0],
+ ['¿Por qué los <b>velocípedos</b> tenían la rueda delantera tan grande?',['para avanzar más con cada pedalada','porque era más bonito','para frenar mejor'],0]]}];
+const ST={};
+/* ---- Construcción ---- */
+function build(a){const Q=$('#'+a.id+' .q');let h='';
+ if(a.tipo=='mc'){a.it.forEach((x,i)=>{const o=mix(x[1].map((t,k)=>[t,k]));h+='<div class="card act"><h4>'+(i+1)+'. '+x[0]+'</h4>'+o.map(([t,k])=>'<label><input type="radio" name="'+a.id+i+'" value="'+k+'"> '+t.replace(/<\/?b>/g,'')+'</label>').join('')+'</div>'})}
+ if(a.tipo=='sel'){h='<div class="card act">'+mix(a.it.map((x,i)=>[x,i])).map(([x,i])=>'<div class="row it"><span>'+x[0]+'</span><select data-i="'+i+'"><option value="">— elige —</option>'+a.op.map((o,k)=>'<option value="'+k+'">'+o+'</option>').join('')+'</select></div>').join('')+'</div>'}
+ if(a.tipo=='num'){h=a.it.map((x,i)=>'<div class="card act"><h4>'+(i+1)+'. '+x[0]+'</h4><div class="row">Respuesta: <input class="n" inputmode="decimal" data-i="'+i+'"> '+x[2]+'</div></div>').join('')}
+ if(a.tipo=='fill'){h='<div class="card act fill">'+a.txt.replace(/\{(\d)\}/g,(m,n)=>{const[o]=a.h[n];return '<select data-i="'+n+'"><option value="">— — —</option>'+mix(o.map((t,k)=>[t,k])).map(([t,k])=>'<option value="'+k+'">'+t+'</option>').join('')+'</select>'})+'</div>'}
+ h+='<button class="b">✔ Comprobar</button><button class="b g">↺ Repetir</button><div class="fb"></div>';Q.innerHTML=h;if(window.supA)supA(a,Q);
+ const [bc,br]=Q.querySelectorAll('button'),fb=Q.querySelector('.fb');
+ bc.onclick=()=>{let ok=0,n=0;
+  if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const r=c.querySelector('input:checked');const b=r&&+r.value===a.it[i][2];n++;if(b)ok++;c.classList.toggle('ok',b);c.classList.toggle('ko',!b)})}
+  else if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i,v=parseFloat(e.value.replace(',','.')),sol=a.it[i][1];const b=!isNaN(v)&&Math.abs(v-sol)<=Math.max(0.01,sol*0.01);n++;if(b)ok++;e.classList.toggle('ok',b);e.classList.toggle('ko',!b);e.closest('.act').classList.toggle('ok',b);e.closest('.act').classList.toggle('ko',!b)})}
+  else{Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i,sol=a.tipo=='sel'?a.it[i][1]:a.h[i][1];const b=s.value!==''&&+s.value===sol;n++;if(b)ok++;s.classList.toggle('ok',b);s.classList.toggle('ko',!b)})}
+  ST[a.id]=[ok,n];fb.innerHTML=(ok==n?'🎉 ¡Perfecto! ':'')+'Has acertado <b>'+ok+' de '+n+'</b>.'+(ok<n?' Revisa las marcadas en rojo y vuelve a intentarlo.':'');
+  fb.style.color=ok==n?'var(--ok)':'var(--ko)';$('#nv').children[A.indexOf(a)].classList.toggle('dn',ok==n);
+  fb.insertAdjacentHTML('beforeend',' <button class="b nx">Siguiente ▶</button>');fb.querySelector('.nx').onclick=()=>go(A.indexOf(a)+1);res()};
+ br.onclick=()=>{delete ST[a.id];build(a);res()}}
+A.forEach(build);
+/* ---- Navegación ---- */
+const secs=[...A.map(a=>[a.id,(A.indexOf(a)+1)+'. '+a.t]),['res','📄 Resultado']];
+$('#nv').innerHTML=secs.map(s=>'<button>'+s[1]+'</button>').join('')+'<a href="3-transmision-giro.html">📘 Apuntes</a><a href="index.html">🏠 Inicio</a>';
+function go(i){$$('main>section').forEach((s,k)=>s.classList.toggle('on',k==i));$$('#nv button').forEach((b,k)=>b.classList.toggle('on',k==i));if(i==A.length)res();window.scrollTo({top:0,behavior:'smooth'})}
+$$('#nv button').forEach((b,i)=>b.onclick=()=>go(i));go(0);
+/* ---- Resultado ---- */
+function res(){let tot=0;$('#rt').innerHTML='<tr><th>Actividad</th><th>Aciertos</th></tr>'+A.map(a=>{const s=ST[a.id];const n=a.tipo=='fill'?a.h.length:a.it.length;const ok=s?s[0]:0;tot+=ok/n;return '<tr><td>'+$('#'+a.id+' h2').textContent+'</td><td>'+(s?ok+' / '+n:'sin hacer')+'</td></tr>'}).join('');
+ const nota=Math.round(tot/A.length*100)/10;$('#rnota').textContent=String(nota).replace('.',',');$('#rbar').style.width=nota*10+'%';
+ $('#rn').textContent=$('#nom').value||'—';$('#rg').textContent=$('#gru').value||'—';$('#rf').textContent=new Date().toLocaleDateString('es-ES')}
+['nom','gru'].forEach(i=>$('#'+i).oninput=res);res();
+</script><script>
+window.L1A={
+en:{
+s1:{tip:'Choose the correct answer and press <b>Comprobar</b> (check).',it:[
+ ['The wheel that starts the turning is called…',['driver','driven','idler']],
+ ['Which wheel turns faster?',['the small one','the big one','they always turn the same']],
+ ['On a bike, the chainring and the sprocket are joined by…',['a chain','a belt','an idler gear']],
+ ['Two gears together turn…',['in opposite directions','in the same direction','they do not turn']],
+ ['To make two pulleys turn in opposite directions…',['you cross the belt','you take off the belt','you make them bigger']],
+ ['A slow-down system (reductor)…',['makes the driven wheel turn slower','makes the driven wheel turn faster','does not change the speed']]]},
+s2:{tip:'Remember: the small wheel turns faster.',op:['speed-up','slow-down','constant'],it:['driver 40 teeth → driven 10 teeth','driver 10 teeth → driven 30 teeth','driver 20 teeth → driven 20 teeth','big driver pulley → small driven pulley','small driver pulley → big driven pulley','the bike chainring moves the sprocket']},
+s3:{tip:'Does the driven wheel turn the same way as the driver, or the opposite way?',op:['same way','opposite way'],it:['two gears together','two pulleys with a normal belt','two pulleys with a crossed belt','three gears in a row: the 1st and the 3rd','the bike chainring and sprocket (with a chain)']},
+s4:{tip:'Turns of the driven wheel = teeth of the driver ÷ teeth of the driven wheel.',it:['A gear with 40 teeth moves a gear with 10 teeth. How many turns does the small one make for each turn of the big one?','A gear with 30 teeth moves a gear with 10 teeth. How many turns does the small one make?','A chainring with 48 teeth moves a sprocket with 16 teeth. How many turns does the wheel make for each pedal turn?','A gear with 10 teeth moves a gear with 20 teeth. How many turns does the big one make?']},
+s5:{tip:'Choose the best answer.',it:[
+ ['You are going up a very steep hill. Which combination do you choose?',['small chainring and big sprocket','big chainring and small sprocket','it does not matter']],
+ ['You are on a flat road and want to go fast. Which combination do you choose?',['big chainring and small sprocket','small chainring and big sprocket','it does not matter']],
+ ['Why did old bikes (velocípedos) have such a big front wheel?',['to move farther with each pedal turn','because it looked nice','to brake better']]]},
+res:'Write your <b>name</b> and <b>group</b> at the top. Press <b>Descargar PDF</b>, choose <b>Save as PDF</b> and hand it in on <b>Classroom</b>.'},
+ar:{
+s1:{tip:'اختر الجواب الصحيح واضغط <b>Comprobar</b> (تحقّق).',it:[
+ ['العجلة التي تبدأ الدوران اسمها…',['المحرِّكة','المُدارة','الوسيطة']],
+ ['أيّ عجلة تدور أسرع؟',['الصغيرة','الكبيرة','تدوران دائمًا بنفس السرعة']],
+ ['في الدرّاجة، الترس الأمامي والترس الخلفي متصلان بـ…',['سلسلة','سير','ترس وسيط']],
+ ['ترسان متلامسان يدوران…',['في اتجاهين متعاكسين','في نفس الاتجاه','لا يدوران']],
+ ['لكي تدور بكرتان في اتجاهين متعاكسين…',['نقاطع السير','ننزع السير','نكبّرهما']],
+ ['النظام المُخفِّض (reductor)…',['يجعل العجلة المُدارة تدور أبطأ','يجعل العجلة المُدارة تدور أسرع','لا يغيّر السرعة']]]},
+s2:{tip:'تذكّر: العجلة الصغيرة تدور أسرع.',op:['مُضاعِف','مُخفِّض','ثابت'],it:['محرِّك 40 سنًّا ← مُدار 10 أسنان','محرِّك 10 أسنان ← مُدار 30 سنًّا','محرِّك 20 سنًّا ← مُدار 20 سنًّا','بكرة محرِّكة كبيرة ← بكرة مُدارة صغيرة','بكرة محرِّكة صغيرة ← بكرة مُدارة كبيرة','الترس الأمامي للدرّاجة يحرّك الترس الخلفي']},
+s3:{tip:'هل تدور العجلة المُدارة في نفس اتجاه المحرِّكة أم في الاتجاه المعاكس؟',op:['نفس الاتجاه','اتجاه معاكس'],it:['ترسان متلامسان','بكرتان مع سير عادي','بكرتان مع سير متقاطع','ثلاثة تروس في صف: الأول والثالث','الترس الأمامي والخلفي للدرّاجة (مع سلسلة)']},
+s4:{tip:'دورات العجلة المُدارة = أسنان المحرِّكة ÷ أسنان المُدارة.',it:['ترس فيه 40 سنًّا يحرّك ترسًا فيه 10 أسنان. كم دورة يدور الصغير مع كل دورة للكبير؟','ترس فيه 30 سنًّا يحرّك ترسًا فيه 10 أسنان. كم دورة يدور الصغير؟','ترس أمامي فيه 48 سنًّا يحرّك ترسًا خلفيًا فيه 16 سنًّا. كم دورة تدور العجلة مع كل دورة للدوّاسة؟','ترس فيه 10 أسنان يحرّك ترسًا فيه 20 سنًّا. كم دورة يدور الكبير؟']},
+s5:{tip:'اختر أفضل جواب.',it:[
+ ['تصعد طريقًا شديد الانحدار. أيّ تركيبة تختار؟',['ترس أمامي صغير وترس خلفي كبير','ترس أمامي كبير وترس خلفي صغير','لا يهم']],
+ ['أنت على طريق مستوٍ وتريد السرعة. أيّ تركيبة تختار؟',['ترس أمامي كبير وترس خلفي صغير','ترس أمامي صغير وترس خلفي كبير','لا يهم']],
+ ['لماذا كانت للدرّاجات القديمة (velocípedos) عجلة أمامية كبيرة جدًا؟',['لتقطع مسافة أكبر مع كل دورة للدوّاسة','لأنها جميلة','لتفرمل بشكل أفضل']]]},
+res:'اكتب <b>اسمك</b> و<b>صفّك</b> في الأعلى. اضغط <b>Descargar PDF</b>، اختر <b>حفظ بصيغة PDF</b> وسلّمه في <b>Classroom</b>.'}};
+
+if(window.NUMT){for(const l of ['en','ar'])if(L1A[l]&&L1A[l].s4)L1A[l].s4.it=NUMT[l]}
+window.onLang=function(l){if(typeof A==='undefined')return;A.forEach(a=>supA(a,document.querySelector('#'+a.id+' .q')));const r=document.getElementById('res');if(l!='es'&&L1A[l]&&L1A[l].res)r.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+L1A[l].res))};
+/* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
+(function(){
+const TIT={en:'🇬🇧 Help in English',ar:'🌍 مساعدة بالعربية'};
+let cur='es';try{cur=localStorage.getItem('mec-lang')||'es'}catch(e){}
+const hd=document.querySelector('header');
+const bar=document.createElement('div');bar.className='lang noprint';bar.setAttribute('aria-label','Idioma / Language / اللغة');
+bar.innerHTML='<button data-l="es" title="Español">ES</button><button data-l="en" title="English">EN</button><button data-l="ar" title="العربية">ع</button>';
+hd.appendChild(bar);
+const box=(l,html,extra)=>{const d=document.createElement('div');d.className='l1'+(extra?' '+extra:'');if(l=='ar')d.dir='rtl';d.innerHTML=html;return d};
+window.LANG=()=>cur;
+window.l1box=box;window.L1TIT=TIT;
+function apply(l){cur=l;try{localStorage.setItem('mec-lang',l)}catch(e){}
+ bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+ document.querySelectorAll('.l1,.l1o').forEach(e=>e.remove());
+ document.querySelectorAll('option[data-t]').forEach(o=>o.textContent=o.dataset.t);
+ if(l=='es'){if(window.onLang)window.onLang(l);return}
+ /* Apuntes: un recuadro de apoyo bajo el título de cada sección */
+ const L=(window.L1||{})[l];
+ if(L)for(const id in L){const s=document.getElementById(id);if(!s)continue;const h=s.querySelector('h2');const d=box(l,'<span class="l1t">'+TIT[l]+'</span>'+L[id]);h?h.after(d):s.prepend(d)}
+ if(window.onLang)window.onLang(l)}
+bar.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.l));
+window.applyLang=apply;
+apply(cur);
+})();
+/* Actividades: apoyo dentro de cada pregunta */
+function supA(a,Q){const l=window.LANG?LANG():'es';if(l=='es'||!window.L1A||!L1A[l])return;const T=L1A[l][a.id];if(!T)return;
+ const sec=document.getElementById(a.id);if(T.tip&&!sec.querySelector(':scope>.l1')){sec.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+T.tip))}
+ if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const t=T.it[i];if(!t)return;c.querySelector('h4').after(l1box(l,t[0]));c.querySelectorAll('label').forEach(lb=>{const k=+lb.querySelector('input').value;if(t[1][k].trim()===lb.textContent.trim())return;const sp=document.createElement('span');sp.className='l1o';sp.style.marginLeft='14px';sp.style.display='inline-block';if(l=='ar')sp.dir='rtl';sp.textContent=t[1][k];lb.appendChild(sp)})})}
+ if(a.tipo=='sel'){Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;const sp=s.closest('.row').querySelector('span');if(T.it[i])sp.appendChild(l1box(l,T.it[i]));s.querySelectorAll('option').forEach((o,k)=>{if(!k)return;o.dataset.t=o.dataset.t||o.textContent;o.textContent=o.dataset.t+' · '+T.op[k-1]})})}
+ if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i;const c=e.closest('.act');if(T.it[i])c.querySelector('h4').after(l1box(l,T.it[i]))})}
+ if(a.tipo=='fill'){const c=Q.querySelector('.fill');c.after(l1box(l,T.txt));Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;s.querySelectorAll('option').forEach(o=>{if(!o.value)return;o.dataset.t=o.dataset.t||o.textContent;const tr=(T.h&&T.h[i]&&T.h[i][o.dataset.t]);if(tr)o.textContent=o.dataset.t+' · '+tr})})}}
+
+</script>
+<script>
+/* Calculadora flotante */
+(function(){const nv=document.getElementById('nv');if(!nv)return;
+const b=document.createElement('button');b.type='button';b.className='calc-btn';b.textContent='🧮 Calculadora';nv.appendChild(b);
+const P=document.createElement('div');P.id='calc';P.className='noprint';P.hidden=true;
+const K=['C','⌫','(',')','7','8','9','÷','4','5','6','×','1','2','3','−','0',',','=','+'];
+P.innerHTML='<div class="ch"><b>🧮 Calculadora</b><button type="button" class="cx" aria-label="Cerrar">✕</button></div><div class="cd"><div class="ce"></div><div class="cr">0</div></div><div class="cg">'+K.map(k=>'<button type="button" class="ck'+(/[÷×−+=]/.test(k)?' op':'')+(k=='='?' eq':'')+(k=='C'||k=='⌫'?' cl':'')+'">'+k+'</button>').join('')+'</div>';
+document.body.appendChild(P);
+let ex='',done=false;const E=P.querySelector('.ce'),R=P.querySelector('.cr');
+const show=()=>{R.textContent=ex||'0'};
+const fmt=n=>String(+n.toFixed(6)).replace('.',',');
+function press(k){
+ if(k=='C'){ex='';E.textContent='';show();return}
+ if(k=='⌫'){ex=ex.slice(0,-1);show();return}
+ if(k=='='){const js=ex.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-').replace(/,/g,'.');
+  if(!/^[0-9+\-*/.() ]+$/.test(js)){R.textContent='Error';ex='';return}
+  try{const v=Function('"use strict";return ('+js+')')();if(!isFinite(v))throw 0;E.textContent=ex+' =';ex=fmt(v);done=true;show()}catch(e){R.textContent='Error';ex=''}return}
+ if(done&&/[0-9,]/.test(k)){ex='';E.textContent=''}done=false;ex+=k;show()}
+P.querySelectorAll('.ck').forEach(x=>x.onclick=()=>press(x.textContent));
+b.onclick=()=>{P.hidden=!P.hidden};P.querySelector('.cx').onclick=()=>{P.hidden=true};
+document.addEventListener('keydown',e=>{if(P.hidden||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;const m={'*':'×','/':'÷','-':'−','+':'+','.':',',',':',','Enter':'=','=':'=','Backspace':'⌫','Escape':'C','(':'(',')':')'};const k=/^[0-9]$/.test(e.key)?e.key:m[e.key];if(k){e.preventDefault();press(k)}});
+})();
+
+</script>
+</body></html>

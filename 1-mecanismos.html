@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1. ¿Qué es un mecanismo? · 1º ESO</title><style>
+:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;box-shadow:0 1px 4px #0002}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
+h2{color:var(--c);margin-top:6px}h3{margin:18px 0 6px}
+.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
+.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
+details{background:#fff;border-radius:12px;margin:8px 0;padding:10px 14px;box-shadow:0 1px 4px #0001}summary{font-weight:700;cursor:pointer}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
+button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0}
+button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
+.chip{display:inline-block;background:var(--cl);border:1px solid var(--c);border-radius:16px;padding:4px 12px;margin:3px;cursor:pointer;font-weight:600}
+.chip.sel{background:var(--c);color:#fff}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}
+.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0}
+a.lk{display:inline-block;background:#fff;border:2px solid var(--c);border-radius:10px;padding:8px 14px;margin:4px;color:var(--c);font-weight:700;text-decoration:none}
+.im{max-width:100%;background:#fff;border-radius:10px;padding:4px}
+nav a{border:2px solid var(--c);color:var(--c);border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}nav a:hover{background:var(--c);color:#fff}
+dt{font-weight:700;margin-top:8px}dd{margin:0 0 4px 14px}footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
+.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}.portada{max-width:900px;margin:12px auto 0;padding:0 14px}.portada img{width:100%;max-height:300px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 2px 8px #0002}
+[data-s]{opacity:0;transition:opacity .6s}[data-s].v{opacity:1}
+.card ol,.card ul{margin:6px 0;padding-left:22px}.card li{margin:3px 0}nav a.act-nav{background:var(--c);color:#fff}nav a.act-nav:hover{background:var(--c2)}
+.fg{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center}.fg>div{flex:1 1 240px}.ci{color:var(--hl);font-weight:700}nav a.cur{background:var(--c);color:#fff}body{padding-bottom:84px}
+#sl{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;box-shadow:0 -2px 10px #0003;display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 12px}
+#sl button,#sl a{margin:0;white-space:nowrap;text-decoration:none;display:inline-block}#sl button:disabled{opacity:.35;cursor:default}
+#si{flex:1;max-width:340px;text-align:center;line-height:1.25}#si b{font-size:1.15rem}#st{display:block;font-size:.8rem;color:#556;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sb{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+#sl .bar{margin-top:4px}@media print{#sl,nav,button{display:none!important}section{display:block!important}}
+@media(max-width:480px){#sl{gap:6px;padding:8px}#sl .b{padding:8px 10px;font-size:.95rem}}
+/* Propios de la unidad de mecanismos */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:8px 0}
+.flow .bx{flex:1 1 150px;max-width:220px;border-radius:12px;padding:10px;text-align:center;font-weight:700;border:2px solid}
+.flow .ar{font-size:1.6rem;color:var(--c)}
+.m1{background:#ffe3e3;border-color:#e03131}.m2{background:#d3f9d8;border-color:#2f9e44}.m3{background:#d0ebff;border-color:#1971c2}
+.flow .bx small{display:block;font-weight:400;font-size:.88rem;margin-top:3px}
+.mov{text-align:center}.mov svg{width:100%;max-width:200px;height:110px;display:block;margin:auto}
+@keyframes lin{0%{transform:translateX(0)}100%{transform:translateX(110px)}}
+@keyframes alt{0%,100%{transform:translateX(0)}50%{transform:translateX(90px)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+.lin{animation:lin 2.4s linear infinite}.alt{animation:alt 2s ease-in-out infinite}.rot{animation:rot 3s linear infinite;transform-origin:100px 55px;transform-box:view-box}
+.big{font-size:2.4rem;text-align:center;line-height:1.2}
+header{position:relative}
+.lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
+.lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
+.lang button.on{background:#fff;color:var(--c)}
+.l1{background:#e7f5ff;border-left:5px solid #1971c2;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.95rem;color:#1d3557;font-weight:400}
+.l1[dir=rtl]{border-left:0;border-right:5px solid #1971c2;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro',Tahoma,Arial,sans-serif;font-size:1.05rem;line-height:1.8}
+.l1 ul,.l1 ol{margin:4px 0;padding-inline-start:22px}.l1t{display:block;font-weight:800;font-size:.8rem;margin-bottom:2px;color:#1971c2}
+.l1o{color:#1971c2;font-size:.9em}.row .l1{margin:4px 0 0;padding:4px 8px;font-size:.88rem}
+@media(max-width:640px){.lang{position:static;margin-top:8px}}
+@media print{.lang{display:none!important}}
+</style></head><body>
+<header><p class="eb">Tecnología y Digitalización · 1º ESO · Mecanismos · Parte 1 de 3</p><h1>⚙️ ¿Qué es un mecanismo?</h1></header>
+<div class="portada"><img src="portada-mecanismos.jpg" alt="Chico montando en bicicleta por una calle de la ciudad"></div>
+<nav><a href="index.html">🏠 Inicio</a><a href="#intro">¿Dónde hay?</a><a href="#def">Definición</a><a href="#partes">Las 3 partes</a><a href="#bici">La bici</a><a href="#ejemplos">Ejemplos</a><a href="#movs">Movimientos</a><a href="#tipos">Transmitir o transformar</a><a href="#preg">Piensa</a><a href="#practica">Cuaderno</a><a class="act-nav" href="1-mecanismos-actividades.html">🧩 Actividades</a></nav>
+<main>
+<section id="intro"><h2>¿Dónde hay mecanismos?</h2>
+<div class="card">Mira a tu alrededor: la <b>bicicleta</b>, el <b>reloj</b>, unas <b>tijeras</b>, el <b>balancín</b> del parque o la <b>batidora</b> de la cocina. Todos tienen piezas que se mueven y que nos ayudan a hacer las cosas con <b>menos esfuerzo</b>.</div>
+<div class="card"><div class="big">🚲 &nbsp; 🕰️ &nbsp; ✂️ &nbsp; 🛝 &nbsp; 🪣</div><p style="text-align:center;margin-bottom:0">En todos ellos hay <b>mecanismos</b>. En esta unidad aprenderás a <b>reconocerlos</b>.</p></div>
+<div class="card tip">💬 <b>Piensa:</b> ¿qué pieza lleva el movimiento desde los <b>pedales</b> hasta la <b>rueda</b> de una bici?</div></section>
+
+<section id="def"><h2>¿Qué es un mecanismo?</h2>
+<div class="card key">Un <b>mecanismo</b> es un conjunto de piezas que <b>transmite</b> o <b>transforma</b> fuerzas y movimientos desde un <b>elemento motriz</b> (el que empieza el movimiento) hasta un <b>elemento receptor</b> (el que hace el trabajo).</div>
+<div class="fg"><div class="card" style="margin:6px 0"><b>⚙️ Mecanismo</b><br>Una sola parte que hace <b>una tarea</b>.<br><span class="ci">Ej.: la cadena de la bici.</span></div>
+<div class="card" style="margin:6px 0"><b>🚲 Máquina</b><br>Varios <b>mecanismos juntos</b> que trabajan para un fin.<br><span class="ci">Ej.: la bicicleta entera.</span></div></div>
+<div class="card tip">Recuerda: <b>máquina</b> = varios <b>mecanismos</b> unidos.<br>💡 ¡Un simple <b>palo</b> se convierte en máquina si lo usas como <b>palanca</b> para mover una piedra!</div></section>
+
+<section id="partes"><h2>Las tres partes de una máquina</h2>
+<p>Todas las máquinas siguen el mismo camino:</p>
+<div class="flow"><div class="bx m1">1. Elemento motriz<small>Produce la fuerza y el movimiento</small></div><div class="ar">➜</div><div class="bx m2">2. Mecanismo<small>Transmite o transforma el movimiento</small></div><div class="ar">➜</div><div class="bx m3">3. Elemento receptor<small>Hace el trabajo final</small></div></div>
+<div class="card"><table><tr><th>Parte</th><th>¿Qué hace?</th><th>Ejemplos</th></tr>
+<tr><td><b>Motriz</b></td><td>Pone en marcha el movimiento</td><td>músculos, un motor, un muelle, el agua de un río</td></tr>
+<tr><td><b>Mecanismo</b></td><td>Lleva o cambia el movimiento</td><td>engranajes, poleas, cadena, palancas</td></tr>
+<tr><td><b>Receptor</b></td><td>Hace el trabajo para el que existe la máquina</td><td>ruedas, manecillas, aspas, un cubo que sube</td></tr></table></div></section>
+
+<section id="bici"><h2>🎬 Las tres partes en la bicicleta</h2>
+<div class="card"><div id="abici"></div></div>
+<div class="card key">Un movimiento <b>pequeño</b> de las piernas se convierte en un <b>gran avance</b> de la bicicleta.</div></section>
+
+<section id="ejemplos"><h2>Más ejemplos</h2>
+<p>Toca una máquina y mira sus tres partes.</p><div id="exs"></div>
+<div class="flow" id="exf"></div></section>
+
+<section id="movs"><h2>Tipos de movimiento</h2>
+<p>Antes de clasificar los mecanismos, hay que conocer los <b>tres movimientos</b> básicos:</p>
+<div class="fg">
+<div class="card mov"><svg viewBox="0 0 200 110"><line x1="10" y1="85" x2="190" y2="85" stroke="#adb5bd" stroke-width="3"/><g class="lin"><rect x="15" y="50" width="50" height="34" rx="5" fill="#d9480f"/></g></svg><b>Lineal</b><br>En línea recta, en un sentido.<br><span class="ci">Ej.: un cajón, una puerta corredera.</span></div>
+<div class="card mov"><svg viewBox="0 0 200 110"><g class="rot"><circle cx="100" cy="55" r="42" fill="none" stroke="#d9480f" stroke-width="7"/><line x1="100" y1="55" x2="100" y2="15" stroke="#d9480f" stroke-width="5"/><line x1="100" y1="55" x2="136" y2="75" stroke="#d9480f" stroke-width="5"/><line x1="100" y1="55" x2="64" y2="75" stroke="#d9480f" stroke-width="5"/></g><circle cx="100" cy="55" r="6" fill="#1d2733"/></svg><b>Circular</b><br>Gira alrededor de un eje.<br><span class="ci">Ej.: una rueda, las manecillas del reloj.</span></div>
+<div class="card mov"><svg viewBox="0 0 200 110"><rect x="10" y="40" width="180" height="54" rx="6" fill="#f1f3f5" stroke="#adb5bd" stroke-width="2"/><g class="alt"><rect x="20" y="47" width="40" height="40" rx="4" fill="#d9480f"/></g></svg><b>Alternativo</b><br>De ida y vuelta (vaivén).<br><span class="ci">Ej.: la aguja de coser, el pistón de un motor.</span></div></div></section>
+
+<section id="tipos"><h2>¿Transmiten o transforman?</h2>
+<p>Los mecanismos se pueden clasificar en dos grandes grupos:</p>
+<div class="fg">
+<div class="card key" style="margin:6px 0"><b>➡️ Transmiten</b> el movimiento<br>El movimiento que <b>entra</b> es del <b>mismo tipo</b> que el que <b>sale</b>.<svg id="sv1" viewBox="0 0 260 150" class="im" style="width:100%;max-width:260px;display:block;margin:6px auto"><g id="gA" fill="#d9480f"></g><g id="gB" fill="#f08c00"></g><circle cx="60" cy="75" r="5" fill="#fff"/><circle cx="140" cy="75" r="5" fill="#fff"/></svg><small>Giro ➜ giro. Ej.: <b>engranajes</b>, <b>poleas</b>, <b>cadena</b>, <b>palanca</b>.</small></div>
+<div class="card key" style="margin:6px 0"><b>🔄 Transforman</b> el movimiento<br>El movimiento <b>cambia de tipo</b>: por ejemplo, de <b>giro</b> a <b>línea recta</b>.<svg id="sv2" viewBox="0 0 260 150" class="im" style="width:100%;max-width:260px;display:block;margin:6px auto"><g id="gC" fill="#d9480f"></g><circle cx="130" cy="60" r="5" fill="#fff"/><g id="rk" fill="#868e96"></g></svg><small>Giro ➜ recto. Ej.: <b>piñón-cremallera</b>, <b>biela-manivela</b>, <b>leva</b>.</small></div></div>
+<div class="row" style="justify-content:center"><button class="b g" id="pp">⏸ Pausar</button></div>
+<div class="card"><table><tr><th>Transmiten: movimiento lineal</th><th>Transmiten: giro</th><th>Transforman</th></tr><tr><td>palanca, polea</td><td>poleas con correa, engranajes, piñón y cadena</td><td>piñón-cremallera, biela-manivela, leva</td></tr></table></div>
+<div class="card tip">En esta unidad estudiaremos los que <b>transmiten</b>: palancas y poleas (parte 2) y la transmisión del giro (parte 3).</div></section>
+
+<section id="preg"><h2>Piensa y responde <button class="b g" id="all" style="float:right;font-size:.85rem">Abrir todas</button></h2>
+<details><summary>¿Qué diferencia hay entre una máquina y un mecanismo?</summary>Una <b>máquina</b> está formada por <b>varios mecanismos</b> que trabajan juntos.</details>
+<details><summary>En una bici, ¿cuál es el elemento motriz?</summary>Las <b>piernas</b> del ciclista.</details>
+<details><summary>¿Y el elemento receptor?</summary>La <b>rueda trasera</b>, que hace avanzar la bici.</details>
+<details><summary>¿Cómo se llama el mecanismo para sacar agua de un pozo dándole vueltas a una manivela?</summary><b>Manivela-torno</b>: la cuerda se enrolla en un cilindro y el cubo sube.</details>
+<details><summary>Si una puerta corredera se mueve con un motor que gira, ¿el mecanismo transmite o transforma?</summary><b>Transforma</b>: pasa de un <b>giro</b> a un movimiento <b>en línea recta</b>.</details></section>
+
+<section id="practica"><h2>✏️ En tu cuaderno</h2>
+<div class="card tip"><p style="margin-top:0"><b>Copia y completa</b> en tu cuaderno (libro, págs. 84 y 85):</p>
+<ol><li>La <b>definición</b> de mecanismo y la diferencia con una máquina.</li><li>El <b>esquema</b>: Elemento motriz ➜ Mecanismo ➜ Elemento receptor.</li><li>Haz una <b>tabla</b> con la <b>bicicleta</b>, el <b>balancín</b>, el <b>reloj</b> y el <b>pozo</b>: escribe su elemento <b>motriz</b>, su <b>mecanismo</b> y su elemento <b>receptor</b>.</li></ol>
+<details><summary>Ver soluciones de la tabla</summary><table><tr><th>Máquina</th><th>Motriz</th><th>Mecanismo</th><th>Receptor</th></tr><tr><td>Bicicleta</td><td>piernas</td><td>pedales, plato, cadena, piñón</td><td>rueda trasera</td></tr><tr><td>Balancín</td><td>peso de un niño</td><td>la barra (palanca)</td><td>el niño que sube</td></tr><tr><td>Reloj de pared</td><td>pesas o muelle</td><td>engranajes</td><td>manecillas</td></tr><tr><td>Pozo</td><td>brazos</td><td>manivela-torno y cuerda</td><td>el cubo</td></tr></table></details></div>
+<h3>Antes de entregar</h3><a class="lk" href="1-mecanismos-actividades.html">🧩 Hacer las actividades autocorregibles</a></section>
+
+<section id="glosario"><h2>Glosario</h2><dl><dt>Mecanismo</dt><dd>Piezas que transmiten o transforman fuerzas y movimientos.</dd><dt>Máquina</dt><dd>Conjunto de varios mecanismos que trabajan juntos.</dd><dt>Elemento motriz</dt><dd>El que produce la fuerza y el movimiento (músculos, motor, muelle…).</dd><dt>Elemento receptor</dt><dd>El que hace el trabajo final (rueda, manecillas, cubo…).</dd><dt>Transmitir</dt><dd>Llevar el movimiento de un sitio a otro sin cambiar su tipo.</dd><dt>Transformar</dt><dd>Cambiar el tipo de movimiento (por ejemplo, de giro a línea recta).</dd><dt>Movimiento alternativo</dt><dd>Movimiento de ida y vuelta, de vaivén.</dd></dl></section>
+</main><footer>Carlos Alberto Toledo · 2026</footer>
+<script>
+const $=s=>document.querySelector(s);
+function Anim(id,vb,mk,tx){const R=$('#'+id);clearInterval(R._t);let n=0;const N=tx.length-1;
+R.innerHTML='<div class="row"><button class="b g">◀ Anterior</button><button class="b">Siguiente ▶</button><button class="b g">▶ Reproducir</button><button class="b g">↺ Reiniciar</button></div><svg viewBox="'+vb+'" class="im" style="width:100%;max-width:480px;display:block;margin:6px auto">'+mk+'</svg><div class="fb" style="min-height:3.2em"></div>';
+const[bp,bn,bl,br]=R.querySelectorAll('button'),sv=R.querySelector('svg'),t=R.querySelector('.fb');
+const set=k=>{n=Math.max(0,Math.min(N,k));sv.querySelectorAll('[data-s]').forEach(e=>{const a=+e.dataset.s,z=e.dataset.e===undefined?99:+e.dataset.e;e.classList.toggle('v',n>=a&&n<=z)});t.innerHTML='<b>Paso '+(n+1)+' de '+(N+1)+'.</b> '+tx[n];bp.disabled=n==0;bn.disabled=n==N};
+bp.onclick=()=>{clearInterval(R._t);set(n-1)};bn.onclick=()=>{clearInterval(R._t);set(n+1)};br.onclick=()=>{clearInterval(R._t);set(0)};
+bl.onclick=()=>{clearInterval(R._t);set(0);R._t=setInterval(()=>{if(n>=N)clearInterval(R._t);else set(n+1)},2300)};set(0)}
+
+/* Engranaje: radio primitivo r, z dientes, altura del diente h */
+function gearD(r,z,h){const a=2*Math.PI/z,P=[];for(let i=0;i<z;i++){const t=i*a;[[r-h/2,t-a*.27],[r+h/2,t-a*.12],[r+h/2,t+a*.12],[r-h/2,t+a*.27]].forEach(([R,u])=>P.push((R*Math.cos(u)).toFixed(1)+','+(R*Math.sin(u)).toFixed(1)))}return 'M'+P.join('L')+'Z'}
+const gear=(el,cx,cy,r,z,h)=>{el.innerHTML='<path d="'+gearD(r,z,h)+'"/>';el._c=[cx,cy];el.setAttribute('transform','translate('+cx+' '+cy+')')};
+const rotG=(el,deg)=>el.setAttribute('transform','translate('+el._c[0]+' '+el._c[1]+') rotate('+deg+')');
+
+
+/* Transmitir: dos engranajes 12 y 20 dientes. Transformar: piñón-cremallera */
+const gA=$('#gA'),gB=$('#gB'),gC=$('#gC'),rk=$('#rk');
+const m=5,zA=12,zB=20,rA=m*zA/2,rB=m*zB/2;gear(gA,80,75,rA,zA,9);gear(gB,80+rA+rB,75,rB,zB,9);
+/* recoloco para que quepa */
+gA._c=[60,75];gB._c=[60+rA+rB,75];
+const zC=12,rC=m*zC/2,pas=2*Math.PI*rC/zC;gear(gC,130,60,rC,zC,9);
+let rkd='';for(let k=-30;k<=30;k++){const x=130+pas/2+k*pas;rkd+='M'+(x-pas*.27).toFixed(1)+','+(60+rC+4.5)+'L'+(x-pas*.12).toFixed(1)+','+(60+rC-4.5)+'L'+(x+pas*.12).toFixed(1)+','+(60+rC-4.5)+'L'+(x+pas*.27).toFixed(1)+','+(60+rC+4.5)+'Z'}
+rk.innerHTML='<rect x="-300" y="'+(60+rC+4.5)+'" width="860" height="14" rx="2"/><path d="'+rkd+'"/>';
+let run=true,t0=performance.now(),tp=0;
+function loop(now){if(run){tp+=(now-t0)/1000}t0=now;
+ const a=tp*40; rotG(gA,a*1.6);rotG(gB,-a*1.6*zA/zB+180/zB);
+ const th=Math.sin(tp*0.9)*140; /* grados, va y viene */
+ rotG(gC,th);rk.setAttribute('transform','translate('+(-(th*Math.PI/180)*rC).toFixed(2)+' 0)');
+ requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+$('#pp').onclick=()=>{run=!run;$('#pp').textContent=run?'⏸ Pausar':'▶ Reanudar'};
+
+/* Animación de la bici */
+const K='stroke="#495057" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"';
+Anim('abici','0 0 480 290',
+'<g '+K+'><circle cx="110" cy="180" r="55"/><circle cx="370" cy="180" r="55"/><path d="M110 180 L215 185 L195 100 Z M195 100 L330 105 L215 185 M330 105 L370 180 M330 105 L322 82 M308 80 L338 78 M195 100 L190 86"/></g>'
++'<line x1="170" y1="84" x2="210" y2="84" stroke="#495057" stroke-width="8" stroke-linecap="round"/>'
++'<g stroke="#868e96" stroke-width="3" fill="none"><circle cx="215" cy="185" r="20"/><circle cx="110" cy="180" r="9"/><line x1="110" y1="171" x2="215" y2="165"/><line x1="110" y1="189" x2="215" y2="205"/></g>'
++'<g '+K.replace('#495057','#adb5bd')+'><path d="M188 80 L245 128 L232 205"/><line x1="215" y1="185" x2="232" y2="205" stroke="#495057"/></g>'
+/* paso 1: motriz */
++'<g data-s="1"><path d="M188 80 L245 128 L232 205" stroke="#e03131" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="232" y="62" font-size="15" font-weight="700" fill="#e03131">1. Motriz: las piernas</text></g>'
+/* paso 2: mecanismo */
++'<g data-s="2" stroke="#2f9e44" stroke-width="5" fill="none"><circle cx="215" cy="185" r="20"/><circle cx="110" cy="180" r="9"/><line x1="110" y1="171" x2="215" y2="165"/><line x1="110" y1="189" x2="215" y2="205"/><line x1="215" y1="185" x2="232" y2="205"/></g><g data-s="2"><text x="20" y="258" font-size="15" font-weight="700" fill="#2f9e44">2. Mecanismo: pedal, plato, cadena y piñón</text></g>'
+/* paso 3: receptor */
++'<g data-s="3"><circle cx="110" cy="180" r="55" stroke="#1971c2" stroke-width="9" fill="none"/><text x="20" y="282" font-size="15" font-weight="700" fill="#1971c2">3. Receptor: la rueda trasera</text></g>'
+/* paso 4: resumen */
++'<g data-s="4"><text x="250" y="30" font-size="15" font-weight="700" fill="#d9480f">La bici avanza ➜➜➜</text><text x="20" y="30" font-size="13" font-weight="700"><tspan fill="#e03131">Motriz</tspan> ➜ <tspan fill="#2f9e44">Mecanismo</tspan> ➜ <tspan fill="#1971c2">Receptor</tspan></text></g>',
+['Esta es una <b>bicicleta</b>. Vamos a buscar sus <b>tres partes</b>.',
+ 'Las <b>piernas</b> del ciclista empujan los pedales: son el <b>elemento motriz</b>.',
+ 'El <b>pedal</b>, el <b>plato</b>, la <b>cadena</b> y el <b>piñón</b> llevan el giro hasta la rueda: son el <b>mecanismo</b>.',
+ 'La <b>rueda trasera</b> gira y hace avanzar la bici: es el <b>elemento receptor</b>.',
+ 'Resumen: <b>motriz ➜ mecanismo ➜ receptor</b>. ¡La bici avanza!']);
+
+/* Ejemplos */
+const EX=[['🚲 Bicicleta','las piernas','pedales, plato, cadena y piñón','la rueda trasera'],
+['🕰️ Reloj de pared','las pesas o un muelle','engranajes','las manecillas'],
+['🪣 Pozo','los brazos','manivela-torno y cuerda','el cubo de agua'],
+['🛝 Balancín','el peso de un niño','la barra (una palanca)','el niño que sube'],
+['🥤 Batidora','un motor eléctrico','engranajes','las varillas o cuchillas']];
+$('#exs').innerHTML=EX.map(e=>'<span class="chip">'+e[0]+'</span>').join('');
+const ex=i=>{const e=EX[i];$('#exf').innerHTML='<div class="bx m1">Motriz<small>'+e[1]+'</small></div><div class="ar">➜</div><div class="bx m2">Mecanismo<small>'+e[2]+'</small></div><div class="ar">➜</div><div class="bx m3">Receptor<small>'+e[3]+'</small></div>';document.querySelectorAll('#exs .chip').forEach((c,k)=>c.classList.toggle('sel',k==i))};
+document.querySelectorAll('#exs .chip').forEach((c,i)=>c.onclick=()=>ex(i));ex(0);
+$('#all').onclick=()=>{const d=[...document.querySelectorAll('#preg details')],o=d.every(x=>x.open);d.forEach(x=>x.open=!o);$('#all').textContent=o?'Abrir todas':'Cerrar todas'};
+</script><script>window.ACT_HREF="1-mecanismos-actividades.html";(function(){const S=[...document.querySelectorAll('main>section')],N=S.length,$=s=>document.querySelector(s);let cur=-1;
+const bar=document.createElement('div');bar.id='sl';
+bar.innerHTML='<button class="b g" id="sp">◀ Anterior</button><div id="si"><b id="sn"></b><span id="st"></span><div class="bar"><i id="sb"></i></div></div><button class="b" id="snx">Siguiente ▶</button>';
+document.body.append(bar);
+const ttl=s=>{const h=s.querySelector('h2');return h?h.firstChild.textContent.trim():''};
+function show(i,scroll){i=Math.max(0,Math.min(N-1,i));
+ if(cur>=0&&cur!=i)S[cur].querySelectorAll('iframe').forEach(f=>{f.src=f.src});
+ S.forEach((s,k)=>s.classList.toggle('on',k==i));cur=i;
+ $('#sn').textContent=(i+1)+' / '+N;$('#st').textContent=ttl(S[i]);$('#sb').style.width=((i+1)/N*100)+'%';
+ $('#sp').disabled=i==0;const nx=$('#snx');
+ if(i==N-1&&window.ACT_HREF){nx.outerHTML='<a class="b" id="snx" href="'+window.ACT_HREF+'">🧩 Ir a las actividades ▶</a>'}
+ else if(nx.tagName=='A'){nx.outerHTML='<button class="b" id="snx">Siguiente ▶</button>';wire()}
+ else nx.disabled=i==N-1;
+ document.querySelectorAll('nav a').forEach(a=>{const h=a.getAttribute('href');a.classList.toggle('cur',h&&h[0]=='#'&&S[i].contains(document.getElementById(h.slice(1)))||h=='#'+S[i].id)});
+ try{history.replaceState(null,'','#'+(S[i].id||('p'+(i+1))))}catch(e){}
+ if(scroll){const m=document.querySelector('main');window.scrollTo({top:Math.max(0,m.getBoundingClientRect().top+scrollY-10),behavior:'smooth'})}}
+function wire(){$('#snx').onclick=()=>show(cur+1,1)}
+$('#sp').onclick=()=>show(cur-1,1);wire();
+document.querySelectorAll('nav a').forEach(a=>{const h=a.getAttribute('href');if(h&&h[0]=='#')a.onclick=e=>{e.preventDefault();const t=document.getElementById(h.slice(1));const k=S.findIndex(s=>s.contains(t));if(k>=0)show(k,1)}});
+document.addEventListener('keydown',e=>{if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.key=='ArrowRight')show(cur+1,1);if(e.key=='ArrowLeft')show(cur-1,1)});
+let k0=0;const h=location.hash.slice(1);if(h){const t=document.getElementById(h);k0=Math.max(0,S.findIndex(s=>s.contains(t)))}
+show(k0,0);})();
+</script><script>
+window.L1={
+en:{
+intro:'Look around you: bikes, clocks, scissors, see-saws and blenders all have <b>mechanisms (mecanismos)</b>. They help us do things with <b>less effort (menos esfuerzo)</b>.',
+def:'A <b>mechanism (mecanismo)</b> passes on or changes forces and movements, from the <b>driving element (elemento motriz)</b> to the <b>output element (elemento receptor)</b>.<br>A <b>machine (máquina)</b> = several mechanisms working together.',
+partes:'Every machine has <b>3 parts</b>:<ol><li><b>Driving element (motriz)</b>: starts the movement (muscles, a motor).</li><li><b>Mechanism (mecanismo)</b>: passes on the movement (gears, pulleys, chain).</li><li><b>Output element (receptor)</b>: does the final job (wheels, clock hands).</li></ol>',
+bici:'Press <b>Siguiente</b> (next). On a bike:<ul><li>legs = <b>driving element (motriz)</b>, red</li><li>pedal, chainring (plato), chain (cadena), sprocket (piñón) = <b>mechanism (mecanismo)</b>, green</li><li>back wheel (rueda trasera) = <b>output element (receptor)</b>, blue</li></ul>',
+ejemplos:'Tap a machine to see its 3 parts: bike (bicicleta), wall clock (reloj de pared), well (pozo), see-saw (balancín), blender (batidora).',
+movs:'3 types of <b>movement (movimiento)</b>:<ul><li><b>linear (lineal)</b>: in a straight line</li><li><b>circular (circular)</b>: turning around an axle</li><li><b>back and forth (alternativo)</b>: it goes and comes back</li></ul>',
+tipos:'Mechanisms <b>transmit (transmiten)</b> movement: the same type of movement comes in and out (gears, pulleys, chain, lever).<br>Or they <b>transform (transforman)</b> it: the type changes, for example turning → straight line.',
+preg:'Read each question and think. Click on it to see the answer.',
+practica:'In your <b>notebook (cuaderno)</b>:<ol><li>Copy the definition of <b>mechanism</b> and machine.</li><li>Copy the diagram: motriz → mecanismo → receptor.</li><li>Make a table with the bike, see-saw, clock and well. Write the 3 parts of each one.</li></ol>',
+glosario:'<ul><li><b>mecanismo</b> = mechanism</li><li><b>máquina</b> = machine</li><li><b>elemento motriz</b> = driving element</li><li><b>elemento receptor</b> = output element</li><li><b>transmitir</b> = to pass on</li><li><b>transformar</b> = to change</li><li><b>movimiento alternativo</b> = back-and-forth movement</li></ul>'},
+ar:{
+intro:'انظر حولك: الدرّاجة والساعة والمقص والأرجوحة والخلّاط، كلها فيها <b>آليات (mecanismos)</b>. تساعدنا على العمل <b>بجهد أقل (menos esfuerzo)</b>.',
+def:'<b>الآلية (mecanismo)</b> تنقل القوى والحركات أو تغيّرها، من <b>العنصر المحرِّك (elemento motriz)</b> إلى <b>العنصر المستقبِل (elemento receptor)</b>.<br><b>الآلة (máquina)</b> = عدة آليات تعمل معًا.',
+partes:'لكل آلة <b>3 أجزاء</b>:<ol><li><b>المحرِّك (motriz)</b>: يبدأ الحركة (العضلات، محرّك كهربائي).</li><li><b>الآلية (mecanismo)</b>: تنقل الحركة (التروس، البكرات، السلسلة).</li><li><b>المستقبِل (receptor)</b>: يقوم بالعمل النهائي (العجلات، عقارب الساعة).</li></ol>',
+bici:'اضغط <b>Siguiente</b> (التالي). في الدرّاجة:<ul><li>الساقان = <b>المحرِّك (motriz)</b>، باللون الأحمر</li><li>الدوّاسة، الترس الأمامي (plato)، السلسلة (cadena)، الترس الخلفي (piñón) = <b>الآلية (mecanismo)</b>، باللون الأخضر</li><li>العجلة الخلفية (rueda trasera) = <b>المستقبِل (receptor)</b>، باللون الأزرق</li></ul>',
+ejemplos:'اضغط على آلة لترى أجزاءها الثلاثة: الدرّاجة (bicicleta)، ساعة الحائط (reloj de pared)، البئر (pozo)، الأرجوحة (balancín)، الخلّاط (batidora).',
+movs:'3 أنواع من <b>الحركة (movimiento)</b>:<ul><li><b>خطّية (lineal)</b>: في خط مستقيم</li><li><b>دائرية (circular)</b>: تدور حول محور</li><li><b>ترددية (alternativo)</b>: ذهابًا وإيابًا</li></ul>',
+tipos:'الآليات إمّا <b>تنقل (transmiten)</b> الحركة: نفس نوع الحركة يدخل ويخرج (التروس، البكرات، السلسلة، الرافعة).<br>أو <b>تحوّل (transforman)</b> الحركة: يتغيّر نوعها، مثلًا من دوران إلى خط مستقيم.',
+preg:'اقرأ كل سؤال وفكّر. اضغط عليه لترى الجواب.',
+practica:'في <b>دفترك (cuaderno)</b>:<ol><li>انسخ تعريف <b>الآلية</b> والآلة.</li><li>انسخ المخطط: motriz ← mecanismo ← receptor.</li><li>اصنع جدولًا للدرّاجة والأرجوحة والساعة والبئر، واكتب الأجزاء الثلاثة لكل واحد.</li></ol>',
+glosario:'<ul><li><b>mecanismo</b> = آلية</li><li><b>máquina</b> = آلة</li><li><b>elemento motriz</b> = العنصر المحرِّك</li><li><b>elemento receptor</b> = العنصر المستقبِل</li><li><b>transmitir</b> = ينقل</li><li><b>transformar</b> = يحوّل</li><li><b>movimiento alternativo</b> = حركة ترددية</li></ul>'}};
+
+
+/* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
+(function(){
+const TIT={en:'🇬🇧 Help in English',ar:'🌍 مساعدة بالعربية'};
+let cur='es';try{cur=localStorage.getItem('mec-lang')||'es'}catch(e){}
+const hd=document.querySelector('header');
+const bar=document.createElement('div');bar.className='lang noprint';bar.setAttribute('aria-label','Idioma / Language / اللغة');
+bar.innerHTML='<button data-l="es" title="Español">ES</button><button data-l="en" title="English">EN</button><button data-l="ar" title="العربية">ع</button>';
+hd.appendChild(bar);
+const box=(l,html,extra)=>{const d=document.createElement('div');d.className='l1'+(extra?' '+extra:'');if(l=='ar')d.dir='rtl';d.innerHTML=html;return d};
+window.LANG=()=>cur;
+window.l1box=box;window.L1TIT=TIT;
+function apply(l){cur=l;try{localStorage.setItem('mec-lang',l)}catch(e){}
+ bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+ document.querySelectorAll('.l1,.l1o').forEach(e=>e.remove());
+ document.querySelectorAll('option[data-t]').forEach(o=>o.textContent=o.dataset.t);
+ if(l=='es'){if(window.onLang)window.onLang(l);return}
+ /* Apuntes: un recuadro de apoyo bajo el título de cada sección */
+ const L=(window.L1||{})[l];
+ if(L)for(const id in L){const s=document.getElementById(id);if(!s)continue;const h=s.querySelector('h2');const d=box(l,'<span class="l1t">'+TIT[l]+'</span>'+L[id]);h?h.after(d):s.prepend(d)}
+ if(window.onLang)window.onLang(l)}
+bar.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.l));
+window.applyLang=apply;
+apply(cur);
+})();
+/* Actividades: apoyo dentro de cada pregunta */
+function supA(a,Q){const l=window.LANG?LANG():'es';if(l=='es'||!window.L1A||!L1A[l])return;const T=L1A[l][a.id];if(!T)return;
+ const sec=document.getElementById(a.id);if(T.tip&&!sec.querySelector(':scope>.l1')){sec.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+T.tip))}
+ if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const t=T.it[i];if(!t)return;c.querySelector('h4').after(l1box(l,t[0]));c.querySelectorAll('label').forEach(lb=>{const k=+lb.querySelector('input').value;if(t[1][k].trim()===lb.textContent.trim())return;const sp=document.createElement('span');sp.className='l1o';sp.style.marginLeft='14px';sp.style.display='inline-block';if(l=='ar')sp.dir='rtl';sp.textContent=t[1][k];lb.appendChild(sp)})})}
+ if(a.tipo=='sel'){Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;const sp=s.closest('.row').querySelector('span');if(T.it[i])sp.appendChild(l1box(l,T.it[i]));s.querySelectorAll('option').forEach((o,k)=>{if(!k)return;o.dataset.t=o.dataset.t||o.textContent;o.textContent=o.dataset.t+' · '+T.op[k-1]})})}
+ if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i;const c=e.closest('.act');if(T.it[i])c.querySelector('h4').after(l1box(l,T.it[i]))})}
+ if(a.tipo=='fill'){const c=Q.querySelector('.fill');c.after(l1box(l,T.txt));Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;s.querySelectorAll('option').forEach(o=>{if(!o.value)return;o.dataset.t=o.dataset.t||o.textContent;const tr=(T.h&&T.h[i]&&T.h[i][o.dataset.t]);if(tr)o.textContent=o.dataset.t+' · '+tr})})}}
+
+</script>
+</body></html>

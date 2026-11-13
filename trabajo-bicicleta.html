@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trabajo · El mapa de la bici · Mecanismos · 1º ESO</title><style>
+:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
+.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}
+.who input{padding:8px;border-radius:8px;border:0;margin:2px 6px 2px 0;font-size:1rem;width:240px;max-width:100%}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;position:sticky;top:0;z-index:5;box-shadow:0 1px 4px #0002}
+nav button{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:20px;padding:7px 14px;font-weight:700;cursor:pointer;font-size:.95rem}
+nav button.on{background:var(--c);color:#fff}nav button.dn::after{content:" ✓"}
+nav a{border:2px solid #868e96;color:#495057;border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
+h2{color:var(--c);margin-top:6px}
+.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
+.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
+.act h4{margin:0 0 4px}.tag{font-size:.75rem;background:var(--cl);color:var(--c);padding:2px 8px;border-radius:10px;margin-left:6px}
+.act label{display:block;margin:4px 0;cursor:pointer}.act.ok{border:2px solid var(--ok)}.act.ko{border:2px solid var(--ko)}
+button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0;text-decoration:none;display:inline-block}
+button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
+input.n{width:90px;padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem}input.n.ok{border:2px solid var(--ok);background:#ebfbee}input.n.ko{border:2px solid var(--ko);background:#fff5f5}
+select{padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem;max-width:100%;background:#fff}
+select.ok{border:2px solid var(--ok);background:#ebfbee}select.ko{border:2px solid var(--ko);background:#fff5f5}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}.it{justify-content:space-between;border-bottom:1px dashed #e9ecef;padding:4px 0}
+.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+.fill{line-height:2.4}.big{font-size:2.2rem;font-weight:800;color:var(--c)}
+footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
+@media print{nav,header .who,section:not(#res),button,.noprint{display:none!important}section#res{display:block!important}body{background:#fff}}
+.map{position:relative;max-width:720px;margin:6px auto}
+.slot{position:absolute;transform:translate(-50%,-50%);min-width:100px;min-height:32px;border:2px dashed var(--c);border-radius:10px;background:#fffffff0;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:2px}
+.slot.ok{border:2px solid var(--ok);background:#ebfbee}.slot.ko{border:2px solid var(--ko);background:#fff5f5}
+.bank{display:flex;flex-wrap:wrap;gap:6px;min-height:40px;padding:8px;border-radius:10px;background:var(--cl)}
+.tg{display:inline-block;background:#fff;border:2px solid var(--c);color:#1d2733;border-radius:16px;padding:3px 10px;font-weight:700;cursor:grab;user-select:none;font-size:.9rem;margin:2px}
+.tg.sel{background:var(--c);color:#fff;box-shadow:0 0 0 3px #ffd8a8}.tg.ok{border-color:var(--ok);background:#ebfbee}.tg.ko{border-color:var(--ko);background:#fff5f5}
+.boxes{display:flex;flex-wrap:wrap;gap:10px}.box{flex:1 1 180px;border:2px solid;border-radius:12px;padding:8px;text-align:center;cursor:pointer;min-height:130px}
+.box small{display:block;font-size:.8rem;opacity:.8}.drop{min-height:60px;margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-content:flex-start}
+.m1{background:#ffe3e3;border-color:#e03131}.m2{background:#d3f9d8;border-color:#2f9e44}.m3{background:#d0ebff;border-color:#1971c2}
+@media(max-width:600px){.slot{min-width:70px;font-size:.75rem}.tg{font-size:.78rem;padding:2px 6px}}
+@media print{header .who{display:block!important}.card{box-shadow:none;border:1px solid #ddd;break-inside:avoid}#res{display:block!important}header,.m1,.m2,.m3,.slot{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+header{position:relative}
+.lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
+.lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
+.lang button.on{background:#fff;color:var(--c)}
+.l1{background:#e7f5ff;border-left:5px solid #1971c2;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.95rem;color:#1d3557;font-weight:400}
+.l1[dir=rtl]{border-left:0;border-right:5px solid #1971c2;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro',Tahoma,Arial,sans-serif;font-size:1.05rem;line-height:1.8}
+.l1 ul,.l1 ol{margin:4px 0;padding-inline-start:22px}.l1t{display:block;font-weight:800;font-size:.8rem;margin-bottom:2px;color:#1971c2}
+.l1o{color:#1971c2;font-size:.9em}.row .l1{margin:4px 0 0;padding:4px 8px;font-size:.88rem}
+@media(max-width:640px){.lang{position:static;margin-top:8px}}
+@media print{.lang{display:none!important}}
+</style></head><body>
+<header><p class="eb">Tecnología y Digitalización · 1º ESO · Mecanismos · Trabajo final</p><h1>🗺️ Trabajo: El mapa de la bici</h1>
+<div class="who"><input id="nom" placeholder="Nombre y apellidos"><input id="gru" placeholder="Grupo (ej.: 1º ESO B)"></div></header>
+<main>
+<div class="card key noprint"><b>Cómo se juega:</b> toca una <b>etiqueta</b> y después toca el <b>hueco</b> donde va (con ratón también puedes <b>arrastrarla</b>). Para quitar una etiqueta, tócala otra vez. Cuando acabes, pulsa <b>Comprobar</b>.
+<table style="margin-top:8px"><tr><th>Se evalúa</th><th>Puntos</th></tr><tr><td>Reto 1: las piezas de la bici</td><td>3</td></tr><tr><td>Reto 2: motriz, mecanismo y receptor</td><td>2</td></tr><tr><td>Reto 3: tu bici en la libreta</td><td>2</td></tr><tr><td>Actitud y trabajo en clase</td><td>3</td></tr></table></div>
+
+<div class="card act" id="r1"><h4>🚲 Reto 1. Coloca las piezas en la bici</h4>
+<div class="map"><svg viewBox="-140 -10 760 300" style="width:100%;display:block">
+<g stroke="#495057" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="110" cy="180" r="55"/><circle cx="370" cy="180" r="55"/><path d="M110 180 L215 185 L195 100 Z M195 100 L330 105 L215 185 M330 105 L370 180 M330 105 L322 82 M308 80 L338 78 M195 100 L190 86"/></g>
+<line x1="170" y1="84" x2="210" y2="84" stroke="#495057" stroke-width="8" stroke-linecap="round"/>
+<g stroke="#868e96" stroke-width="3" fill="none"><circle cx="215" cy="185" r="20"/><circle cx="110" cy="180" r="9"/><line x1="110" y1="171" x2="215" y2="165"/><line x1="110" y1="189" x2="215" y2="205"/></g>
+<line x1="215" y1="185" x2="232" y2="205" stroke="#495057" stroke-width="5" stroke-linecap="round"/><rect x="222" y="203" width="22" height="7" rx="2" fill="#495057"/>
+<g id="lead" stroke="#d9480f" stroke-width="2" stroke-dasharray="4 3" fill="#d9480f"></g></svg>
+<div id="slots"></div></div>
+<p class="noprint" style="margin:8px 0 4px"><b>Etiquetas:</b></p><div class="bank noprint" id="b1"></div>
+<button class="b noprint" id="k1">✔ Comprobar</button><div class="fb" id="f1"></div></div>
+
+<div class="card act" id="r2"><h4>⚙️ Reto 2. ¿Motriz, mecanismo o receptor?</h4><p style="margin:4px 0">Coloca cada pieza de la bici en su <b>caja</b>.</p>
+<div class="boxes"><div class="box m1" data-k="0"><b>Elemento motriz</b><small>pone en marcha el movimiento</small><div class="drop"></div></div><div class="box m2" data-k="1"><b>Mecanismo</b><small>lleva el movimiento</small><div class="drop"></div></div><div class="box m3" data-k="2"><b>Elemento receptor</b><small>hace el trabajo final</small><div class="drop"></div></div></div>
+<p class="noprint" style="margin:8px 0 4px"><b>Etiquetas:</b></p><div class="bank noprint" id="b2"></div>
+<button class="b noprint" id="k2">✔ Comprobar</button><div class="fb" id="f2"></div></div>
+
+<div class="card act"><h4>✏️ Reto 3. Tu bici en la libreta</h4><ol style="margin:4px 0"><li><b>Dibuja</b> una bicicleta en tu libreta (o pega una foto o un recorte).</li><li><b>Señala</b> con flechas al menos <b>6 piezas</b> y escribe su nombre.</li><li>Colorea de <span style="color:#e03131;font-weight:700">rojo</span> el elemento <b>motriz</b>, de <span style="color:#2f9e44;font-weight:700">verde</span> el <b>mecanismo</b> y de <span style="color:#1971c2;font-weight:700">azul</span> el <b>receptor</b>.</li><li>Hazle una <b>foto</b> y súbela a Classroom junto al PDF.</li></ol></div>
+
+<div class="card key" id="res"><h4 style="margin-top:0">📄 Resultado</h4><p style="margin:0"><b>Alumno/a:</b> <span id="rn">—</span> &nbsp; <b>Grupo:</b> <span id="rg">—</span> &nbsp; <b>Fecha:</b> <span id="rf"></span></p>
+<table style="margin:8px 0"><tr><th>Reto</th><th>Aciertos</th><th>Intentos</th></tr><tr><td>1. Piezas de la bici</td><td id="a1">sin comprobar</td><td id="i1">0</td></tr><tr><td>2. Motriz, mecanismo y receptor</td><td id="a2">sin comprobar</td><td id="i2">0</td></tr><tr><td>3. Libreta</td><td colspan="2">Foto adjunta en Classroom</td></tr></table>
+<div class="noprint"><button class="b" onclick="window.print()">📄 Descargar PDF</button><a class="b g" href="index.html">🏠 Volver a la unidad</a>
+<ol style="margin:8px 0 0"><li>Elige <b>Guardar como PDF</b>.</li><li>En la tarea de <b>Classroom</b> adjunta el <b>PDF</b> y la <b>foto de tu libreta</b>, y pulsa <b>Entregar</b>.</li></ol></div></div>
+</main><footer>Carlos Alberto Toledo · 2026</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const mix=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+/* Reto 1: [nombre, punto de la pieza, posición de la etiqueta] en coordenadas del dibujo */
+const P1=[['manillar',[330,79],[480,30]],['sillín',[190,84],[150,15]],['cuadro',[262,103],[315,15]],['plato',[215,185],[300,268]],['rueda delantera',[419,205],[520,255]],['cadena',[160,197],[160,268]],['piñón',[110,180],[-60,120]],['rueda trasera',[62,205],[-60,240]]];
+const VB=[-140,-10,760,300];
+$('#lead').innerHTML=P1.map(p=>'<line x1="'+p[1][0]+'" y1="'+p[1][1]+'" x2="'+p[2][0]+'" y2="'+p[2][1]+'"/><circle cx="'+p[1][0]+'" cy="'+p[1][1]+'" r="4" stroke="none"/>').join('');
+$('#slots').innerHTML=P1.map((p,i)=>'<div class="slot" data-i="'+i+'" style="left:'+((p[2][0]-VB[0])/VB[2]*100).toFixed(2)+'%;top:'+((p[2][1]-VB[1])/VB[3]*100).toFixed(2)+'%"></div>').join('');
+/* Reto 2 */
+const P2=[['las piernas',0],['el pedal',1],['el plato',1],['la cadena',1],['el piñón',1],['la rueda trasera',2]];
+const mk=(b,arr,g)=>{$(b).innerHTML=mix(arr.map((p,i)=>[p[0],i])).map(([t,i])=>'<span class="tg" draggable="true" data-g="'+g+'" data-i="'+i+'">'+t+'</span>').join('')};
+mk('#b1',P1,1);mk('#b2',P2,2);
+let selT=null;
+const bankOf=t=>$('#b'+t.dataset.g);
+function pick(t){if(selT===t){t.classList.remove('sel');selT=null;return}
+ if(t.parentElement.closest('.slot,.drop')){bankOf(t).appendChild(t);t.classList.remove('ok','ko');if(selT){selT.classList.remove('sel');selT=null}return}
+ if(selT)selT.classList.remove('sel');selT=t;t.classList.add('sel')}
+function put(t,target){if(!t)return;const g=t.dataset.g;
+ if(g=='1'&&!target.classList.contains('slot'))return;if(g=='2'&&!target.classList.contains('drop'))return;
+ if(target.classList.contains('slot')){const old=target.querySelector('.tg');if(old&&old!==t){bankOf(old).appendChild(old);old.classList.remove('ok','ko')}}
+ target.appendChild(t);t.classList.remove('sel','ok','ko');target.classList.remove('ok','ko');selT=null}
+$$('.tg').forEach(t=>{t.onclick=e=>{e.stopPropagation();const z=t.parentElement.closest('.slot,.drop');if(selT&&selT!==t&&z){put(selT,z);return}pick(t)};t.ondragstart=e=>{selT=t;e.dataTransfer.setData('text','x')}});
+$$('.slot,.drop').forEach(z=>{z.onclick=()=>put(selT,z);z.ondragover=e=>e.preventDefault();z.ondrop=e=>{e.preventDefault();put(selT,z)}});
+$$('.box').forEach(b=>b.onclick=e=>{if(e.target.closest('.tg'))return;put(selT,b.querySelector('.drop'))});
+const tries=[0,0];
+$('#k1').onclick=()=>{tries[0]++;let ok=0;$$('.slot').forEach(s=>{const t=s.querySelector('.tg');const b=t&&t.dataset.i===s.dataset.i;if(b)ok++;s.classList.toggle('ok',!!b);s.classList.toggle('ko',!b)});
+ $('#f1').innerHTML=(ok==8?'🎉 ¡Perfecto! ':'')+'Has acertado <b>'+ok+' de 8</b>.'+(ok<8?' Cambia las que están en rojo.':'');$('#f1').style.color=ok==8?'var(--ok)':'var(--ko)';$('#a1').textContent=ok+' / 8';$('#i1').textContent=tries[0]};
+$('#k2').onclick=()=>{tries[1]++;let ok=0;$$('.box').forEach(b=>b.querySelectorAll('.tg').forEach(t=>{const c=P2[+t.dataset.i][1]==+b.dataset.k;if(c)ok++;t.classList.toggle('ok',c);t.classList.toggle('ko',!c)}));
+ $('#f2').innerHTML=(ok==6?'🎉 ¡Perfecto! ':'')+'Has acertado <b>'+ok+' de 6</b>.'+(ok<6?' Revisa las rojas y las que faltan por colocar.':'');$('#f2').style.color=ok==6?'var(--ok)':'var(--ko)';$('#a2').textContent=ok+' / 6';$('#i2').textContent=tries[1]};
+const who=()=>{$('#rn').textContent=$('#nom').value||'—';$('#rg').textContent=$('#gru').value||'—'};['nom','gru'].forEach(i=>$('#'+i).oninput=who);
+$('#rf').textContent=new Date().toLocaleDateString('es-ES');
+</script><script>
+window.L1T={
+en:{intro:'<b>How to play:</b> tap a <b>label</b> and then tap the <b>gap</b> where it goes (with a mouse you can also drag it). To take a label back, tap it again. When you finish, press <b>Comprobar</b> (check).',
+r1:'Put each label on the correct part of the bike.',
+r2:'Put each part of the bike in its box: <b>driving element (motriz)</b>, <b>mechanism (mecanismo)</b> or <b>output element (receptor)</b>.',
+r3:'In your notebook: 1. Draw a bike (or stick a photo). 2. Point to at least 6 parts and write their names. 3. Colour the driving element red, the mechanism green and the output element blue. 4. Take a photo and upload it to Classroom with the PDF.',
+res:'Press <b>Descargar PDF</b>, choose <b>Save as PDF</b>. On Classroom, attach the PDF and the photo of your notebook, then press <b>Entregar</b> (hand in).',
+w:{'manillar':'handlebar','sillín':'saddle','cuadro':'frame','plato':'chainring','rueda delantera':'front wheel','cadena':'chain','piñón':'sprocket','rueda trasera':'back wheel','las piernas':'legs','el pedal':'pedal','el plato':'chainring','la cadena':'chain','el piñón':'sprocket','la rueda trasera':'back wheel'},
+box:['starts the movement','passes on the movement','does the final job']},
+ar:{intro:'<b>طريقة اللعب:</b> اضغط على <b>بطاقة</b> ثم اضغط على <b>الفراغ</b> المناسب (بالفأرة يمكنك أيضًا سحبها). لإرجاع بطاقة اضغط عليها مرة أخرى. عندما تنتهي اضغط <b>Comprobar</b> (تحقّق).',
+r1:'ضع كل بطاقة على الجزء الصحيح من الدرّاجة.',
+r2:'ضع كل جزء من الدرّاجة في صندوقه: <b>العنصر المحرِّك (motriz)</b>، <b>الآلية (mecanismo)</b> أو <b>العنصر المستقبِل (receptor)</b>.',
+r3:'في دفترك: 1. ارسم درّاجة (أو الصق صورة). 2. أشِر إلى 6 أجزاء على الأقل واكتب أسماءها. 3. لوّن العنصر المحرِّك بالأحمر، والآلية بالأخضر، والعنصر المستقبِل بالأزرق. 4. التقط صورة وارفعها إلى Classroom مع ملف PDF.',
+res:'اضغط <b>Descargar PDF</b> واختر <b>حفظ بصيغة PDF</b>. في Classroom أرفق ملف PDF وصورة دفترك، ثم اضغط <b>Entregar</b> (تسليم).',
+w:{'manillar':'المقود','sillín':'المقعد','cuadro':'الهيكل','plato':'الترس الأمامي','rueda delantera':'العجلة الأمامية','cadena':'السلسلة','piñón':'الترس الخلفي','rueda trasera':'العجلة الخلفية','las piernas':'الساقان','el pedal':'الدوّاسة','el plato':'الترس الأمامي','la cadena':'السلسلة','el piñón':'الترس الخلفي','la rueda trasera':'العجلة الخلفية'},
+box:['يبدأ الحركة','ينقل الحركة','يقوم بالعمل النهائي']}};
+
+window.onLang=function(l){if(l=='es'||!L1T[l])return;const T=L1T[l],q=s=>document.querySelector(s);
+q('main>.card.key').appendChild(l1box(l,T.intro));q('#r1 h4').after(l1box(l,T.r1));q('#r2 h4').after(l1box(l,T.r2));document.querySelectorAll('main>.card.act')[2].querySelector('h4').after(l1box(l,T.r3));q('#res h4').after(l1box(l,T.res));
+document.querySelectorAll('.tg').forEach(t=>{const w=T.w[t.firstChild.textContent.trim()];if(w){const s=document.createElement('small');s.className='l1o';s.textContent=' · '+w;t.appendChild(s)}});
+document.querySelectorAll('.box').forEach((b,i)=>{const s=document.createElement('small');s.className='l1o';if(l=='ar')s.dir='rtl';s.textContent=T.box[i];b.querySelector('small').after(s)})};
+/* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
+(function(){
+const TIT={en:'🇬🇧 Help in English',ar:'🌍 مساعدة بالعربية'};
+let cur='es';try{cur=localStorage.getItem('mec-lang')||'es'}catch(e){}
+const hd=document.querySelector('header');
+const bar=document.createElement('div');bar.className='lang noprint';bar.setAttribute('aria-label','Idioma / Language / اللغة');
+bar.innerHTML='<button data-l="es" title="Español">ES</button><button data-l="en" title="English">EN</button><button data-l="ar" title="العربية">ع</button>';
+hd.appendChild(bar);
+const box=(l,html,extra)=>{const d=document.createElement('div');d.className='l1'+(extra?' '+extra:'');if(l=='ar')d.dir='rtl';d.innerHTML=html;return d};
+window.LANG=()=>cur;
+window.l1box=box;window.L1TIT=TIT;
+function apply(l){cur=l;try{localStorage.setItem('mec-lang',l)}catch(e){}
+ bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+ document.querySelectorAll('.l1,.l1o').forEach(e=>e.remove());
+ document.querySelectorAll('option[data-t]').forEach(o=>o.textContent=o.dataset.t);
+ if(l=='es'){if(window.onLang)window.onLang(l);return}
+ /* Apuntes: un recuadro de apoyo bajo el título de cada sección */
+ const L=(window.L1||{})[l];
+ if(L)for(const id in L){const s=document.getElementById(id);if(!s)continue;const h=s.querySelector('h2');const d=box(l,'<span class="l1t">'+TIT[l]+'</span>'+L[id]);h?h.after(d):s.prepend(d)}
+ if(window.onLang)window.onLang(l)}
+bar.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.l));
+window.applyLang=apply;
+apply(cur);
+})();
+/* Actividades: apoyo dentro de cada pregunta */
+function supA(a,Q){const l=window.LANG?LANG():'es';if(l=='es'||!window.L1A||!L1A[l])return;const T=L1A[l][a.id];if(!T)return;
+ const sec=document.getElementById(a.id);if(T.tip&&!sec.querySelector(':scope>.l1')){sec.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+T.tip))}
+ if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const t=T.it[i];if(!t)return;c.querySelector('h4').after(l1box(l,t[0]));c.querySelectorAll('label').forEach(lb=>{const k=+lb.querySelector('input').value;if(t[1][k].trim()===lb.textContent.trim())return;const sp=document.createElement('span');sp.className='l1o';sp.style.marginLeft='14px';sp.style.display='inline-block';if(l=='ar')sp.dir='rtl';sp.textContent=t[1][k];lb.appendChild(sp)})})}
+ if(a.tipo=='sel'){Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;const sp=s.closest('.row').querySelector('span');if(T.it[i])sp.appendChild(l1box(l,T.it[i]));s.querySelectorAll('option').forEach((o,k)=>{if(!k)return;o.dataset.t=o.dataset.t||o.textContent;o.textContent=o.dataset.t+' · '+T.op[k-1]})})}
+ if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i;const c=e.closest('.act');if(T.it[i])c.querySelector('h4').after(l1box(l,T.it[i]))})}
+ if(a.tipo=='fill'){const c=Q.querySelector('.fill');c.after(l1box(l,T.txt));Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;s.querySelectorAll('option').forEach(o=>{if(!o.value)return;o.dataset.t=o.dataset.t||o.textContent;const tr=(T.h&&T.h[i]&&T.h[i][o.dataset.t]);if(tr)o.textContent=o.dataset.t+' · '+tr})})}}
+
+</script>
+</body></html>

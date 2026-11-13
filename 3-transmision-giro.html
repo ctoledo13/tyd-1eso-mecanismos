@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3. La transmisión del giro · 1º ESO</title><style>
+:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
+nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;box-shadow:0 1px 4px #0002}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
+h2{color:var(--c);margin-top:6px}h3{margin:18px 0 6px}
+.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
+.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
+details{background:#fff;border-radius:12px;margin:8px 0;padding:10px 14px;box-shadow:0 1px 4px #0001}summary{font-weight:700;cursor:pointer}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
+button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0}
+button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
+.chip{display:inline-block;background:var(--cl);border:1px solid var(--c);border-radius:16px;padding:4px 12px;margin:3px;cursor:pointer;font-weight:600}
+.chip.sel{background:var(--c);color:#fff}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}
+.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0}
+a.lk{display:inline-block;background:#fff;border:2px solid var(--c);border-radius:10px;padding:8px 14px;margin:4px;color:var(--c);font-weight:700;text-decoration:none}
+.im{max-width:100%;background:#fff;border-radius:10px;padding:4px}
+nav a{border:2px solid var(--c);color:var(--c);border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}nav a:hover{background:var(--c);color:#fff}
+dt{font-weight:700;margin-top:8px}dd{margin:0 0 4px 14px}footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
+.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}.portada{max-width:900px;margin:12px auto 0;padding:0 14px}.portada img{width:100%;max-height:300px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 2px 8px #0002}
+[data-s]{opacity:0;transition:opacity .6s}[data-s].v{opacity:1}
+.card ol,.card ul{margin:6px 0;padding-left:22px}.card li{margin:3px 0}nav a.act-nav{background:var(--c);color:#fff}nav a.act-nav:hover{background:var(--c2)}
+.fg{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center}.fg>div{flex:1 1 240px}.ci{color:var(--hl);font-weight:700}nav a.cur{background:var(--c);color:#fff}body{padding-bottom:84px}
+#sl{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;box-shadow:0 -2px 10px #0003;display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 12px}
+#sl button,#sl a{margin:0;white-space:nowrap;text-decoration:none;display:inline-block}#sl button:disabled{opacity:.35;cursor:default}
+#si{flex:1;max-width:340px;text-align:center;line-height:1.25}#si b{font-size:1.15rem}#st{display:block;font-size:.8rem;color:#556;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sb{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+#sl .bar{margin-top:4px}@media print{#sl,nav,button{display:none!important}section{display:block!important}}
+@media(max-width:480px){#sl{gap:6px;padding:8px}#sl .b{padding:8px 10px;font-size:.95rem}}
+/* Propios de la unidad de mecanismos */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:8px 0}
+.flow .bx{flex:1 1 150px;max-width:220px;border-radius:12px;padding:10px;text-align:center;font-weight:700;border:2px solid}
+.flow .ar{font-size:1.6rem;color:var(--c)}
+.m1{background:#ffe3e3;border-color:#e03131}.m2{background:#d3f9d8;border-color:#2f9e44}.m3{background:#d0ebff;border-color:#1971c2}
+.flow .bx small{display:block;font-weight:400;font-size:.88rem;margin-top:3px}
+.mov{text-align:center}.mov svg{width:100%;max-width:200px;height:110px;display:block;margin:auto}
+@keyframes lin{0%{transform:translateX(0)}100%{transform:translateX(110px)}}
+@keyframes alt{0%,100%{transform:translateX(0)}50%{transform:translateX(90px)}}
+@keyframes rot{to{transform:rotate(360deg)}}
+.lin{animation:lin 2.4s linear infinite}.alt{animation:alt 2s ease-in-out infinite}.rot{animation:rot 3s linear infinite;transform-origin:100px 55px;transform-box:view-box}
+.big{font-size:2.4rem;text-align:center;line-height:1.2}
+.res{font-size:1.1rem}input[type=range]{accent-color:var(--c);width:150px}input[type=number]{padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem}
+header{position:relative}
+.lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
+.lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
+.lang button.on{background:#fff;color:var(--c)}
+.l1{background:#e7f5ff;border-left:5px solid #1971c2;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:.95rem;color:#1d3557;font-weight:400}
+.l1[dir=rtl]{border-left:0;border-right:5px solid #1971c2;text-align:right;font-family:'Noto Naskh Arabic','Geeza Pro',Tahoma,Arial,sans-serif;font-size:1.05rem;line-height:1.8}
+.l1 ul,.l1 ol{margin:4px 0;padding-inline-start:22px}.l1t{display:block;font-weight:800;font-size:.8rem;margin-bottom:2px;color:#1971c2}
+.l1o{color:#1971c2;font-size:.9em}.row .l1{margin:4px 0 0;padding:4px 8px;font-size:.88rem}
+@media(max-width:640px){.lang{position:static;margin-top:8px}}
+@media print{.lang{display:none!important}}
+</style></head><body>
+<header><p class="eb">Tecnología y Digitalización · 1º ESO · Mecanismos · Parte 3 de 3</p><h1>🔄 La transmisión del giro</h1></header>
+<div class="portada"><img src="portada-mecanismos.jpg" alt="Chico montando en bicicleta por una calle de la ciudad"></div>
+<nav><a href="index.html">🏠 Inicio</a><a href="#porque">¿Para qué?</a><a href="#sistemas">Tres sistemas</a><a href="#sim">Simulador</a><a href="#tipos">Más rápido o más lento</a><a href="#sentido">Sentido de giro</a><a href="#calc">Calcula</a><a href="#bici">Las marchas</a><a href="#preg">Piensa</a><a href="#practica">Cuaderno</a><a class="act-nav" href="3-transmision-giro-actividades.html">🧩 Actividades</a></nav>
+<main>
+<section id="porque"><h2>¿Para qué sirve transmitir el giro?</h2>
+<div class="card">Las <b>primeras bicicletas</b> (velocípedos) tenían los pedales en la rueda delantera. Para ir rápido, la rueda tenía que ser <b>enorme</b>: eran incómodas y peligrosas. 🚲</div>
+<div class="card key">Con la <b>cadena</b> conseguimos dos cosas:<ol><li>Llevar el giro <b>lejos</b>: de los pedales a la rueda trasera.</li><li><b>Cambiar la velocidad</b> de giro: la rueda gira más rápido que los pedales.</li></ol></div>
+<div class="card tip">Para cambiar la velocidad, las dos ruedas tienen que ser de <b>distinto tamaño</b>.</div></section>
+
+<section id="sistemas"><h2>Tres formas de transmitir el giro</h2>
+<div class="fg">
+<div class="card" style="margin:6px 0;text-align:center"><b>Poleas con correa</b><svg id="s_pc" viewBox="0 0 260 150" style="width:100%;max-width:250px;display:block;margin:auto"></svg><small>Ej.: lavadora, cintas transportadoras.</small></div>
+<div class="card" style="margin:6px 0;text-align:center"><b>Engranajes</b><svg id="s_en" viewBox="0 0 260 150" style="width:100%;max-width:250px;display:block;margin:auto"></svg><small>Ej.: relojes, batidoras, coches. No patinan.</small></div>
+<div class="card" style="margin:6px 0;text-align:center"><b>Piñón y cadena</b><svg id="s_ca" viewBox="0 0 260 150" style="width:100%;max-width:250px;display:block;margin:auto"></svg><small>Ej.: bicicleta, moto.</small></div></div>
+<div class="card">También existen las <b>ruedas de fricción</b>: dos ruedas que se tocan y se arrastran. Giran en sentido <b>contrario</b> y con el uso se <b>desgastan</b>. <span class="ci">Ej.: impresoras.</span></div>
+<div class="card tip">La rueda que <b>empieza</b> el giro se llama <b>motriz</b>. La que <b>recibe</b> el giro se llama <b>conducida</b>.</div></section>
+
+<section id="sim"><h2>🎮 Simulador de engranajes</h2>
+<p>Elige los <b>dientes</b> de cada engranaje y fíjate en las <b>vueltas</b>.</p>
+<div class="card"><div class="row"><b style="color:#d9480f;min-width:150px">Motriz (naranja):</b><span id="c1"></span></div><div class="row"><b style="color:#1971c2;min-width:150px">Conducido (azul):</b><span id="c2"></span></div>
+<svg id="ssv" viewBox="0 0 400 200" class="im" style="width:100%;max-width:440px;display:block;margin:6px auto"><g id="sg1" fill="#d9480f"></g><g id="sg2" fill="#4dabf7"></g></svg>
+<div class="fb res" id="sres"></div></div></section>
+
+<section id="tipos"><h2>¿Más rápido o más lento?</h2>
+<div class="card key" style="text-align:center;font-size:1.15rem">🔑 La rueda <b>pequeña</b> siempre gira <b>más rápido</b> que la grande.</div>
+<div class="card"><table><tr><th>Sistema</th><th>¿Cómo son las ruedas?</th><th>¿Qué pasa?</th></tr>
+<tr><td><b>Multiplicador</b> ⏩</td><td>Motriz <b>grande</b> → conducida <b>pequeña</b></td><td>La conducida gira <b>más rápido</b></td></tr>
+<tr><td><b>Reductor</b> ⏪</td><td>Motriz <b>pequeña</b> → conducida <b>grande</b></td><td>La conducida gira <b>más despacio</b>, pero con <b>más fuerza</b></td></tr>
+<tr><td><b>Constante</b> ⏸️</td><td>Las dos <b>iguales</b></td><td>Giran a la <b>misma velocidad</b></td></tr></table></div>
+<div class="card tip">🚲 La bici es un sistema <b>multiplicador</b>: el plato (grande) mueve el piñón (pequeño) y la rueda da varias vueltas por cada pedalada.</div></section>
+
+<section id="sentido"><h2>El sentido de giro</h2>
+<div class="fg">
+<div class="card" style="margin:6px 0;text-align:center"><b>2 engranajes</b><svg id="d1" viewBox="0 0 260 130" style="width:100%;max-width:240px;display:block;margin:auto"></svg>Giran en sentido <b>contrario</b> 🔁</div>
+<div class="card" style="margin:6px 0;text-align:center"><b>3 engranajes</b><svg id="d2" viewBox="0 0 260 130" style="width:100%;max-width:240px;display:block;margin:auto"></svg>El 1º y el 3º giran en el <b>mismo</b> sentido. El del medio se llama <b>engranaje loco</b>.</div>
+<div class="card" style="margin:6px 0;text-align:center"><b>Correa normal</b><svg id="d3" viewBox="0 0 260 130" style="width:100%;max-width:240px;display:block;margin:auto"></svg>Giran en el <b>mismo</b> sentido ✅</div>
+<div class="card" style="margin:6px 0;text-align:center"><b>Correa cruzada</b><svg id="d4" viewBox="0 0 260 130" style="width:100%;max-width:240px;display:block;margin:auto"></svg>Giran en sentido <b>contrario</b> 🔁</div></div>
+<div class="row" style="justify-content:center"><button class="b g pp">⏸ Pausar</button></div></section>
+
+<section id="calc"><h2>Cómo se calcula</h2>
+<div class="card key" style="text-align:center"><div style="font-size:1.3rem;font-weight:800">Vueltas de la conducida = dientes de la motriz ÷ dientes de la conducida</div>(por cada vuelta de la motriz)</div>
+<div class="card"><b>Ejemplo:</b> el plato tiene <b>40</b> dientes y el piñón <b>10</b>.<br>40 ÷ 10 = <b>4</b>. Por cada pedalada, el piñón (y la rueda) da <b>4 vueltas</b>.</div>
+<div class="card"><h3 style="margin-top:0">🧮 Compruébalo</h3><div class="row">Dientes de la motriz <input type="number" id="z1" value="40" min="1" style="width:80px"> · Dientes de la conducida <input type="number" id="z2" value="10" min="1" style="width:80px"></div><div class="fb res" id="zout"></div></div>
+<div class="card tip">Con <b>poleas</b> se hace igual, pero usando el <b>diámetro</b> en lugar de los dientes.</div></section>
+
+<section id="bici"><h2>🚲 Las marchas de la bici</h2>
+<p>Elige un <b>plato</b> (delante) y un <b>piñón</b> (atrás).</p>
+<div class="card"><div class="row"><b style="min-width:70px">Plato:</b><span id="cp"></span></div><div class="row"><b style="min-width:70px">Piñón:</b><span id="cn"></span></div>
+<svg id="bsv" viewBox="0 0 400 190" class="im" style="width:100%;max-width:440px;display:block;margin:6px auto"></svg>
+<div class="fb res" id="bres"></div></div>
+<div class="card tip">⛰️ Para <b>subir una cuesta</b>: plato <b>pequeño</b> y piñón <b>grande</b>. 🏁 Para ir <b>rápido en llano</b>: plato <b>grande</b> y piñón <b>pequeño</b>.</div></section>
+
+<section id="preg"><h2>Piensa y responde <button class="b g" id="all" style="float:right;font-size:.85rem">Abrir todas</button></h2>
+<details><summary>¿Qué rueda gira más rápido, la grande o la pequeña?</summary>La <b>pequeña</b>.</details>
+<details><summary>Si la motriz es grande y la conducida pequeña, ¿es multiplicador o reductor?</summary><b>Multiplicador</b>: la conducida gira más rápido.</details>
+<details><summary>¿En qué sentido giran dos engranajes juntos?</summary>En sentido <b>contrario</b>.</details>
+<details><summary>¿Cómo consigo que dos poleas giren en sentido contrario?</summary><b>Cruzando</b> la correa.</details>
+<details><summary>Un engranaje de 30 dientes mueve otro de 10. ¿Cuántas vueltas da el pequeño por cada vuelta del grande?</summary>30 ÷ 10 = <b>3 vueltas</b>.</details></section>
+
+<section id="practica"><h2>✏️ En tu cuaderno</h2>
+<div class="card tip"><p style="margin-top:0"><b>Copia y haz</b> en tu cuaderno (libro, págs. 90 a 92):</p>
+<ol><li>Dibuja los <b>tres sistemas</b>: poleas con correa, engranajes y piñón con cadena.</li><li>Copia la tabla de <b>multiplicador</b>, <b>reductor</b> y <b>constante</b>.</li><li>Dibuja dos engranajes y marca con flechas el <b>sentido de giro</b> de cada uno.</li><li>Problema: un plato de <b>48 dientes</b> mueve un piñón de <b>12 dientes</b>. ¿Cuántas vueltas da la rueda por cada pedalada? ¿Es multiplicador o reductor?</li></ol>
+<details><summary>Ver solución del problema</summary>48 ÷ 12 = <b>4 vueltas</b>. Es <b>multiplicador</b>.</details></div>
+<h3>Antes de entregar</h3><a class="lk" href="3-transmision-giro-actividades.html">🧩 Hacer las actividades autocorregibles</a></section>
+
+<section id="glosario"><h2>Glosario</h2><dl><dt>Rueda motriz</dt><dd>La que empieza el giro.</dd><dt>Rueda conducida</dt><dd>La que recibe el giro.</dd><dt>Engranaje</dt><dd>Rueda con dientes que encaja con otra.</dd><dt>Piñón</dt><dd>Engranaje pequeño. En la bici, el de la rueda trasera.</dd><dt>Plato</dt><dd>Engranaje grande de los pedales de la bici.</dd><dt>Multiplicador</dt><dd>La conducida gira más rápido que la motriz.</dd><dt>Reductor</dt><dd>La conducida gira más despacio, pero con más fuerza.</dd><dt>Engranaje loco</dt><dd>Engranaje intermedio que sirve para cambiar el sentido de giro.</dd></dl></section>
+</main><footer>Carlos Alberto Toledo · 2026</footer>
+<script>
+const $=s=>document.querySelector(s);
+const f2=n=>String(+(+n).toFixed(2)).replace('.',',');
+function Anim(id,vb,mk,tx){const R=$('#'+id);clearInterval(R._t);let n=0;const N=tx.length-1;
+R.innerHTML='<div class="row"><button class="b g">◀ Anterior</button><button class="b">Siguiente ▶</button><button class="b g">▶ Reproducir</button><button class="b g">↺ Reiniciar</button></div><svg viewBox="'+vb+'" class="im" style="width:100%;max-width:480px;display:block;margin:6px auto">'+mk+'</svg><div class="fb" style="min-height:3.2em"></div>';
+const[bp,bn,bl,br]=R.querySelectorAll('button'),sv=R.querySelector('svg'),t=R.querySelector('.fb');
+const set=k=>{n=Math.max(0,Math.min(N,k));sv.querySelectorAll('[data-s]').forEach(e=>{const a=+e.dataset.s,z=e.dataset.e===undefined?99:+e.dataset.e;e.classList.toggle('v',n>=a&&n<=z)});t.innerHTML='<b>Paso '+(n+1)+' de '+(N+1)+'.</b> '+tx[n];bp.disabled=n==0;bn.disabled=n==N};
+bp.onclick=()=>{clearInterval(R._t);set(n-1)};bn.onclick=()=>{clearInterval(R._t);set(n+1)};br.onclick=()=>{clearInterval(R._t);set(0)};
+bl.onclick=()=>{clearInterval(R._t);set(0);R._t=setInterval(()=>{if(n>=N)clearInterval(R._t);else set(n+1)},2300)};set(0)}
+
+/* Engranaje: radio primitivo r, z dientes, altura del diente h */
+function gearD(r,z,h){const a=2*Math.PI/z,P=[];for(let i=0;i<z;i++){const t=i*a;[[r-h/2,t-a*.27],[r+h/2,t-a*.12],[r+h/2,t+a*.12],[r-h/2,t+a*.27]].forEach(([R,u])=>P.push((R*Math.cos(u)).toFixed(1)+','+(R*Math.sin(u)).toFixed(1)))}return 'M'+P.join('L')+'Z'}
+const gear=(el,cx,cy,r,z,h)=>{el.innerHTML='<path d="'+gearD(r,z,h)+'"/>';el._c=[cx,cy];el.setAttribute('transform','translate('+cx+' '+cy+')')};
+const rotG=(el,deg)=>el.setAttribute('transform','translate('+el._c[0]+' '+el._c[1]+') rotate('+deg+')');
+
+
+
+const NS='http://www.w3.org/2000/svg';
+const ROT=[];let run=true;
+/* rueda: tipo 'g' engranaje (m=4 → z=r/2), 'p' polea con radios. k = grados/s; off = desfase */
+function wheel(svg,cx,cy,r,tipo,col,k,off,z){const g=document.createElementNS(NS,'g');g.setAttribute('fill',col);
+ if(tipo=='g'){z=z||Math.round(r/2);g.innerHTML='<path d="'+gearD(r,z,8)+'"/><circle r="5" fill="#fff"/><circle cx="'+(r*0.55)+'" r="3.5" fill="#fff"/>'}
+ else g.innerHTML='<circle r="'+r+'" fill="'+col+'" stroke="#495057" stroke-width="3"/><circle r="'+(r-6)+'" fill="#f1f3f5"/>'+[0,120,240].map(a=>'<line x1="0" y1="0" x2="'+((r-6)*Math.cos(a*Math.PI/180)).toFixed(1)+'" y2="'+((r-6)*Math.sin(a*Math.PI/180)).toFixed(1)+'" stroke="'+col+'" stroke-width="4"/>').join('')+'<circle r="4" fill="#495057"/>';
+ g._c=[cx,cy];svg.appendChild(g);const o={el:g,k:k,off:off||0};ROT.push(o);rotG(g,o.off);return o}
+const belt=(svg,x1,r1,x2,r2,cy,cross,dash)=>{const a=dash?'stroke-dasharray="5 3" stroke-width="5"':'stroke-width="4"';svg.insertAdjacentHTML('beforeend',cross?'<line x1="'+x1+'" y1="'+(cy-r1)+'" x2="'+x2+'" y2="'+(cy+r2)+'" stroke="#343a40" '+a+'/><line x1="'+x1+'" y1="'+(cy+r1)+'" x2="'+x2+'" y2="'+(cy-r2)+'" stroke="#343a40" '+a+'/>':'<line x1="'+x1+'" y1="'+(cy-r1)+'" x2="'+x2+'" y2="'+(cy-r2)+'" stroke="#343a40" '+a+'/><line x1="'+x1+'" y1="'+(cy+r1)+'" x2="'+x2+'" y2="'+(cy+r2)+'" stroke="#343a40" '+a+'/>')};
+const lab=(svg,x,y,t)=>svg.insertAdjacentHTML('beforeend','<text x="'+x+'" y="'+y+'" font-size="12" font-weight="700" text-anchor="middle" fill="#495057">'+t+'</text>');
+const V=60;
+/* Tres sistemas */
+let s=$('#s_pc');belt(s,75,45,195,25,70);wheel(s,75,70,45,'p','#d9480f',V);wheel(s,195,70,25,'p','#4dabf7',V*45/25);lab(s,75,140,'motriz');lab(s,195,140,'conducida');
+s=$('#s_en');wheel(s,90,70,48,'g','#d9480f',V,0,24);wheel(s,90+48+28,70,28,'g','#4dabf7',-V*24/14,180/14,14);lab(s,90,140,'motriz');lab(s,166,140,'conducida');
+s=$('#s_ca');belt(s,75,44,200,20,70,0,1);wheel(s,75,70,44,'g','#d9480f',V,0,22);wheel(s,200,70,20,'g','#4dabf7',V*22/10,0,10);lab(s,75,140,'plato (motriz)');lab(s,200,140,'piñón (conducida)');
+/* Sentido de giro */
+s=$('#d1');wheel(s,85,62,40,'g','#d9480f',V,0,20);wheel(s,165,62,40,'g','#4dabf7',-V,9,20);
+s=$('#d2');wheel(s,66,62,32,'g','#d9480f',V,0,16);wheel(s,130,62,32,'g','#ffd43b',-V,180/16,16);wheel(s,194,62,32,'g','#4dabf7',V,0,16);lab(s,130,122,'loco');
+s=$('#d3');belt(s,80,38,185,38,62);wheel(s,80,62,38,'p','#d9480f',V);wheel(s,185,62,38,'p','#4dabf7',V);
+s=$('#d4');belt(s,80,38,185,38,62,1);wheel(s,80,62,38,'p','#d9480f',V);wheel(s,185,62,38,'p','#4dabf7',-V);
+/* Simulador */
+const ZS=[10,20,30,40];let Z1=40,Z2=20,sim1,sim2,turns0=0;
+function setSim(){const g1=$('#sg1'),g2=$('#sg2');[sim1,sim2].forEach(o=>{if(o)ROT.splice(ROT.indexOf(o),1)});
+ const r1=Z1*2,r2=Z2*2,cx1=30+r1,cx2=cx1+r1+r2,sv=$('#ssv');sv.setAttribute('viewBox','0 '+(100-Math.max(r1,r2)-10)+' '+(cx2+r2+30)+' '+(2*Math.max(r1,r2)+20));
+ g1.innerHTML='';g2.innerHTML='';
+ g1.innerHTML='<path d="'+gearD(r1,Z1,8)+'"/><circle r="5" fill="#fff"/><circle cx="'+(r1*0.6)+'" r="5" fill="#fff"/>';g1._c=[cx1,100];
+ g2.innerHTML='<path d="'+gearD(r2,Z2,8)+'"/><circle r="5" fill="#fff"/><circle cx="'+(r2*0.6)+'" r="5" fill="#fff"/>';g2._c=[cx2,100];
+ sim1={el:g1,k:45,off:0};sim2={el:g2,k:-45*Z1/Z2,off:180+180/Z2};ROT.push(sim1,sim2);T=0;
+ const v=Z1/Z2,tp=v>1?'<b>multiplicador</b> ⏩: el azul gira <b>más rápido</b>':v<1?'<b>reductor</b> ⏪: el azul gira <b>más despacio</b>':'<b>constante</b> ⏸️: giran igual de rápido';
+ $('#sres').innerHTML='Por cada vuelta del naranja, el azul da '+Z1+' ÷ '+Z2+' = <b>'+f2(v)+' vueltas</b>. Es un sistema '+tp+'.<br><span style="font-weight:400">Fíjate en el <b>punto blanco</b> para contar las vueltas.</span>';
+ document.querySelectorAll('#c1 .chip').forEach(c=>c.classList.toggle('sel',+c.textContent==Z1));document.querySelectorAll('#c2 .chip').forEach(c=>c.classList.toggle('sel',+c.textContent==Z2))}
+$('#c1').innerHTML=ZS.map(z=>'<span class="chip">'+z+'</span>').join('');$('#c2').innerHTML=ZS.map(z=>'<span class="chip">'+z+'</span>').join('');
+document.querySelectorAll('#c1 .chip').forEach(c=>c.onclick=()=>{Z1=+c.textContent;setSim()});document.querySelectorAll('#c2 .chip').forEach(c=>c.onclick=()=>{Z2=+c.textContent;setSim()});
+/* Marchas */
+const PL=[30,40,50],PI=[10,20,30];let zp=40,zn=20,bk1,bk2;
+function setBk(){const sv=$('#bsv');[bk1,bk2].forEach(o=>{if(o)ROT.splice(ROT.indexOf(o),1)});sv.innerHTML='';
+ const rp=zp*1.4,rn=zn*1.4;belt(sv,250,rp,95,rn,95,0,1);bk1=wheel(sv,250,95,rp,'g','#d9480f',40,0,zp);bk2=wheel(sv,95,95,rn,'g','#4dabf7',40*zp/zn,0,zn);
+ lab(sv,250,185,'plato '+zp+' dientes');lab(sv,95,185,'piñón '+zn+' dientes');
+ const v=zp/zn,uso=v<1.6?'⛰️ <b>Subir cuestas</b>: pedaleas con poca fuerza, pero avanzas despacio.':v<=2.5?'🛣️ <b>Ir por llano</b> a ritmo normal.':'🏁 <b>Ir muy rápido</b>: cuesta más pedalear.';
+ $('#bres').innerHTML='Por cada pedalada, la rueda da '+zp+' ÷ '+zn+' = <b>'+f2(v)+' vueltas</b>.<br>'+uso;
+ document.querySelectorAll('#cp .chip').forEach(c=>c.classList.toggle('sel',+c.textContent==zp));document.querySelectorAll('#cn .chip').forEach(c=>c.classList.toggle('sel',+c.textContent==zn))}
+$('#cp').innerHTML=PL.map(z=>'<span class="chip">'+z+'</span>').join('');$('#cn').innerHTML=PI.map(z=>'<span class="chip">'+z+'</span>').join('');
+document.querySelectorAll('#cp .chip').forEach(c=>c.onclick=()=>{zp=+c.textContent;setBk()});document.querySelectorAll('#cn .chip').forEach(c=>c.onclick=()=>{zn=+c.textContent;setBk()});
+let T=0,t0=performance.now();
+function loop(now){const dt=(now-t0)/1000;t0=now;if(run)T+=dt;ROT.forEach(o=>rotG(o.el,o.off+o.k*(o===sim1||o===sim2?T:T)));requestAnimationFrame(loop)}
+setSim();setBk();requestAnimationFrame(loop);
+document.querySelectorAll('.pp').forEach(b=>b.onclick=()=>{run=!run;document.querySelectorAll('.pp').forEach(x=>x.textContent=run?'⏸ Pausar':'▶ Reanudar')});
+const zc=()=>{const a=+$('#z1').value,b=+$('#z2').value;$('#zout').innerHTML=a>0&&b>0?a+' ÷ '+b+' = <b>'+f2(a/b)+' vueltas</b> → '+(a>b?'multiplicador ⏩':a<b?'reductor ⏪':'constante ⏸️'):''};['z1','z2'].forEach(i=>$('#'+i).oninput=zc);zc();
+$('#all').onclick=()=>{const d=[...document.querySelectorAll('#preg details')],o=d.every(x=>x.open);d.forEach(x=>x.open=!o);$('#all').textContent=o?'Abrir todas':'Cerrar todas'};
+</script>
+<script>window.ACT_HREF="3-transmision-giro-actividades.html";(function(){const S=[...document.querySelectorAll('main>section')],N=S.length,$=s=>document.querySelector(s);let cur=-1;
+const bar=document.createElement('div');bar.id='sl';
+bar.innerHTML='<button class="b g" id="sp">◀ Anterior</button><div id="si"><b id="sn"></b><span id="st"></span><div class="bar"><i id="sb"></i></div></div><button class="b" id="snx">Siguiente ▶</button>';
+document.body.append(bar);
+const ttl=s=>{const h=s.querySelector('h2');return h?h.firstChild.textContent.trim():''};
+function show(i,scroll){i=Math.max(0,Math.min(N-1,i));
+ if(cur>=0&&cur!=i){S[cur].querySelectorAll('iframe').forEach(f=>{f.src=f.src});S[cur].querySelectorAll('video').forEach(v=>v.pause())}
+ S.forEach((s,k)=>s.classList.toggle('on',k==i));cur=i;
+ $('#sn').textContent=(i+1)+' / '+N;$('#st').textContent=ttl(S[i]);$('#sb').style.width=((i+1)/N*100)+'%';
+ $('#sp').disabled=i==0;const nx=$('#snx');
+ if(i==N-1&&window.ACT_HREF){nx.outerHTML='<a class="b" id="snx" href="'+window.ACT_HREF+'">🧩 Ir a las actividades ▶</a>'}
+ else if(nx.tagName=='A'){nx.outerHTML='<button class="b" id="snx">Siguiente ▶</button>';wire()}
+ else nx.disabled=i==N-1;
+ document.querySelectorAll('nav a').forEach(a=>{const h=a.getAttribute('href');a.classList.toggle('cur',h&&h[0]=='#'&&S[i].contains(document.getElementById(h.slice(1)))||h=='#'+S[i].id)});
+ try{history.replaceState(null,'','#'+(S[i].id||('p'+(i+1))))}catch(e){}
+ if(scroll){const m=document.querySelector('main');window.scrollTo({top:Math.max(0,m.getBoundingClientRect().top+scrollY-10),behavior:'smooth'})}}
+function wire(){$('#snx').onclick=()=>show(cur+1,1)}
+$('#sp').onclick=()=>show(cur-1,1);wire();
+document.querySelectorAll('nav a').forEach(a=>{const h=a.getAttribute('href');if(h&&h[0]=='#')a.onclick=e=>{e.preventDefault();const t=document.getElementById(h.slice(1));const k=S.findIndex(s=>s.contains(t));if(k>=0)show(k,1)}});
+document.addEventListener('keydown',e=>{if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;if(e.key=='ArrowRight')show(cur+1,1);if(e.key=='ArrowLeft')show(cur-1,1)});
+let k0=0;const h=location.hash.slice(1);if(h){const t=document.getElementById(h);k0=Math.max(0,S.findIndex(s=>s.contains(t)))}
+show(k0,0);})();
+</script>
+<script>
+window.L1={
+en:{
+porque:'Old bikes (<b>velocípedos</b>) had the pedals on a huge front wheel. With a <b>chain (cadena)</b> we can:<ol><li>take the turning movement far away, to the back wheel;</li><li>change the <b>speed (velocidad)</b> of turning.</li></ol>To change the speed, the wheels must have <b>different sizes</b>.',
+sistemas:'3 ways to pass on turning: <b>pulleys with a belt (poleas con correa)</b>, <b>gears (engranajes)</b> and <b>sprocket and chain (piñón y cadena)</b>.<br>The wheel that starts is the <b>driver (motriz)</b>. The wheel that receives the movement is the <b>driven wheel (conducida)</b>. Friction wheels (ruedas de fricción) touch each other and turn in opposite directions.',
+sim:'Choose the number of <b>teeth (dientes)</b> of each gear. Watch the white dot to count the <b>turns (vueltas)</b>.',
+tipos:'Key idea: the <b>small wheel always turns faster</b>.<ul><li>Big → small = <b>speed-up (multiplicador)</b></li><li>Small → big = <b>slow-down (reductor)</b>, with more force</li><li>Same size = <b>constant (constante)</b></li></ul>',
+sentido:'<b>Direction of turning (sentido de giro)</b>:<ul><li>2 gears: <b>opposite</b> directions (contrario).</li><li>3 gears: the 1st and the 3rd turn the <b>same</b> way (mismo). The middle one is the <b>idler gear (engranaje loco)</b>.</li><li>Normal belt (correa): same way. Crossed belt (correa cruzada): opposite.</li></ul>',
+calc:'<b>Turns of the driven wheel = teeth of the driver ÷ teeth of the driven wheel.</b><br>Example: 40 ÷ 10 = <b>4 turns</b>. With pulleys, use the <b>diameter (diámetro)</b>.',
+bici:'Choose a <b>chainring (plato)</b> at the front and a <b>sprocket (piñón)</b> at the back.<ul><li>Uphill (<b>cuesta</b>): small chainring + big sprocket.</li><li>Fast on a flat road (<b>llano</b>): big chainring + small sprocket.</li></ul>',
+preg:'Read each question and think. Click on it to see the answer.',
+practica:'In your <b>notebook (cuaderno)</b>:<ol><li>Draw the 3 systems.</li><li>Copy the table: multiplicador, reductor, constante.</li><li>Draw two gears with arrows for the direction of turning.</li><li>Problem: a chainring with 48 teeth moves a sprocket with 12 teeth. How many turns does the wheel make for each pedal turn? Is it speed-up or slow-down?</li></ol>',
+glosario:'<ul><li><b>rueda motriz</b> = driver wheel</li><li><b>rueda conducida</b> = driven wheel</li><li><b>engranaje</b> = gear</li><li><b>diente</b> = tooth</li><li><b>plato</b> = chainring</li><li><b>piñón</b> = sprocket, small gear</li><li><b>cadena</b> = chain</li><li><b>correa</b> = belt</li><li><b>multiplicador</b> = speed-up</li><li><b>reductor</b> = slow-down</li><li><b>engranaje loco</b> = idler gear</li></ul>'},
+ar:{
+porque:'الدرّاجات القديمة (<b>velocípedos</b>) كانت دوّاساتها على عجلة أمامية ضخمة. بواسطة <b>السلسلة (cadena)</b> يمكننا:<ol><li>نقل الدوران بعيدًا، إلى العجلة الخلفية؛</li><li>تغيير <b>سرعة (velocidad)</b> الدوران.</li></ol>لتغيير السرعة يجب أن تكون العجلات <b>بأحجام مختلفة</b>.',
+sistemas:'3 طرق لنقل الدوران: <b>بكرات مع سير (poleas con correa)</b>، <b>تروس (engranajes)</b>، <b>ترس وسلسلة (piñón y cadena)</b>.<br>العجلة التي تبدأ هي <b>المحرِّكة (motriz)</b>، والتي تستقبل الحركة هي <b>المُدارة (conducida)</b>. عجلات الاحتكاك (ruedas de fricción) تتلامس وتدور في اتجاهين متعاكسين.',
+sim:'اختر عدد <b>الأسنان (dientes)</b> لكل ترس. راقب النقطة البيضاء لتعدّ <b>الدورات (vueltas)</b>.',
+tipos:'الفكرة الأساسية: <b>العجلة الصغيرة تدور دائمًا أسرع</b>.<ul><li>كبيرة ← صغيرة = <b>مُضاعِف للسرعة (multiplicador)</b></li><li>صغيرة ← كبيرة = <b>مُخفِّض للسرعة (reductor)</b>، مع قوة أكبر</li><li>نفس الحجم = <b>ثابت (constante)</b></li></ul>',
+sentido:'<b>اتجاه الدوران (sentido de giro)</b>:<ul><li>ترسان: اتجاهان <b>متعاكسان</b> (contrario).</li><li>3 تروس: الأول والثالث في <b>نفس</b> الاتجاه (mismo). الترس الأوسط اسمه <b>الترس الوسيط (engranaje loco)</b>.</li><li>سير عادي (correa): نفس الاتجاه. سير متقاطع (correa cruzada): اتجاه معاكس.</li></ul>',
+calc:'<b>دورات العجلة المُدارة = أسنان المحرِّكة ÷ أسنان المُدارة.</b><br>مثال: 40 ÷ 10 = <b>4 دورات</b>. مع البكرات نستعمل <b>القطر (diámetro)</b>.',
+bici:'اختر <b>الترس الأمامي (plato)</b> و<b>الترس الخلفي (piñón)</b>.<ul><li>للصعود (<b>cuesta</b>): ترس أمامي صغير + ترس خلفي كبير.</li><li>للسرعة على طريق مستوٍ (<b>llano</b>): ترس أمامي كبير + ترس خلفي صغير.</li></ul>',
+preg:'اقرأ كل سؤال وفكّر. اضغط عليه لترى الجواب.',
+practica:'في <b>دفترك (cuaderno)</b>:<ol><li>ارسم الأنظمة الثلاثة.</li><li>انسخ الجدول: multiplicador، reductor، constante.</li><li>ارسم ترسين مع أسهم تبيّن اتجاه الدوران.</li><li>مسألة: ترس أمامي فيه 48 سنًّا يحرّك ترسًا خلفيًا فيه 12 سنًّا. كم دورة تدور العجلة مع كل دورة للدوّاسة؟ هل هو مُضاعِف أم مُخفِّض؟</li></ol>',
+glosario:'<ul><li><b>rueda motriz</b> = العجلة المحرِّكة</li><li><b>rueda conducida</b> = العجلة المُدارة</li><li><b>engranaje</b> = ترس</li><li><b>diente</b> = سنّ</li><li><b>plato</b> = الترس الأمامي</li><li><b>piñón</b> = الترس الخلفي (ترس صغير)</li><li><b>cadena</b> = سلسلة</li><li><b>correa</b> = سير</li><li><b>multiplicador</b> = مُضاعِف للسرعة</li><li><b>reductor</b> = مُخفِّض للسرعة</li><li><b>engranaje loco</b> = الترس الوسيط</li></ul>'}};
+
+
+/* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
+(function(){
+const TIT={en:'🇬🇧 Help in English',ar:'🌍 مساعدة بالعربية'};
+let cur='es';try{cur=localStorage.getItem('mec-lang')||'es'}catch(e){}
+const hd=document.querySelector('header');
+const bar=document.createElement('div');bar.className='lang noprint';bar.setAttribute('aria-label','Idioma / Language / اللغة');
+bar.innerHTML='<button data-l="es" title="Español">ES</button><button data-l="en" title="English">EN</button><button data-l="ar" title="العربية">ع</button>';
+hd.appendChild(bar);
+const box=(l,html,extra)=>{const d=document.createElement('div');d.className='l1'+(extra?' '+extra:'');if(l=='ar')d.dir='rtl';d.innerHTML=html;return d};
+window.LANG=()=>cur;
+window.l1box=box;window.L1TIT=TIT;
+function apply(l){cur=l;try{localStorage.setItem('mec-lang',l)}catch(e){}
+ bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));
+ document.querySelectorAll('.l1,.l1o').forEach(e=>e.remove());
+ document.querySelectorAll('option[data-t]').forEach(o=>o.textContent=o.dataset.t);
+ if(l=='es'){if(window.onLang)window.onLang(l);return}
+ /* Apuntes: un recuadro de apoyo bajo el título de cada sección */
+ const L=(window.L1||{})[l];
+ if(L)for(const id in L){const s=document.getElementById(id);if(!s)continue;const h=s.querySelector('h2');const d=box(l,'<span class="l1t">'+TIT[l]+'</span>'+L[id]);h?h.after(d):s.prepend(d)}
+ if(window.onLang)window.onLang(l)}
+bar.querySelectorAll('button').forEach(b=>b.onclick=()=>apply(b.dataset.l));
+window.applyLang=apply;
+apply(cur);
+})();
+/* Actividades: apoyo dentro de cada pregunta */
+function supA(a,Q){const l=window.LANG?LANG():'es';if(l=='es'||!window.L1A||!L1A[l])return;const T=L1A[l][a.id];if(!T)return;
+ const sec=document.getElementById(a.id);if(T.tip&&!sec.querySelector(':scope>.l1')){sec.querySelector('h2').after(l1box(l,'<span class="l1t">'+L1TIT[l]+'</span>'+T.tip))}
+ if(a.tipo=='mc'){Q.querySelectorAll('.act').forEach((c,i)=>{const t=T.it[i];if(!t)return;c.querySelector('h4').after(l1box(l,t[0]));c.querySelectorAll('label').forEach(lb=>{const k=+lb.querySelector('input').value;if(t[1][k].trim()===lb.textContent.trim())return;const sp=document.createElement('span');sp.className='l1o';sp.style.marginLeft='14px';sp.style.display='inline-block';if(l=='ar')sp.dir='rtl';sp.textContent=t[1][k];lb.appendChild(sp)})})}
+ if(a.tipo=='sel'){Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;const sp=s.closest('.row').querySelector('span');if(T.it[i])sp.appendChild(l1box(l,T.it[i]));s.querySelectorAll('option').forEach((o,k)=>{if(!k)return;o.dataset.t=o.dataset.t||o.textContent;o.textContent=o.dataset.t+' · '+T.op[k-1]})})}
+ if(a.tipo=='num'){Q.querySelectorAll('input.n').forEach(e=>{const i=+e.dataset.i;const c=e.closest('.act');if(T.it[i])c.querySelector('h4').after(l1box(l,T.it[i]))})}
+ if(a.tipo=='fill'){const c=Q.querySelector('.fill');c.after(l1box(l,T.txt));Q.querySelectorAll('select').forEach(s=>{const i=+s.dataset.i;s.querySelectorAll('option').forEach(o=>{if(!o.value)return;o.dataset.t=o.dataset.t||o.textContent;const tr=(T.h&&T.h[i]&&T.h[i][o.dataset.t]);if(tr)o.textContent=o.dataset.t+' · '+tr})})}}
+
+</script>
+</body></html>
