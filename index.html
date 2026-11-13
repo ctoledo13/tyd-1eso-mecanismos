@@ -1,54 +1,10 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mecanismos · 1º ESO · Tecnología y Digitalización</title><style>
-:root{--c:#d9480f;--c2:#a8380b;--cl:#fff0e6;--bg:#fff8f3;--ok:#2f9e44;--ko:#c92a2a;--hl:#1971c2}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#1d2733;line-height:1.55;font-size:17px}
-header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}header p{margin:2px 0 10px;opacity:.9}
-nav{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;background:#fff;box-shadow:0 1px 4px #0002}
-main{max-width:900px;margin:0 auto;padding:14px}section{display:none}section.on{display:block}
-h2{color:var(--c);margin-top:6px}h3{margin:18px 0 6px}
-.card{background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001}
-.tip{border-left:6px solid #f59f00;background:#fff9db}.key{border-left:6px solid var(--c);background:var(--cl)}
-details{background:#fff;border-radius:12px;margin:8px 0;padding:10px 14px;box-shadow:0 1px 4px #0001}summary{font-weight:700;cursor:pointer}
-table{border-collapse:collapse;width:100%}th,td{border:1px solid #e3c9b8;padding:7px;text-align:left;vertical-align:top}th{background:var(--cl)}
-button.b,a.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:8px 14px;font-size:1rem;cursor:pointer;margin:6px 6px 0 0}
-button.g{background:#868e96}.fb{margin-top:6px;font-weight:600}
-.chip{display:inline-block;background:var(--cl);border:1px solid var(--c);border-radius:16px;padding:4px 12px;margin:3px;cursor:pointer;font-weight:600}
-.chip.sel{background:var(--c);color:#fff}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:5px 0}
-.bar{height:12px;background:#dee2e6;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0}
-a.lk{display:inline-block;background:#fff;border:2px solid var(--c);border-radius:10px;padding:8px 14px;margin:4px;color:var(--c);font-weight:700;text-decoration:none}
-.im{max-width:100%;background:#fff;border-radius:10px;padding:4px}
-nav a{border:2px solid var(--c);color:var(--c);border-radius:20px;padding:6px 13px;font-weight:700;text-decoration:none;font-size:.92rem;background:#fff}nav a:hover{background:var(--c);color:#fff}
-dt{font-weight:700;margin-top:8px}dd{margin:0 0 4px 14px}footer{text-align:center;font-size:.8rem;color:#667;padding:18px}
-.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}.portada{max-width:900px;margin:12px auto 0;padding:0 14px}.portada img{width:100%;max-height:300px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 2px 8px #0002}
-[data-s]{opacity:0;transition:opacity .6s}[data-s].v{opacity:1}
-.card ol,.card ul{margin:6px 0;padding-left:22px}.card li{margin:3px 0}nav a.act-nav{background:var(--c);color:#fff}nav a.act-nav:hover{background:var(--c2)}
-.fg{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center}.fg>div{flex:1 1 240px}.ci{color:var(--hl);font-weight:700}nav a.cur{background:var(--c);color:#fff}body{padding-bottom:84px}
-#sl{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;box-shadow:0 -2px 10px #0003;display:flex;gap:10px;align-items:center;justify-content:center;padding:8px 12px}
-#sl button,#sl a{margin:0;white-space:nowrap;text-decoration:none;display:inline-block}#sl button:disabled{opacity:.35;cursor:default}
-#si{flex:1;max-width:340px;text-align:center;line-height:1.25}#si b{font-size:1.15rem}#st{display:block;font-size:.8rem;color:#556;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#sb{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
-#sl .bar{margin-top:4px}@media print{#sl,nav,button{display:none!important}section{display:block!important}}
-@media(max-width:480px){#sl{gap:6px;padding:8px}#sl .b{padding:8px 10px;font-size:.95rem}}
-/* Propios de la unidad de mecanismos */
-.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:8px 0}
-.flow .bx{flex:1 1 150px;max-width:220px;border-radius:12px;padding:10px;text-align:center;font-weight:700;border:2px solid}
-.flow .ar{font-size:1.6rem;color:var(--c)}
-.m1{background:#ffe3e3;border-color:#e03131}.m2{background:#d3f9d8;border-color:#2f9e44}.m3{background:#d0ebff;border-color:#1971c2}
-.flow .bx small{display:block;font-weight:400;font-size:.88rem;margin-top:3px}
-.mov{text-align:center}.mov svg{width:100%;max-width:200px;height:110px;display:block;margin:auto}
-@keyframes lin{0%{transform:translateX(0)}100%{transform:translateX(110px)}}
-@keyframes alt{0%,100%{transform:translateX(0)}50%{transform:translateX(90px)}}
-@keyframes rot{to{transform:rotate(360deg)}}
-.lin{animation:lin 2.4s linear infinite}.alt{animation:alt 2s ease-in-out infinite}.rot{animation:rot 3s linear infinite;transform-origin:100px 55px;transform-box:view-box}
-.big{font-size:2.4rem;text-align:center;line-height:1.2}
-.res{font-size:1.1rem}input[type=range]{accent-color:var(--c);width:150px}input[type=number]{padding:6px;border-radius:6px;border:1px solid #9aa5b1;font-size:1rem}
-body{padding-bottom:0}main{padding-bottom:10px}
-.flow .bx{max-width:190px}.s1{background:#fff9db;border-color:#f59f00}.s2{background:var(--cl);border-color:var(--c)}.s3{background:#d3f9d8;border-color:#2f9e44}.s4{background:#d0ebff;border-color:#1971c2}
-.parte{display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001;border-left:6px solid var(--c)}
-.parte .num{flex:0 0 52px;height:52px;border-radius:50%;background:var(--c);color:#fff;font-size:1.6rem;font-weight:800;display:flex;align-items:center;justify-content:center}
-.parte .txt{flex:1 1 300px}.parte h3{margin:0 0 2px;color:var(--c)}.parte p{margin:0 0 4px}.parte small{color:#667}
-.parte .btns{display:flex;flex-wrap:wrap;gap:6px}.parte a.b{text-decoration:none;display:inline-block;margin:0;font-weight:700}a.b.act{background:#1971c2}
-.parte.final{border-left-color:#2f9e44}.parte.final .num{background:#2f9e44}
-header{position:relative}
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mecanismos · 1º ESO</title><style>
+:root{--c:#d9480f}*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:#fff8f3;color:#1d2733;line-height:1.55;font-size:17px}
+header{background:var(--c);color:#fff;padding:16px 20px}header h1{margin:0;font-size:1.6rem}.eb{margin:0 0 4px;font-size:.95rem;opacity:.92;font-weight:600}
+main{max-width:900px;margin:0 auto;padding:14px}.portada img{width:100%;max-height:300px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 2px 8px #0002}
+.p{display:block;background:#fff;border-radius:14px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 5px #0001;color:inherit;text-decoration:none}a.p{border:2px solid var(--c)}a.p:hover{background:#fff0e6}.p b{color:var(--c);font-size:1.1rem}.p.n{opacity:.6}
+a.p.fin{border-color:#2f9e44}a.p.fin b{color:#2f9e44}a.p.fin:hover{background:#ebfbee}
+footer{text-align:center;font-size:.8rem;color:#667;padding:18px}header{position:relative}
 .lang{display:flex;gap:4px;position:absolute;top:12px;right:14px}
 .lang button{background:transparent;border:2px solid #fff;color:#fff;border-radius:14px;padding:3px 10px;font-weight:800;cursor:pointer;font-size:.9rem;font-family:inherit}
 .lang button.on{background:#fff;color:var(--c)}
@@ -59,32 +15,22 @@ header{position:relative}
 @media(max-width:640px){.lang{position:static;margin-top:8px}}
 @media print{.lang{display:none!important}}
 </style></head><body>
-<header><p class="eb">Tecnología y Digitalización · 1º ESO · Unidad 3</p><h1>⚙️ Mecanismos</h1></header>
-<div class="portada"><img src="portada-mecanismos.jpg" alt="Chico montando en bicicleta por una calle de la ciudad"></div>
-<main>
-<div id="intro"><h2>¿Qué vas a aprender?</h2>
-<div class="card key">Los <b>mecanismos</b> están por todas partes: en la bici, en el reloj, en las tijeras… En esta unidad aprenderás a <b>reconocerlos</b> y a entender cómo nos ayudan a hacer las cosas con <b>menos esfuerzo</b>. 🚲</div>
-</div>
-
+<header><p class="eb">Tecnología y Digitalización · 1º ESO</p><h1>⚙️ Mecanismos</h1></header>
+<main><div class="portada"><img src="portada-mecanismos.jpg" alt="Chico montando en bicicleta por una calle de la ciudad"></div>
 <div id="partes"><h2>Contenido de la unidad</h2>
-<div class="parte"><div class="num">1</div><div class="txt"><h3>¿Qué es un mecanismo?</h3><p>Máquinas y mecanismos. Elemento <b>motriz</b>, <b>mecanismo</b> y elemento <b>receptor</b>. Tipos de movimiento.</p></div>
-<div class="btns"><a class="b" href="1-mecanismos.html">📘 Apuntes</a><a class="b act" href="1-mecanismos-actividades.html">🧩 Actividades</a></div></div>
-<div class="parte"><div class="num">2</div><div class="txt"><h3>Palancas y poleas</h3><p>La <b>ley de la palanca</b> y sus tres tipos. La polea <b>fija</b> y la polea <b>móvil</b>. 🎬 Con vídeo.</p></div>
-<div class="btns"><a class="b" href="2-palancas-poleas.html">📘 Apuntes</a><a class="b act" href="2-palancas-poleas-actividades.html">🧩 Actividades</a></div></div>
-<div class="parte"><div class="num">3</div><div class="txt"><h3>La transmisión del giro</h3><p>Poleas con correa, <b>engranajes</b> y <b>cadena</b>. Más rápido o más lento. Sentido de giro. Las marchas de la bici.</p></div>
-<div class="btns"><a class="b" href="3-transmision-giro.html">📘 Apuntes</a><a class="b act" href="3-transmision-giro-actividades.html">🧩 Actividades</a></div></div>
-<div class="parte final"><div class="num">🏁</div><div class="txt"><h3>Trabajo final: El mapa de la bici</h3><p>Coloca las piezas de la bici, clasifícalas y dibuja tu bici en la libreta.</p></div>
-<div class="btns"><a class="b" href="trabajo-bicicleta.html">🗺️ Ir al trabajo</a></div></div></div>
-<!-- REPASO: cuando tengas el Blooket o el pasapalabra, añade aquí un bloque como este:
-<div id="repaso"><h2>🎮 Repaso</h2><div class="card"><a class="lk" href="ENLACE-BLOOKET" target="_blank">🎮 Blooket</a></div></div>
--->
-</main><footer>Carlos Alberto Toledo · 2026</footer>
-<script>
+<a class="p" href="1-mecanismos.html"><b>Parte 1 · ¿Qué es un mecanismo?</b><br>Máquinas y mecanismos: elemento motriz, mecanismo y elemento receptor.</a>
+<a class="p" href="2-palancas-poleas.html"><b>Parte 2 · Palancas y poleas</b><br>La ley de la palanca, sus tres tipos y las poleas fija y móvil.</a>
+<a class="p" href="3-transmision-giro.html"><b>Parte 3 · La transmisión del giro</b><br>Poleas con correa, engranajes y cadena. Las marchas de la bici.</a>
+<a class="p fin" href="trabajo-bicicleta.html"><b>🏁 Trabajo final · El mapa de la bici</b><br>Coloca las piezas de la bici, clasifícalas y dibuja tu bici en la libreta.</a></div>
+<!-- REPASO: cuando tengas el Blooket o el pasapalabra, añade aquí una tarjeta como esta:
+<a class="p" href="ENLACE-BLOOKET" target="_blank"><b>🎮 Repaso · Blooket</b><br>Juega y repasa toda la unidad.</a>
+--></main>
+<footer>Carlos Alberto Toledo · 2026</footer><script>
 window.L1={
 en:{intro:'In this unit you will learn to recognise <b>mechanisms (mecanismos)</b> and how they help us do things with <b>less effort</b>.',
-partes:'<ol><li><b>What is a mechanism?</b> Driving element (motriz), mechanism (mecanismo), output element (receptor).</li><li><b>Levers and pulleys</b> (palancas y poleas). With a video.</li><li><b>Passing on turning</b> (transmisión del giro): gears, belts and chains.</li><li>🏁 <b>Final task</b>: the bike map (el mapa de la bici).</li></ol>Press <b>Apuntes</b> for the notes and <b>Actividades</b> for the exercises.'},
+partes:'<ol><li><b>What is a mechanism?</b> Driving element (motriz), mechanism (mecanismo), output element (receptor).</li><li><b>Levers and pulleys</b> (palancas y poleas).</li><li><b>Passing on turning</b> (transmisión del giro): gears, belts and chains.</li><li>🏁 <b>Final task</b>: the bike map (el mapa de la bici).</li></ol>Press <b>Apuntes</b> for the notes and <b>Actividades</b> for the exercises.'},
 ar:{intro:'في هذه الوحدة ستتعلّم التعرّف على <b>الآليات (mecanismos)</b> وكيف تساعدنا على العمل <b>بجهد أقل</b>.',
-partes:'<ol><li><b>ما هي الآلية؟</b> العنصر المحرِّك (motriz)، الآلية (mecanismo)، العنصر المستقبِل (receptor).</li><li><b>الروافع والبكرات</b> (palancas y poleas). مع فيديو.</li><li><b>نقل الدوران</b> (transmisión del giro): التروس والسيور والسلاسل.</li><li>🏁 <b>العمل النهائي</b>: خريطة الدرّاجة (el mapa de la bici).</li></ol>اضغط <b>Apuntes</b> للدروس و<b>Actividades</b> للتمارين.'}};
+partes:'<ol><li><b>ما هي الآلية؟</b> العنصر المحرِّك (motriz)، الآلية (mecanismo)، العنصر المستقبِل (receptor).</li><li><b>الروافع والبكرات</b> (palancas y poleas).</li><li><b>نقل الدوران</b> (transmisión del giro): التروس والسيور والسلاسل.</li><li>🏁 <b>العمل النهائي</b>: خريطة الدرّاجة (el mapa de la bici).</li></ol>اضغط <b>Apuntes</b> للدروس و<b>Actividades</b> للتمارين.'}};
 
 
 /* ===== Apoyo en otros idiomas (inglés / árabe). El español siempre se mantiene visible. ===== */
